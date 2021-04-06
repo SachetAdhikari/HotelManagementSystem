@@ -1,1 +1,1 @@
-# HotelManagementSystem
+# DBMS Project HMS
