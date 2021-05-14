@@ -9,18 +9,29 @@
     <link rel="icon" type="image/icon" href="../static/images/icon.ico" />
   </head>
   <body>
-    <div class="navbar">
-      <a href="./index.html" class="navlink">Home</a>
-      <a href="#" class="navlink">Hotels</a>
-      <a href="#" class="navlink">Features</a>
-      <a href="#" class="navlink">Packages</a>
-      <a href="./signup.html" class="navlink" id="navlinkLogSin">Signup</a>
-      <a href="./login.html" class="navlink" id="navlinkLogSin">Login</a>
-    </div>
+    <header>
+      <nav>
+        <div class="navlink">
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="#">Hotels</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Packages</a></li>
+          </ul>
+        </div>
+        <div class="signuplink">
+          <ul>
+            <li><a href="./signup.html">Signup</a></li>
+            <li><a href="./login.html">Login</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
     <div class="login">
-      <div class="loginBox">
-        <!-- <h1 class="loginh1">Login</h1> -->
+      <div class="decorator loginBox">
         <h1>Login</h1>
+        <img src="../static/images/avatar.png" alt="avatar" />
+        <!-- <div class="avatar"></div> -->
         <form action="" method="">
           <label for="id1UserName">Username</label><br />
           <input

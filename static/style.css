@@ -2,32 +2,69 @@
   margin: 0;
   padding: 0;
 }
+
 a {
   text-decoration: none;
 }
-.navbar {
-  background-color: rgb(5, 91, 112);
+
+nav {
+  /* background-color: rgb(5, 91, 112); */
+  /* background-color: rgb(107, 82, 19); */
+  background-color: rgb(128, 93, 29);
   height: 50px;
   width: 100vw;
   position: fixed;
   top: 0;
+  display: flex;
+  justify-content: space-between;
+  
 }
-.navlink {
-  color: white;
+
+.navlink li:hover{
+  background-color: rgb(128, 96, 39);
+}
+
+.navlink li, .signuplink li{
+  position: relative;
+  display: inline-block;
+}
+
+nav a{
+  /* color: white; */
+  color: rgb(245, 223, 184);
   text-decoration: none;
   display: inline-block;
-  padding: 17px;
-  font-size: 17px;
+  padding: 16px 17px 8px;
+  font-size: 18px;
 }
-#navlinkLogSin {
-  /* padding-right: 35px; */
-  /* right: 0; */
-  float: right;
+
+.navlink a:hover{
+  /* color: rgb(231, 152, 152); */
+  /* color: rgb(153, 141, 142); */
+  color: gold;
+  transition: 0.5s;
 }
-.navlink:hover {
-  text-transform: uppercase;
+
+.navlink li::after {
+  content: "";
+  width: 0;
+  height: 5px;
+  /* background-color: rgb(141, 107, 45); */
+  /* background-color: rgb(153, 141, 142); */
+  background-color: gold;
+  display: block;
+  margin: auto;
+  transition: 0.5s;
+}
+
+.navlink li:hover::after {
+  width: 100%;
+}
+
+.signuplink li a:hover{
   text-decoration: underline;
 }
+
 /* @media screen and (max-width: 550px) {
   .navlink {
     font-size: 15px;
@@ -38,23 +75,19 @@ a {
   margin-top: 50px;
   width: 100vw;
   height: calc(100vh - 50px);
-  background-image: url(./images/hotel.jpg);
+  background-image: url(./images/test2.jpg);
   background-size: 100% 100%;
   /* background-repeat: round; */
   /* background: url(./images/hotel.jpg) no-repeat center center fixed;
   background-size: cover; */
 }
 
-.login {
-  margin-top: 50px;
-  width: 100vw;
-  height: calc(100vh - 50px);
-  background-image: url(./images/reception.jpg);
-  background-size: 100% 100%;
-}
-.loginBox {
+/* decorator for login and signup page */
+
+.decorator {
   /* clear: all; */
-  height: calc(70% - 60px);
+  /* height: calc(70% - 60px); */
+  height: 70%;
   width: 450px;
   /* width: 30em; */
   border: rgb(114, 97, 65) solid 3px;
@@ -73,49 +106,27 @@ a {
   background-color: rgba(245, 222, 179, 0.63);
   padding: 20px;
 }
-.signup {
-  margin-top: 50px;
-  width: 100vw;
-  height: calc(100vh - 50px);
-  background-image: url(./images/h3.jpg);
-  background-size: 100% 100%;
-}
-.signupBox {
-  /* clear: all; */
-  height: 75%;
-  width: 50%;
-  /* width: 30em; */
-  border: rgb(9, 101, 155) solid 3px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  /* margin-top: -50px; */
-  margin-left: -10px;
-  transform: translate(-50%, -50%);
-  margin-top: 50px;
 
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
-
-  background-color: rgba(14, 92, 116, 0.555);
-}
-.login h1 {
+.decorator h1 {
   text-align: center;
   color: rgb(83, 59, 14);
   text-transform: uppercase;
   /* text-decoration: underline; */
 }
-.login form {
+
+.decorator form {
   text-align: left;
-  margin-top: 30px;
+  margin-top: -10px;
 }
-.login label {
+
+.decorator label {
   font-size: 1.57rem;
   color: rgb(78, 65, 40);
   font-family: cursive;
 }
-.login input[type="text"],
+
+.decorator input[type="text"],
+input[type="email"],
 input[type="password"] {
   margin-bottom: 20px;
   border: none;
@@ -126,10 +137,12 @@ input[type="password"] {
   border-bottom: rgb(105, 75, 18) solid;
   outline: none;
 }
+
 input::placeholder {
   font-family: cursive;
 }
-.login input[type="submit"] {
+
+.decorator input[type="submit"] {
   width: 100%;
   height: 50px;
   background-color: rgba(124, 95, 41, 0.699);
@@ -142,19 +155,62 @@ input::placeholder {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
-.login input[type="submit"]:hover {
+
+.decorator input[type="submit"]:hover {
   background-color: rgba(124, 95, 41, 0.849);
-  transition: 0.5s;
+  transition: 0.2s;
   font-weight: bold;
   font-size: 1.2rem;
 }
-.login span {
+
+.decorator span {
   display: inline-block;
   margin-top: 20px;
 }
-.login a {
+
+.decorator a {
   color: black;
 }
-.login a:hover {
+
+.decorator a:hover {
   text-decoration: underline;
+}
+
+/* LOGIN  */
+
+.login {
+  margin-top: 50px;
+  width: 100vw;
+  height: calc(100vh - 50px);
+  background-image: url(./images/reception.jpg);
+  background-size: 100% 100%;
+}
+
+.loginBox{
+  height: 60%;
+}
+
+.loginBox img {
+  height: 20%;
+  width: 23%;
+  border-radius: 50%;
+  position: relative;
+  top: 30px;
+  left: 51%;
+  margin-left: -10px;
+  transform: translate(-50%, -50%);
+  margin-top: 40px;
+}
+
+/* SIGNUP  */
+.signup {
+  margin-top: 50px;
+  width: 100vw;
+  height: calc(100vh - 50px);
+  background-image: url(./images/signup.jpg);
+  background-size: 100% 100%;
+}
+
+.signupBox form {
+  margin-top: 30px;
 }
