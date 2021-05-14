@@ -54,7 +54,7 @@
   height: 75%;
   width: 50%;
   /* width: 30em; */
-  border: red solid 5px;
+  border: rgb(114, 97, 65) solid 3px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -81,7 +81,7 @@
   height: 75%;
   width: 50%;
   /* width: 30em; */
-  border: red solid 5px;
+  border: rgb(9, 101, 155) solid 3px;
   position: absolute;
   top: 50%;
   left: 50%;
