@@ -6,14 +6,17 @@ a {
   text-decoration: none;
 }
 .navbar {
-  background-color: rgb(5, 91, 112);
+  /* background-color: rgb(5, 91, 112); */
+  /* background-color: rgb(107, 82, 19); */
+  background-color: rgb(128, 93, 29);
   height: 50px;
   width: 100vw;
   position: fixed;
   top: 0;
 }
 .navlink {
-  color: white;
+  /* color: white; */
+  color: rgb(245, 223, 184);
   text-decoration: none;
   display: inline-block;
   padding: 17px;
@@ -23,6 +26,19 @@ a {
   /* padding-right: 35px; */
   /* right: 0; */
   float: right;
+}
+.navbar::after {
+  content: "";
+  width: 0;
+  height: 5px;
+  background-color: rgb(141, 107, 45);
+  display: block;
+  margin: auto;
+  transition: 0.3s;
+}
+
+.navbar:hover::after {
+  width: 100%;
 }
 .navlink:hover {
   text-transform: uppercase;
@@ -38,12 +54,14 @@ a {
   margin-top: 50px;
   width: 100vw;
   height: calc(100vh - 50px);
-  background-image: url(./images/hotel.jpg);
+  background-image: url(./images/test2.jpg);
   background-size: 100% 100%;
   /* background-repeat: round; */
   /* background: url(./images/hotel.jpg) no-repeat center center fixed;
   background-size: cover; */
 }
+
+/* LOGIN  */
 
 .login {
   margin-top: 50px;
@@ -54,7 +72,8 @@ a {
 }
 .loginBox {
   /* clear: all; */
-  height: calc(70% - 60px);
+  /* height: calc(70% - 60px); */
+  height: 70%;
   width: 450px;
   /* width: 30em; */
   border: rgb(114, 97, 65) solid 3px;
@@ -73,33 +92,7 @@ a {
   background-color: rgba(245, 222, 179, 0.63);
   padding: 20px;
 }
-.signup {
-  margin-top: 50px;
-  width: 100vw;
-  height: calc(100vh - 50px);
-  background-image: url(./images/h3.jpg);
-  background-size: 100% 100%;
-}
-.signupBox {
-  /* clear: all; */
-  height: 75%;
-  width: 50%;
-  /* width: 30em; */
-  border: rgb(9, 101, 155) solid 3px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  /* margin-top: -50px; */
-  margin-left: -10px;
-  transform: translate(-50%, -50%);
-  margin-top: 50px;
 
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
-
-  background-color: rgba(14, 92, 116, 0.555);
-}
 .login h1 {
   text-align: center;
   color: rgb(83, 59, 14);
@@ -108,7 +101,7 @@ a {
 }
 .login form {
   text-align: left;
-  margin-top: 30px;
+  margin-top: -10px;
 }
 .login label {
   font-size: 1.57rem;
@@ -116,6 +109,7 @@ a {
   font-family: cursive;
 }
 .login input[type="text"],
+input[type="email"],
 input[type="password"] {
   margin-bottom: 20px;
   border: none;
@@ -144,7 +138,7 @@ input::placeholder {
 }
 .login input[type="submit"]:hover {
   background-color: rgba(124, 95, 41, 0.849);
-  transition: 0.5s;
+  transition: 0.2s;
   font-weight: bold;
   font-size: 1.2rem;
 }
@@ -157,4 +151,31 @@ input::placeholder {
 }
 .login a:hover {
   text-decoration: underline;
+}
+.login img {
+  height: 20%;
+  width: 23%;
+  border-radius: 50%;
+  position: relative;
+  top: 30px;
+  left: 51%;
+  margin-left: -10px;
+  transform: translate(-50%, -50%);
+  margin-top: 40px;
+}
+
+/* SIGNUP  */
+.signup {
+  margin-top: 50px;
+  width: 100vw;
+  height: calc(100vh - 50px);
+  background-image: url(./images/signup.jpg);
+  background-size: 100% 100%;
+}
+
+.login .signup-Box {
+  height: 70%;
+}
+.login .signup-Box form {
+  margin-top: 30px;
 }
