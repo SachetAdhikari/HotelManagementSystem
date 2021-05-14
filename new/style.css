@@ -2,6 +2,9 @@
   margin: 0;
   padding: 0;
 }
+a {
+  text-decoration: none;
+}
 .navbar {
   background-color: rgb(5, 91, 112);
   height: 50px;
@@ -51,8 +54,8 @@
 }
 .loginBox {
   /* clear: all; */
-  height: 75%;
-  width: 50%;
+  height: calc(70% - 60px);
+  width: 450px;
   /* width: 30em; */
   border: rgb(114, 97, 65) solid 3px;
   position: absolute;
@@ -68,6 +71,7 @@
   align-items: center; */
 
   background-color: rgba(245, 222, 179, 0.63);
+  padding: 20px;
 }
 .signup {
   margin-top: 50px;
@@ -95,4 +99,62 @@
   align-items: center; */
 
   background-color: rgba(14, 92, 116, 0.555);
+}
+.login h1 {
+  text-align: center;
+  color: rgb(83, 59, 14);
+  text-transform: uppercase;
+  /* text-decoration: underline; */
+}
+.login form {
+  text-align: left;
+  margin-top: 30px;
+}
+.login label {
+  font-size: 1.57rem;
+  color: rgb(78, 65, 40);
+  font-family: cursive;
+}
+.login input[type="text"],
+input[type="password"] {
+  margin-bottom: 20px;
+  border: none;
+  width: 100%;
+  padding: 7px 2px;
+  /* background-color: rgba(245, 222, 179, 0); */
+  background: transparent;
+  border-bottom: rgb(105, 75, 18) solid;
+  outline: none;
+}
+input::placeholder {
+  font-family: cursive;
+}
+.login input[type="submit"] {
+  width: 100%;
+  height: 50px;
+  background-color: rgba(124, 95, 41, 0.699);
+  font-size: 1.45rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border: rgb(78, 65, 40) solid 2px;
+  border-radius: 7px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.login input[type="submit"]:hover {
+  background-color: rgba(124, 95, 41, 0.849);
+  transition: 0.5s;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.login span {
+  display: inline-block;
+  margin-top: 20px;
+}
+.login a {
+  color: black;
+}
+.login a:hover {
+  text-decoration: underline;
 }
