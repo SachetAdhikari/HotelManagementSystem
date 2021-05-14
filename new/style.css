@@ -9,8 +9,6 @@
   position: fixed;
   top: 0;
 }
-.a {
-}
 .navlink {
   color: white;
   text-decoration: none;
@@ -42,4 +40,59 @@
   /* background-repeat: round; */
   /* background: url(./images/hotel.jpg) no-repeat center center fixed;
   background-size: cover; */
+}
+
+.login {
+  margin-top: 50px;
+  width: 100vw;
+  height: calc(100vh - 50px);
+  background-image: url(./images/reception.jpg);
+  background-size: 100% 100%;
+}
+.loginBox {
+  /* clear: all; */
+  height: 75%;
+  width: 50%;
+  /* width: 30em; */
+  border: red solid 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* margin-top: -50px; */
+  margin-left: -10px;
+  transform: translate(-50%, -50%);
+  margin-top: 50px;
+
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+
+  background-color: rgba(245, 222, 179, 0.63);
+}
+.signup {
+  margin-top: 50px;
+  width: 100vw;
+  height: calc(100vh - 50px);
+  background-image: url(./images/h3.jpg);
+  background-size: 100% 100%;
+}
+.signupBox {
+  /* clear: all; */
+  height: 75%;
+  width: 50%;
+  /* width: 30em; */
+  border: red solid 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* margin-top: -50px; */
+  margin-left: -10px;
+  transform: translate(-50%, -50%);
+  margin-top: 50px;
+
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+
+  background-color: rgba(14, 92, 116, 0.555);
 }
