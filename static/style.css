@@ -3,11 +3,11 @@
   margin: 0;
   padding: 0;
 }
-
 a {
   text-decoration: none;
 }
 
+/* NAVBAR  */
 nav {
   /* background-color: rgb(128, 93, 29); */
   background-color: rgb(141, 10, 39);
@@ -71,18 +71,6 @@ nav a {
     padding: 15px;
   }
 } */
-.page-body {
-  margin-top: 50px;
-  width: 100vw;
-  height: calc(100vh - 50px);
-  background-image: url(./images/try2.jpg);
-  background-size: 100% 100%;
-  background-attachment: fixed;
-  /* background-repeat: round; */
-  /* background: url(./images/hotel.jpg) no-repeat center center fixed;
-  background-size: cover; */
-}
-
 /* decorator for login and signup page */
 
 .decorator {
@@ -217,7 +205,24 @@ input::placeholder {
 }
 
 /* HOME PAGE  */
-.page-body h1 {
+.home-page {
+  /* margin-top: 50px; */
+  /* margin-right: 0;
+  margin-left: 0; */
+  width: 100vw;
+  height: calc(100vh - 50px);
+
+  /* background-repeat: round; */
+  /* background: url(./images/hotel.jpg) no-repeat center center fixed;
+  background-size: cover; */
+}
+
+.p1 {
+  background-image: url(./images/try2.jpg);
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}
+.p1 h1 {
   font-size: 100px;
   color: white;
   font-family: "Yatra One", cursive;
@@ -225,4 +230,14 @@ input::placeholder {
   text-align: center;
   position: relative;
   top: calc(50% - 50px);
+}
+.p2 {
+  background-image: url(./images/try.jpg);
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}
+.p3 {
+  background-image: url(./images/hotel.jpg);
+  background-size: 100% 100%;
+  background-attachment: fixed;
 }
