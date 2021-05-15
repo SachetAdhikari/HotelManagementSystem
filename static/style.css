@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Yatra+One&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -8,28 +9,27 @@ a {
 }
 
 nav {
-  /* background-color: rgb(5, 91, 112); */
-  /* background-color: rgb(107, 82, 19); */
-  background-color: rgb(128, 93, 29);
+  /* background-color: rgb(128, 93, 29); */
+  background-color: rgb(141, 10, 39);
   height: 50px;
   width: 100vw;
   position: fixed;
   top: 0;
   display: flex;
   justify-content: space-between;
-  
 }
 
-.navlink li:hover{
-  background-color: rgb(128, 96, 39);
+.navlink li:hover {
+  background-color: rgb(114, 6, 51);
 }
 
-.navlink li, .signuplink li{
+.navlink li,
+.signuplink li {
   position: relative;
   display: inline-block;
 }
 
-nav a{
+nav a {
   /* color: white; */
   color: rgb(245, 223, 184);
   text-decoration: none;
@@ -38,7 +38,7 @@ nav a{
   font-size: 18px;
 }
 
-.navlink a:hover{
+.navlink a:hover {
   /* color: rgb(231, 152, 152); */
   /* color: rgb(153, 141, 142); */
   color: gold;
@@ -51,7 +51,7 @@ nav a{
   height: 5px;
   /* background-color: rgb(141, 107, 45); */
   /* background-color: rgb(153, 141, 142); */
-  background-color: gold;
+  background-color: rgb(161, 7, 41);
   display: block;
   margin: auto;
   transition: 0.5s;
@@ -61,7 +61,7 @@ nav a{
   width: 100%;
 }
 
-.signuplink li a:hover{
+.signuplink li a:hover {
   text-decoration: underline;
 }
 
@@ -75,8 +75,9 @@ nav a{
   margin-top: 50px;
   width: 100vw;
   height: calc(100vh - 50px);
-  background-image: url(./images/test2.jpg);
+  background-image: url(./images/try2.jpg);
   background-size: 100% 100%;
+  background-attachment: fixed;
   /* background-repeat: round; */
   /* background: url(./images/hotel.jpg) no-repeat center center fixed;
   background-size: cover; */
@@ -186,7 +187,7 @@ input::placeholder {
   background-size: 100% 100%;
 }
 
-.loginBox{
+.loginBox {
   height: 60%;
 }
 
@@ -213,4 +214,15 @@ input::placeholder {
 
 .signupBox form {
   margin-top: 30px;
+}
+
+/* HOME PAGE  */
+.page-body h1 {
+  font-size: 100px;
+  color: white;
+  font-family: "Yatra One", cursive;
+  text-decoration: overline;
+  text-align: center;
+  position: relative;
+  top: calc(50% - 50px);
 }
