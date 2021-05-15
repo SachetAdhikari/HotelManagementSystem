@@ -205,12 +205,13 @@ input::placeholder {
 }
 
 /* HOME PAGE  */
-.home-page {
-  /* margin-top: 50px; */
+.main-page {
+  margin-top: 50px;
   /* margin-right: 0;
   margin-left: 0; */
   width: 100vw;
   height: calc(100vh - 50px);
+  box-sizing: border-box;
 
   /* background-repeat: round; */
   /* background: url(./images/hotel.jpg) no-repeat center center fixed;
@@ -218,6 +219,7 @@ input::placeholder {
 }
 
 .p1 {
+  /* margin-top: 0; */
   background-image: url(./images/try2.jpg);
   background-size: 100% 100%;
   background-attachment: fixed;
@@ -240,4 +242,34 @@ input::placeholder {
   background-image: url(./images/hotel.jpg);
   background-size: 100% 100%;
   background-attachment: fixed;
+}
+
+/* Profile Page */
+.profile {
+  padding: 20px;
+  background-color: rgba(209, 117, 12, 0.452);
+}
+.profile h1 {
+  text-align: center;
+}
+.profilepic {
+  height: 200px;
+  width: 200px;
+  /* background: lightcoral; */
+  float: right;
+}
+.photo {
+  height: 100%;
+  width: 100%;
+  background: cadetblue;
+}
+.profilepic .photo-tala a {
+  color: black;
+  padding-left: 30%;
+  display: inline-block;
+  margin-top: 10px;
+}
+.profile h2 {
+  font-family: cursive;
+  margin-top: 20px;
 }
