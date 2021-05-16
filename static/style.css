@@ -249,8 +249,7 @@ input::placeholder {
 .current-status {
   display: flex;
   flex-direction: column;
-  margin-top: 50px;
-  padding: 10px;
+  padding: 20px;
   background-color: rgba(209, 117, 12, 0.452);
 }
 .user-profile {
