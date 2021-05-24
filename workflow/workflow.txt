@@ -1,0 +1,8 @@
+login{
+    if not booked{
+        show booking page
+    }
+    if booked {
+        show profile/dashboard
+    }
+}
