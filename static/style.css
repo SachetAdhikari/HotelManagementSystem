@@ -251,6 +251,9 @@ input::placeholder {
   flex-direction: column;
   padding: 20px;
   background-image: url(..//static/images/booking3.jpeg);
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .user-profile {
   display: flex;
