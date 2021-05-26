@@ -44,22 +44,6 @@ CREATE TABLE `hotelmanagementsystem`.`roomtype` (
   `rate` DECIMAL(2) NOT NULL,
   PRIMARY KEY (`id`));
 
-ALTER TABLE `hotelmanagementsystem`.`room` 
-ADD COLUMN `roomno` INT NOT NULL AFTER `status`,
-CHANGE COLUMN `id` `id` INT NOT NULL AUTO_INCREMENT ;
-
-ALTER TABLE `hotelmanagementsystem`.`room` 
-ADD CONSTRAINT `roomtypeid`
-  FOREIGN KEY (`id`)
-  REFERENCES `hotelmanagementsystem`.`roomtype` (`id`)
-  ON DELETE NO ACTION
-  ON UPDATE NO ACTION,
-ADD CONSTRAINT `hotelid`
-  FOREIGN KEY (`id`)
-  REFERENCES `hotelmanagementsystem`.`hotels` (`id`)
-  ON DELETE NO ACTION
-  ON UPDATE NO ACTION;
-
 CREATE TABLE `hotelmanagementsystem`.`booking` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `checkindate` DATETIME NOT NULL,
@@ -77,20 +61,7 @@ CREATE TABLE `hotelmanagementsystem`.`booking` (
     REFERENCES `hotelmanagementsystem`.`customer_credentials` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
-ALTER TABLE `hotelmanagementsystem`.`room` 
-ADD COLUMN `roomtype` INT NOT NULL AFTER `roomno`,
-ADD COLUMN `hotelll` INT NOT NULL AFTER `roomtype`;
-ALTER TABLE `hotelmanagementsystem`.`room` 
-ADD CONSTRAINT `fk_hotelid`
-  FOREIGN KEY (`hotelid`)
-  REFERENCES `hotelmanagementsystem`.`hotels` (`id`)
-  ON DELETE NO ACTION
-  ON UPDATE NO ACTION,
-ADD CONSTRAINT `fk_roomtypeid`
-  FOREIGN KEY (`roomtypeid`)
-  REFERENCES `hotelmanagementsystem`.`roomtype` (`id`)
-  ON DELETE NO ACTION
-  ON UPDATE NO ACTION;
+    
 ALTER TABLE `hotelmanagementsystem`.`booking` 
 DROP FOREIGN KEY `roomid`,
 DROP FOREIGN KEY `cusid`;
@@ -222,3 +193,4 @@ CREATE TABLE `hotelmanagementsystem`.`guests` (
     REFERENCES `hotelmanagementsystem`.`booking` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
+
