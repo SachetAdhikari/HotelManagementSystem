@@ -12,6 +12,10 @@ CREATE TABLE `hotelmanagementsystem`.`room` (
   `id` INT NOT NULL,
   `status` TINYINT NOT NULL,
   PRIMARY KEY (`id`));
+ALTER TABLE `hotelmanagementsystem`.`room` 
+ADD COLUMN `roomno` INT NOT NULL AFTER `status`,
+CHANGE COLUMN `id` `id` INT NOT NULL AUTO_INCREMENT ;
+
 
 CREATE TABLE `hotelmanagementsystem`.`hotels` (
   `id` INT NOT NULL,
@@ -44,21 +48,6 @@ CREATE TABLE `hotelmanagementsystem`.`roomtype` (
   `rate` DECIMAL(2) NOT NULL,
   PRIMARY KEY (`id`));
 
-ALTER TABLE `hotelmanagementsystem`.`room` 
-ADD COLUMN `roomno` INT NOT NULL AFTER `status`,
-CHANGE COLUMN `id` `id` INT NOT NULL AUTO_INCREMENT ;
-
-ALTER TABLE `hotelmanagementsystem`.`room` 
-ADD CONSTRAINT `roomtypeid`
-  FOREIGN KEY (`id`)
-  REFERENCES `hotelmanagementsystem`.`roomtype` (`id`)
-  ON DELETE NO ACTION
-  ON UPDATE NO ACTION,
-ADD CONSTRAINT `hotelid`
-  FOREIGN KEY (`id`)
-  REFERENCES `hotelmanagementsystem`.`hotels` (`id`)
-  ON DELETE NO ACTION
-  ON UPDATE NO ACTION;
 
 CREATE TABLE `hotelmanagementsystem`.`booking` (
   `id` INT NOT NULL AUTO_INCREMENT,
@@ -222,3 +211,7 @@ CREATE TABLE `hotelmanagementsystem`.`guests` (
     REFERENCES `hotelmanagementsystem`.`booking` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
+ALTER TABLE `hotelmanagementsystem`.`room` 
+DROP COLUMN `hotelll`;
+ALTER TABLE `hotelmanagementsystem`.`room` 
+DROP COLUMN `roomtype`;
