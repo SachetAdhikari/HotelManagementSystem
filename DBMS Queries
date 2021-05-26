@@ -1,0 +1,67 @@
+Creating Tables
+
+Customer Details:
+
+CREATE TABLE `hotel`.`customer_credentials` (
+  `id` INT NOT NULL,
+  `Name` VARCHAR(45) NULL,
+  `Email` VARCHAR(45) NULL,
+  `Pass_W` VARCHAR(45) NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `Email_UNIQUE` (`Email` ASC) VISIBLE);
+
+ALTER TABLE `hotel`.`customer_credentials` 
+ADD COLUMN `Address` VARCHAR(45) NULL AFTER `Password`,
+ADD COLUMN `Age` INT NULL AFTER `Address`,
+CHANGE COLUMN `Pass_W` `Password` VARCHAR(45) NULL DEFAULT NULL ;
+
+Room:
+CREATE TABLE `hotel`.`room` (
+  `Room No.` INT NOT NULL,
+  `Hotel No.` INT NOT NULL,
+  `Type` VARCHAR(45) NULL,
+  `Rate` DECIMAL(2) NULL,
+  `Status` TINYINT NULL,
+  PRIMARY KEY (`Room No.`, `Hotel No.`));
+
+Hotel:
+CREATE TABLE `hotel`.`hotels` (
+  `id` INT NOT NULL,
+  `Name` VARCHAR(45) NULL,
+  `Address` VARCHAR(45) NULL,
+  PRIMARY KEY (`id`));
+
+Services:
+CREATE TABLE `hotel`.`services` (
+  `id` INT NOT NULL,
+  `Name` VARCHAR(45) NULL,
+  `Rate` VARCHAR(45) NULL,
+  PRIMARY KEY (`id`));
+
+ALTER TABLE `hotel`.`services` 
+CHANGE COLUMN `Rate` `Rate` DECIMAL(2) NOT NULL ;
+
+Food:
+CREATE TABLE `hotel`.`food` (
+  `id` INT NOT NULL,
+  `Name` VARCHAR(45) NULL,
+  `Rate` INT NULL,
+  `Type` VARCHAR(45) NULL,
+  PRIMARY KEY (`id`));
+
+Bills:
+CREATE TABLE `hotel`.`bills` (
+  `id` INT NOT NULL,
+  `Date` DATETIME NULL,
+  `Total Amount` DECIMAL(2) NULL,
+  PRIMARY KEY (`id`));
+
+Staffs Details:
+CREATE TABLE `hotel`.`staffs` (
+  `id` INT NOT NULL,
+  `Name` VARCHAR(45) NULL,
+  `Age` INT NULL,
+  `Address` VARCHAR(45) NULL,
+  `Position` VARCHAR(45) NULL,
+  PRIMARY KEY (`id`));
+
