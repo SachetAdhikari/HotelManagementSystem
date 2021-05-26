@@ -1,5 +1,5 @@
 CREATE TABLE `hotelmanagementsystem`.`customer_credentials` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
   `email` VARCHAR(45) NOT NULL,
   `passsword` VARCHAR(45) NOT NULL,
@@ -9,36 +9,36 @@ CREATE TABLE `hotelmanagementsystem`.`customer_credentials` (
   UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE);
 
 CREATE TABLE `hotelmanagementsystem`.`room` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `status` TINYINT NOT NULL,
   PRIMARY KEY (`id`));
 
 CREATE TABLE `hotelmanagementsystem`.`hotels` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
   `address` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`));
 
 CREATE TABLE `hotelmanagementsystem`.`services` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`));
 
 CREATE TABLE `hotelmanagementsystem`.`food` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
   `type` TINYINT NULL,
   `rate` DECIMAL(2) NOT NULL,
   PRIMARY KEY (`id`));
 
 CREATE TABLE `hotelmanagementsystem`.`bills` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `date` DATETIME NOT NULL,
   `total amount` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`));
 
 CREATE TABLE `hotelmanagementsystem`.`roomtype` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `ac` TINYINT NOT NULL,
   `capacity` INT NOT NULL,
   `rate` DECIMAL(2) NOT NULL,
