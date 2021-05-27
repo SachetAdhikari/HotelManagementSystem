@@ -1,0 +1,387 @@
+@import url("https://fonts.googleapis.com/css2?family=Yatra+One&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+
+/* NAVBAR  */
+nav {
+  /* background-color: rgb(128, 93, 29); */
+  background-color: rgb(141, 10, 39);
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  z-index: 2;
+}
+
+.navlink li:hover {
+  background-color: rgb(114, 6, 51);
+}
+
+.navlink li,
+.signuplink li {
+  position: relative;
+  display: inline-block;
+}
+
+nav a {
+  /* color: white; */
+  color: rgb(245, 223, 184);
+  text-decoration: none;
+  display: inline-block;
+  padding: 16px 17px 8px;
+  font-size: 18px;
+}
+
+.navlink a:hover {
+  /* color: rgb(231, 152, 152); */
+  /* color: rgb(153, 141, 142); */
+  color: gold;
+  transition: 0.5s;
+}
+
+.navlink li::after {
+  content: "";
+  width: 0;
+  height: 5px;
+  /* background-color: rgb(141, 107, 45); */
+  /* background-color: rgb(153, 141, 142); */
+  background-color: rgb(161, 7, 41);
+  display: block;
+  margin: auto;
+  transition: 0.5s;
+}
+
+.navlink li:hover::after {
+  width: 100%;
+}
+
+.signuplink li a:hover {
+  text-decoration: underline;
+}
+
+/* @media screen and (max-width: 550px) {
+  .navlink {
+    font-size: 15px;
+    padding: 15px;
+  }
+} */
+/* decorator for login and signup page */
+
+.decorator {
+  /* clear: all; */
+  /* height: calc(70% - 60px); */
+  height: 70%;
+  width: 450px;
+  /* width: 30em; */
+  border: rgb(114, 97, 65) solid 3px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* margin-top: -50px; */
+  margin-left: -10px;
+  transform: translate(-50%, -50%);
+  margin-top: 50px;
+
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+
+  background-color: rgba(245, 222, 179, 0.63);
+  padding: 20px;
+}
+
+.decorator h1 {
+  text-align: center;
+  color: rgb(83, 59, 14);
+  text-transform: uppercase;
+  /* text-decoration: underline; */
+}
+
+.decorator form {
+  text-align: left;
+  margin-top: -10px;
+}
+
+.decorator label {
+  font-size: 1.57rem;
+  color: rgb(78, 65, 40);
+  font-family: cursive;
+}
+
+.decorator input[type="text"],
+input[type="email"],
+input[type="password"] {
+  margin-bottom: 20px;
+  border: none;
+  width: 100%;
+  padding: 7px 2px;
+  /* background-color: rgba(245, 222, 179, 0); */
+  background: transparent;
+  border-bottom: rgb(105, 75, 18) solid;
+  outline: none;
+}
+
+input::placeholder {
+  font-family: cursive;
+}
+
+.decorator input[type="submit"] {
+  width: 100%;
+  height: 50px;
+  background-color: rgba(124, 95, 41, 0.699);
+  font-size: 1.45rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border: rgb(78, 65, 40) solid 2px;
+  border-radius: 7px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.decorator input[type="submit"]:hover {
+  background-color: rgba(124, 95, 41, 0.849);
+  transition: 0.2s;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.decorator span {
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.decorator a {
+  color: black;
+}
+
+.decorator a:hover {
+  text-decoration: underline;
+}
+
+/* LOGIN  */
+
+.login {
+  margin-top: 50px;
+  width: 100vw;
+  height: calc(100vh - 50px);
+  background-image: url(./images/reception.jpg);
+  background-size: 100% 100%;
+}
+
+.loginBox {
+  height: 60%;
+}
+
+.loginBox img {
+  height: 20%;
+  width: 23%;
+  border-radius: 50%;
+  position: relative;
+  top: 30px;
+  left: 51%;
+  margin-left: -10px;
+  transform: translate(-50%, -50%);
+  margin-top: 40px;
+}
+
+/* SIGNUP  */
+.signup {
+  margin-top: 50px;
+  width: 100vw;
+  height: calc(100vh - 50px);
+  background-image: url(./images/signup.jpg);
+  background-size: 100% 100%;
+}
+
+.signupBox form {
+  margin-top: 30px;
+}
+
+/* HOME PAGE  */
+.main-page {
+  margin-top: 50px;
+  /* margin-right: 0;
+  margin-left: 0; */
+  width: 100%;
+  height: calc(100vh - 50px);
+  box-sizing: border-box;
+
+  /* background-repeat: round; */
+  /* background: url(./images/hotel.jpg) no-repeat center center fixed;
+  background-size: cover; */
+}
+
+.p1 {
+  /* margin-top: 0; */
+  background-image: url(./images/try2.jpg);
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}
+.p1 h1 {
+  font-size: 100px;
+  color: white;
+  font-family: "Yatra One", cursive;
+  text-decoration: overline;
+  text-align: center;
+  position: relative;
+  top: calc(50% - 50px);
+}
+.p2 {
+  background-image: url(./images/booking8.jpeg);
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}
+.p3 {
+  background-image: url(./images/hotel.jpg);
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}
+
+/* Profile Page */
+.current-status {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-image: url(..//static/images/booking3.jpeg);
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.user-profile {
+  display: flex;
+  /* align-items: center; */
+  /* justify-content: space-between; */
+}
+.user-details {
+  /* background-color: cornflowerblue; */
+  padding-left: 20px;
+}
+.user-details h1 {
+  font-size: 3rem;
+  /* font-family: cursive; */
+}
+.user-details h2 {
+  font-size: 1.2rem;
+  margin-top: 4px;
+}
+.profile-detail {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  margin-top: 50px;
+}
+
+.hotel-detail-profile ul {
+  list-style: none;
+  /* display: flex;
+  flex-direction: column; */
+  font-family: cursive;
+}
+
+.hotel-detail-profile li {
+  margin-bottom: 10px;
+}
+.button {
+  font-size: medium;
+  margin-top: 3px;
+  display: inline-block;
+  /* width: 115px;
+  height: 25px; */
+  /* background: #4e9caf; */
+  padding: 1px 10px;
+  text-align: center;
+  border-radius: 5px;
+  color: black;
+  font-weight: bold;
+  line-height: 25px;
+  border: cadetblue solid 2px;
+}
+
+.current-status .button:hover{
+  border-color: transparent;
+  background-color: rgb(141, 10, 39);
+}
+.profilepic {
+  display: flex;
+  flex-direction: column;
+}
+
+.profilepic img {
+  height: 180px;
+  width: 180px;
+}
+
+.profilepic a {
+  text-align: center;
+  color: black;
+}
+
+.photo {
+  height: 100%;
+  width: 100%;
+  background: cadetblue;
+}
+.profilepic .photo-tala a {
+  color: black;
+  padding-left: 30%;
+  display: inline-block;
+  margin-top: 10px;
+}
+.profile h2 {
+  font-family: cursive;
+  margin-top: 20px;
+}
+
+/* SERVICES  */
+.general-SBH {
+  /* background-color: rgb(11, 85, 107); */
+  background: transparent;
+  height: 50vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.general-SBHbox {
+  width: 30%;
+  height: 90%;
+  border: rgb(138, 44, 7) solid 3px;
+  position: relative;
+}
+.general-SBHbox button {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* margin: 0; */
+  border: none;
+  background-color: grey;
+  height: 10%;
+  cursor: pointer;
+}
+.general-SBHbox button:hover {
+  background-color: hotpink;
+  transition-duration: 0.3s;
+}
+
+/* BOOKING Page  */
+.booking {
+  background-image: url(..//static/images/booking1.jpeg);
+  padding: 10px;
+}
+
+.book-main {
+  /* font-family: cursive; */
+  font-size: 2rem;
+}
+.book-main label {
+  /* padding: 10px; */
+  margin: 20px;
+}
