@@ -21,34 +21,41 @@
   %>
     <section class="main-page booking">
       <section class="book-main">
+      <div>
         <label for="">Hotel</label>
         <select name="Hotel" id="">
           <option value="Hotel-1">Hotel-1</option>
           <option value="Hotel-2">Hotel-2</option>
           <option value="Hotel-3">Hotel-3</option>
         </select>
-        <br />
+      </div>
+      <div>
         <label for="">Room Number</label>
         <select name="RoomNumber" id="">
           <option value="A1">A1</option>
           <option value="B2">B2</option>
           <option value="C3">C3</option>
         </select>
-        <br />
+      </div>
+      <div>
         <label for="">Number of Guests</label>
         <select name="NoOfGuests" id="">
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
         </select>
-        <br />
+      </div>
+      <div>
         <label for="">Checkin Date: </label>
         <input type="date" id="" name="CinDate" /><br />
+      </div>
+      <div>
         <label for="">Checkout Date: </label>
         <input type="date" id="" name="CoutDate" /><br />
+      </div>
       </section>
-      <h2>Quick Services</h2>
       <section class="general-SBH">
+        <h2>Quick Services</h2>
         <div class="general-SBHbox addS1">
           <button>Add Service</button>
         </div>
@@ -58,8 +65,8 @@
         <div class="general-SBHbox addS3">
           <button>Add Service</button>
         </div>
+        <input type="submit" value="Book Now" />
       </section>
-      <input type="submit" value="Book Now" />
     </section>
   </body>
 </html>
