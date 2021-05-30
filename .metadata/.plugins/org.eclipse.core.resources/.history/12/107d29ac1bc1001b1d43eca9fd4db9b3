@@ -1,0 +1,5 @@
+package co.samundra.web.dao;
+
+public class user_credentialsDAO {
+
+}
