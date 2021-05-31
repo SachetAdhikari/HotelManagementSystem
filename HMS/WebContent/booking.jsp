@@ -17,20 +17,20 @@
       <div class="book-main-div">
         <label for="">Hotel</label>
         <select name="Hotel" id="">
-          <option value="Hotel-1">Hotel-1</option>
-          <option value="Hotel-2">Hotel-2</option>
-          <option value="Hotel-3">Hotel-3</option>
+          <option value="1" id="1">Hotel-1</option>
+          <option value="2" id="2">Hotel-2</option>
+          <option value="3" id="3">Hotel-3</option>
         </select>
       </div>
       <div class="book-main-div">
         <label for="room-type">Room Type</label>
         <form action="">
           <div>
-            <input type="radio" id="AC" name="room-type">
+            <input type="radio" id="AC" name="room-type" value="1" checked>
             <label for="AC">AC</label>
           </div>
           <div>
-            <input type="radio" id="Non-AC" name="room-type">
+            <input type="radio" id="Non-AC" name="room-type" value="0">
             <label for="Non-AC">Non-AC</label>
           </div>
         </form>
@@ -58,14 +58,17 @@
         	try{
         		int num;
         		String hotel=request.getParameter("Hotel");
+        		//int ac=1;
+        		//int no = Integer.parseInt(request.getParameter("Hotel"));
         		
+        		System.out.println(hotel);
         		String dbUrl = "jdbc:mysql://remotemysql.com:3306/jBsMU8OOWb";
         		String dbUsername = "jBsMU8OOWb";
         		String dbPassword = "GPkoS7miTH";
         		String dbDriver = "com.mysql.cj.jdbc.Driver";
         		Class.forName(dbDriver);
-        			Connection con = DriverManager.getConnection(dbUrl, dbUsername,dbPassword);
-        			PreparedStatement st = con.prepareStatement("select *from room where hotelid='"+1+"' and status='"+0+"'");
+				Connection con = DriverManager.getConnection(dbUrl, dbUsername,dbPassword);
+        			PreparedStatement st = con.prepareStatement("select * from room join roomtype on room.roomtypeid=roomtype.id where hotelid='"+1+"' and status='"+0+"' and ac='"+0+"'");
         			System.out.println("connected on booking");
         	        ResultSet rs = st.executeQuery();
         	        while(rs.next()){
