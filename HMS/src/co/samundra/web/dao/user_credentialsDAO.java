@@ -15,9 +15,7 @@ public class user_credentialsDAO{
         try { con.close(); } catch (Exception e) {  System.out.println(e); }
 	}
 	public boolean authenticateUser(String email, String password){
-		String query = "SELECT * from practise WHERE email = ? and password=?";
-			
-		
+		String query = "SELECT * from customer_credentials WHERE email = ? and password=?";
 		try{
 			Class.forName(dbDriver);
 			Connection con = DriverManager.getConnection(dbUrl, dbUsername,dbPassword);
@@ -40,5 +38,26 @@ public class user_credentialsDAO{
 			System.out.println(e);
 		}
 		return false;
+	}
+	public void inputUserdetails(String name,String email,String password) {
+		String query = "insert into customer_credentials(name,email,password,address,age)" +"values(?,?,?,?,?)";
+		try{
+			Class.forName(dbDriver);
+			Connection con = DriverManager.getConnection(dbUrl, dbUsername,dbPassword);
+			PreparedStatement st = con.prepareStatement(query);
+			System.out.println("connected"+email+password);
+			st.setString(1, name);
+	        st.setString(2, email);
+	        st.setString(3, password);
+	        st.setString(4, "Kathmandu");
+	        st.setInt(5, 20);
+	        st.execute();
+	        con.close();
+	        st.close();
+		}
+		catch(Exception e){
+			System.out.println(e);
+		}
+		
 	}
 }
