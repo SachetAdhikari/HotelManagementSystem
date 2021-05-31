@@ -16,7 +16,7 @@
   response.setHeader("Expires","0");//Proxies
   
   if(session.getAttribute("email")!=null){
-	  response.sendRedirect("./booking.jsp");
+	  response.sendRedirect("index.jsp");
   }
   %>
     <div class="login">

@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import co.samundra.web.dao.user_credentialsDAO;
 
-@WebServlet("/login")
+@WebServlet("/login.jsp")
 public class loginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     public loginController() {
