@@ -15,6 +15,10 @@ select{
   outline: none;
 }
 
+input:autofill{
+	outline: none;
+}
+
 /* NAVBAR  */
 nav {
   /* background-color: rgb(128, 93, 29); */
@@ -297,6 +301,23 @@ input::placeholder {
 .hotel-detail-profile li {
   margin-bottom: 10px;
 }
+
+.hotel-detail-profile h1{
+  font-size: 3rem;
+  padding: 10px 0px 5px;
+}
+
+.hotel-detail-profile h2{
+  font-size: 1.2rem;
+  margin: 10px;
+  margin-top: 20px;
+}
+
+.hotel-detail-profile h3{
+  font-size: 1rem;
+  margin-left: 20px;
+}
+
 .button {
   font-size: medium;
   margin-top: 3px;
@@ -388,10 +409,26 @@ input::placeholder {
   cursor: pointer;
 }
 
+.myS button{
+  background-color: rgb(245, 163, 238);
+}
+
+.orderF button{
+  background-color: rgb(164, 163, 245);
+}
+
 .booking > input[type="submit"]:hover,
 .general-SBHbox button:hover{
   background-color: rgba(163, 245, 207, 0.76);
   transition-duration: 0.3s;
+}
+
+.myS button:hover{
+  background-color: rgba(245, 163, 238, 0.76);
+}
+
+.orderF button:hover{
+  background-color: rgba(164, 163, 245, 0.76);
 }
 
 /* BOOKING Page  */

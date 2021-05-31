@@ -19,7 +19,7 @@
 //	  response.sendRedirect("index.jsp");
   //}
   %>
-    <section class="main-page current-status">
+	<section class="main-page current-status">
       <div class="user-profile">
         <div class="profilepic">
           <img src="../static/images/avatar.png" alt="profilepic">
@@ -34,13 +34,17 @@
       </div>  
       <div class="hotel-detail-profile">
           <ul>
-            <li><h2>Hotel: abc</h2></li>
-            <li><h2>Room Number: abc</h2></li>
-            <li><h2>Number of Guests: abc</h2></li>
+            <li><h1>Hotel abc</h1></li>
+            <li><h2>Room Number abc</h2></li>
             <li>
-              <h2>Room Assistant: abc <a href="#" class="button">Call Now</a></h2>
-              
+              <h2>Guests</h2>
+              <ul>
+                <li><h3>guest1</h3></li>
+                <li><h3>guest2</h3></li>
+                <li><h3>guest3</h3></li>
+              </ul>
             </li>
+            <li>
             <li><h2>Checkin Date: abc</h2></li>
             <li>
               <h2>Checkout Date: abc <a href="#" class="button">Update</a></h2>
@@ -49,31 +53,47 @@
           </ul>
         </div>
     </section>
-    <section class="general-SBH">
-        <h2>Your Services</h2>
-        <div class="general-SBHbox myS1">
-            <button>Remove Service</button>
-        </div>
-        <div class="general-SBHbox myS2">
-            <button>Remove Service</button>
-        </div>
-        <div class="general-SBHbox myS3">
-            <button>Remove Service</button>
-        </div>
-    </section>
-
-          <h2>Add Services (Dropdown)</h2>
-          <section class="general-SBH">
-            
-            <div class="general-SBHbox addS1">
-                <button>Add Service</button>
+        <section class="general-SBH">
+          <h2>Your Services</h2>
+          <div>
+            <div class="general-SBHbox myS">
+              <button>Remove Service</button>
             </div>
-            <div class="general-SBHbox assS2">
-                <button>Add Service</button>
+            <div class="general-SBHbox myS">
+              <button>Remove Service</button>
             </div>
-            <div class="general-SBHbox addS3">
-                <button>Add Service</button>
+            <div class="general-SBHbox myS">
+              <button>Remove Service</button>
             </div>
+          </div>
+        </section>
+        <section class="general-SBH">
+          <h2>Other Services</h2>
+          <div>
+            <div class="general-SBHbox addS">
+              <button>Add Service</button>
+            </div>
+            <div class="general-SBHbox assS">
+              <button>Add Service</button>
+            </div>
+            <div class="general-SBHbox addS">
+              <button>Add Service</button>
+            </div>
+          </div>
+        </section>
+        <section class="general-SBH">
+          <h2>Available Food</h2>
+          <div>
+            <div class="general-SBHbox orderF">
+              <button>Order this</button>
+            </div>
+            <div class="general-SBHbox orderF">
+              <button>Order this</button>
+            </div>
+            <div class="general-SBHbox orderF">
+              <button>Order this</button>
+            </div>
+          </div>
         </section>
   </body>
 </html>

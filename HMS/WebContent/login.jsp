@@ -24,7 +24,7 @@
         <h1>Login</h1>
         <img src="./static/images/avatar.png" alt="avatar" />
         <!-- <div class="avatar"></div> -->
-        <form action="login" method="post">
+        <form action="login" autocomplete="off" method="post">
           <label for="id1Email">Email</label><br />
           <input
             type="text"
