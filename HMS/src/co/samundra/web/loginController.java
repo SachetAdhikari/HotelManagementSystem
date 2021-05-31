@@ -29,15 +29,8 @@ public class loginController extends HttpServlet {
 		if(result==true){
 			HttpSession session= request.getSession();
 			session.setAttribute("email", email);
-<<<<<<< HEAD
 			response.sendRedirect("./booking.jsp");
-=======
 
-			//response.sendRedirect("./booking.jsp");
-
-			response.sendRedirect("booking.jsp");
-
->>>>>>> b3aeb3088f19ded11f3a4d4df5953e729b3f4926
 			//out.print("Success");
 		}
 		else{

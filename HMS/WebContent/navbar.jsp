@@ -28,7 +28,7 @@
             		<li><a href="./booking.jsp">Book Now</a></li>
             	<%}
             	else{ %>
-            		<li><a href="./booking.jsp">Book Now</a></li>
+            		<li><a href="./login.jsp">Book Now</a></li>
             	<%}
             %>
           </ul>
@@ -39,7 +39,7 @@
 				<div class="signuplink">
 		        <ul>
 		          <li><a href="./dashboard.jsp"><i class="fa fa-user"></i></a></li>
-		          <li><a href="./index.jsp"><i class="fa fa-sign-out"></i></a></li>
+		          <li><a href="#"><i class="fa fa-sign-out"></i></a></li>
 		        </ul>
 		      	</div>	
 			<% }
