@@ -13,7 +13,7 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-@WebFilter({ "/dashboard.jsp", "/booking.jsp" })
+//@WebFilter({ "/dashboard.jsp", "/booking.jsp" })
 public class sessionCheckFilter implements Filter {
 
     public sessionCheckFilter() {
