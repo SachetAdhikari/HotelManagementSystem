@@ -15,9 +15,9 @@
   response.setHeader("Pragma","no-cache");// HTTP 1.0
   response.setHeader("Expires","0");//Proxies
   
-  if(session.getAttribute("email")!=null){
-	  response.sendRedirect("index.jsp");
-  }
+  //if(session.getAttribute("email")!=null){
+//	  response.sendRedirect("index.jsp");
+  //}
   %>
     <section class="main-page current-status">
       <div class="user-profile">
@@ -49,19 +49,18 @@
           </ul>
         </div>
     </section>
-    <h2>Your Services</h2>
-        <section class="general-SBH">
-            
-            <div class="general-SBHbox myS1">
-                <button>Remove Service</button>
-            </div>
-            <div class="general-SBHbox myS2">
-                <button>Remove Service</button>
-            </div>
-            <div class="general-SBHbox myS3">
-                <button>Remove Service</button>
-            </div>
-        </section>
+    <section class="general-SBH">
+        <h2>Your Services</h2>
+        <div class="general-SBHbox myS1">
+            <button>Remove Service</button>
+        </div>
+        <div class="general-SBHbox myS2">
+            <button>Remove Service</button>
+        </div>
+        <div class="general-SBHbox myS3">
+            <button>Remove Service</button>
+        </div>
+    </section>
 
           <h2>Add Services (Dropdown)</h2>
           <section class="general-SBH">
