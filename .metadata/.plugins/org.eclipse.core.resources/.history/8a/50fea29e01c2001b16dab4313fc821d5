@@ -2,6 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@page import="java.sql.*" %>
+<%@page import="java" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -45,7 +46,7 @@
         		String dbDriver = "com.mysql.cj.jdbc.Driver";
         		Class.forName(dbDriver);
         			Connection con = DriverManager.getConnection(dbUrl, dbUsername,dbPassword);
-        			PreparedStatement st = con.prepareStatement("select *from room where hotelid='"+1+"' and status='"+0+"'");
+        			PreparedStatement st = con.prepareStatement("select *from room where hotelid='"+1+"'");
         			System.out.println("connected on booking");
         	        ResultSet rs = st.executeQuery();
         	        while(rs.next()){

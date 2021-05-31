@@ -32,12 +32,8 @@ public class loginController extends HttpServlet {
 <<<<<<< HEAD
 			response.sendRedirect("./booking.jsp");
 =======
-
-			//response.sendRedirect("./booking.jsp");
-
 			response.sendRedirect("booking.jsp");
-
->>>>>>> b3aeb3088f19ded11f3a4d4df5953e729b3f4926
+>>>>>>> 9c5eb8ef1a2632f7b1192fc76885f6cbfca30ed2
 			//out.print("Success");
 		}
 		else{
