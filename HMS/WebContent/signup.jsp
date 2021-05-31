@@ -22,7 +22,7 @@
     <div class="signup">
       <div class="decorator signupBox">
         <h1>Signup</h1>
-        <form action="" method="">
+        <form action="signup" method="post">
           <label for="id1FullName">Full Name</label><br />
           <input
             type="text"
@@ -35,13 +35,14 @@
           <input type="email" name="email" id="id2Email" placeholder="Email" />
           <br />
           <label for="id3Password">Password</label> <br />
-          <input type="password" placeholder="Password" id="id3Password" />
+          <input type="password" placeholder="Password" id="id3Password" name="password" />
           <br />
           <label for="id4CPassword">Confirm Password</label> <br />
           <input
             type="password"
             placeholder="Confirm Password"
             id="id4CPassword"
+            name="cpassword"
           />
           <br />
           <input type="submit" value="Signup" />

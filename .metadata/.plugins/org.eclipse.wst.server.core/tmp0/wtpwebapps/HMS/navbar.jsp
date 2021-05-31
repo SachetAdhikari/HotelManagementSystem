@@ -17,8 +17,8 @@
           <ul>
             <li><a href="./index.jsp">Home</a></li>
             <li><a href="#">Hotels</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Book Now</a></li>
+            <li><a href="#">Services</a></li>a
+            <li><a href="./booking.jsp">Book Now</a></li>
           </ul>
         </div>
         <div class="signuplink">
