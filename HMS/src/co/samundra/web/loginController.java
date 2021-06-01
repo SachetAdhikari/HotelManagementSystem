@@ -29,7 +29,7 @@ public class loginController extends HttpServlet {
 		if(result==true){
 			HttpSession session= request.getSession();
 			session.setAttribute("email", email);
-
+			
 			response.sendRedirect("./booking.jsp");
 
 
