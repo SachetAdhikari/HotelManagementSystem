@@ -17,14 +17,40 @@
       <div class="book-main-div">
         <label for="">Hotel</label>
         <select name="Hotel" id="">
-          <option value="Hotel-1">Hotel-1</option>
-          <option value="Hotel-2">Hotel-2</option>
-          <option value="Hotel-3">Hotel-3</option>
+          <% 
+        	try{
+        		//int num;
+        		//String hotel=request.getParameter("Hotel");
+        		//int ac=1;
+        		//int no = Integer.parseInt(request.getParameter("Hotel"));
+        		
+        		//System.out.println(hotel);
+        		String dbUrl = "jdbc:mysql://remotemysql.com:3306/jBsMU8OOWb";
+        		String dbUsername = "jBsMU8OOWb";
+        		String dbPassword = "GPkoS7miTH";
+        		String dbDriver = "com.mysql.cj.jdbc.Driver";
+        		Class.forName(dbDriver);
+				Connection con = DriverManager.getConnection(dbUrl, dbUsername,dbPassword);
+        			//PreparedStatement st = con.prepareStatement("select * from room join roomtype on room.roomtypeid=roomtype.id where hotelid='"+1+"' and status='"+0+"' and ac='"+0+"'");
+        			PreparedStatement st = con.prepareStatement("select * from hotels");
+        			System.out.println("connected on booking");
+        	        ResultSet rs = st.executeQuery();
+        	        while(rs.next()){
+        	        	%>
+        	        	<option  value="<%=rs.getInt("id") %>"><%=rs.getString("name")%></option>
+        	        	<%
+        	        }
+        	        con.close();
+        	        st.close();
+        	}
+        		catch(Exception e){
+        			System.out.println(e);
+        		}
+        	%>
         </select>
       </div>
-      <div class="book-main-div">
+      <div class="book-main-div room-type-div">
         <label for="room-type">Room Type</label>
-        <form action="">
           <div>
             <input type="radio" id="AC" name="room-type">
             <label for="AC">AC</label>
@@ -33,7 +59,6 @@
             <input type="radio" id="Non-AC" name="room-type">
             <label for="Non-AC">Non-AC</label>
           </div>
-        </form>
       </div>
       <div class="book-main-div">
         <label for="">No. of Guests</label>
@@ -84,33 +109,3 @@
 </html>
 
 
-<%--<% 
-        	try{
-        		//int num;
-        		//String hotel=request.getParameter("Hotel");
-        		//int ac=1;
-        		//int no = Integer.parseInt(request.getParameter("Hotel"));
-        		
-        		//System.out.println(hotel);
-        		String dbUrl = "jdbc:mysql://remotemysql.com:3306/jBsMU8OOWb";
-        		String dbUsername = "jBsMU8OOWb";
-        		String dbPassword = "GPkoS7miTH";
-        		String dbDriver = "com.mysql.cj.jdbc.Driver";
-        		Class.forName(dbDriver);
-				Connection con = DriverManager.getConnection(dbUrl, dbUsername,dbPassword);
-        			//PreparedStatement st = con.prepareStatement("select * from room join roomtype on room.roomtypeid=roomtype.id where hotelid='"+1+"' and status='"+0+"' and ac='"+0+"'");
-        			PreparedStatement st = con.prepareStatement("select * from hotels");
-        			System.out.println("connected on booking");
-        	        ResultSet rs = st.executeQuery();
-        	        while(rs.next()){
-        	        	<option value="<%=rs.getInt("id") %>"><%=rs.getString("name")%></option>
-        	        	<%
-        	        }
-        	        con.close();
-        	        st.close();
-        	}
-        		catch(Exception e){
-        			System.out.println(e);
-        		}
-        	%>
-  --%>

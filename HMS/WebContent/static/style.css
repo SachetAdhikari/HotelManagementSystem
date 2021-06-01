@@ -15,6 +15,9 @@ select{
   outline: none;
 }
 
+ input::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+  }
 /* NAVBAR  */
 nav {
   /* background-color: rgb(128, 93, 29); */
@@ -547,7 +550,11 @@ input::placeholder {
   margin: 10px 10px 0px;
   border-radius: 5px;
 }
-
+ .room-type-div{
+  display: grid;
+  grid-template-rows: 40% 30% 30%;
+  grid-row-gap: 1px;
+ }
 .book-main-div > label{
   border: 1px solid #000;
   width: 80%;
@@ -561,12 +568,7 @@ input::placeholder {
   grid-template-columns: 30% 70%;
 }
 
-.book-main-div form{
-  display: grid;
-  grid-template-rows: 22% 22%;
-}
-
-.book-main-div form input{
+.book-main-div input[type="radio"]{
   border: 0px;
   width: 100%;
   height: 2em;
