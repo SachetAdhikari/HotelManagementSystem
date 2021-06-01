@@ -52,7 +52,8 @@
       </div>
       <div class="book-main-div">
         <label for="room-type">Room Type</label>
-          <div>
+        <form action="">
+        	<div>
             <input type="radio" id="AC" name="room-type" value="1" checked>
             <label for="AC">AC</label>
           </div>
@@ -60,6 +61,7 @@
             <input type="radio" id="Non-AC" name="room-type" value="0">
             <label for="Non-AC">Non-AC</label>
           </div>
+        </form>
       </div>
       <div class="book-main-div">
         <label for="">No. of Guests</label>
@@ -103,5 +105,7 @@
         <input type="submit" class="button" value="Book Now" />
     </section>
     </form>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+    <%@ include file="footer.jsp" %>
   </body>
 </html>

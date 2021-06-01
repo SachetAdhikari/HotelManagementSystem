@@ -15,10 +15,6 @@ select{
   outline: none;
 }
 
-input:autofill{
-	outline: none;
-}
-
 /* NAVBAR  */
 nav {
   /* background-color: rgb(128, 93, 29); */
@@ -76,6 +72,54 @@ nav a {
 
 .signuplink li a:hover {
   text-decoration: underline;
+}
+
+
+/* SERVICES  */
+.general-SBH {
+  /* background-color: rgb(11, 85, 107); */
+  background: transparent;
+  display: grid;
+  grid-template-rows: 10% 80% 10%;
+  margin: 20px 0px;
+}
+
+.general-SBH h2{
+  color: rgb(184, 171, 155);
+  font-size: 50px;
+  text-align: center;
+}
+
+.general-SBH > div{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 50px;
+  margin: 30px 10px;
+}
+
+.general-SBHbox {
+  width: 100%;
+  height: 350px;
+  border: #000 solid 2px;
+  position: relative;
+  border-radius: 5px;
+}
+
+.booking > input[type="submit"],
+.general-SBHbox button {
+  width: 100%;
+  /* margin: 0; */
+  border: none;
+  background-color: rgb(163, 245, 207);
+  height: 35px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.booking > input[type="submit"]:hover,
+.general-SBHbox button:hover{
+  background-color: rgba(163, 245, 207, 0.76);
+  transition-duration: 0.3s;
 }
 
 /* @media screen and (max-width: 550px) {
@@ -218,6 +262,7 @@ input::placeholder {
 }
 
 /* HOME PAGE  */
+
 .main-page {
   margin-top: 50px;
   /* margin-right: 0;
@@ -231,13 +276,13 @@ input::placeholder {
   background-size: cover; */
 }
 
-.p1 {
+.intro {
   /* margin-top: 0; */
   background-image: url(./images/try2.jpg);
   background-size: 100% 100%;
   background-attachment: fixed;
 }
-.p1 h1 {
+.intro h1 {
   font-size: 100px;
   color: white;
   font-family: "Yatra One", cursive;
@@ -246,16 +291,78 @@ input::placeholder {
   position: relative;
   top: calc(50% - 50px);
 }
-.p2 {
+
+.hotels {
   background-image: url(./images/booking8.jpeg);
   background-size: 100% 100%;
   background-attachment: fixed;
 }
-.p3 {
-  background-image: url(./images/hotel.jpg);
-  background-size: 100% 100%;
-  background-attachment: fixed;
+
+.hotels h2{
+  margin-top: 100px;
+  margin-bottom: 1000px;
+  color:rgb(114, 6, 51);
 }
+
+.bookH button{
+  background-color: rgb(245, 91, 155);
+}
+
+.bookH button:hover{
+  background-color: rgba(245, 91, 155, 0.76);
+}
+
+.service{
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 100px;
+}
+
+.service h1{
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 50px;
+}
+
+.service p{
+  color: #777;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 22px;
+  padding: 10px;
+}
+
+.row{
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.service-col{
+  flex-basis: 31%;
+  height: 500px;
+  background: #f5c1c1;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  margin-top: 50px;
+  padding: 20px 12px;
+  box-sizing: border-box;
+  transition: 0.5s;
+}
+
+.service h3{
+  text-align: center;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.service-col:hover{
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+}
+
+
+
 
 /* Profile Page */
 .current-status {
@@ -370,57 +477,12 @@ input::placeholder {
   margin-top: 20px;
 }
 
-/* SERVICES  */
-.general-SBH {
-  /* background-color: rgb(11, 85, 107); */
-  background: transparent;
-  display: grid;
-  grid-template-rows: 10% 80% 10%;
-  margin: 20px 0px;
-}
-
-.general-SBH h2{
-  color: rgb(184, 171, 155);
-  font-size: 50px;
-  text-align: center;
-}
-
-.general-SBH > div{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-column-gap: 50px;
-  margin: 30px 10px;
-}
-
-.general-SBHbox {
-  width: 100%;
-  height: 350px;
-  border: #000 solid 2px;
-  position: relative;
-}
-
-.booking > input[type="submit"],
-.general-SBHbox button {
-  width: 100%;
-  /* margin: 0; */
-  border: none;
-  background-color: rgb(163, 245, 207);
-  height: 35px;
-  cursor: pointer;
-}
-
 .myS button{
   background-color: rgb(245, 163, 238);
 }
 
 .orderF button{
   background-color: rgb(164, 163, 245);
-}
-
-.booking > input[type="submit"]:hover,
-.general-SBHbox button:hover{
-  background-color: rgba(163, 245, 207, 0.76);
-  transition-duration: 0.3s;
 }
 
 .myS button:hover{
@@ -510,4 +572,28 @@ input::placeholder {
   background-color:rgb(163, 245, 207);
 }
 
+/* Footer */
+
+.footer{
+  width: 100%;
+  text-align: center;
+  padding: 30px 0;
+}
+
+.footer h4{
+  margin-top: 25px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.icons .fa{
+  color: #f44336;
+  margin: 0 13px;
+  cursor: pointer;
+  padding: 18px 0;
+}
+
+.fa-heart-o{
+  color: #f44336;
+}
 
