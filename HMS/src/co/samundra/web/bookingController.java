@@ -16,7 +16,7 @@ import co.samundra.web.dao.user_credentialsDAO;
 	        // TODO Auto-generated constructor stub
 	    }
 		protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			System.out.println("in signupcontroller");
+			System.out.println("in bookingcontroller");
 			PrintWriter out= response.getWriter();
 			String Hotel = request.getParameter("Hotel");
 			System.out.println(Hotel);

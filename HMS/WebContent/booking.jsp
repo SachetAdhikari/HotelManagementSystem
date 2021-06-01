@@ -38,7 +38,7 @@
         	        ResultSet rs = st.executeQuery();
         	        while(rs.next()){
         	        	%>
-        	        	<option value="<%=rs.getInt("id") %>"><%=rs.getString("name")%></option>
+        	        	<option  value="<%=rs.getInt("id") %>"><%=rs.getString("name")%></option>
         	        	<%
         	        }
         	        con.close();
@@ -52,7 +52,6 @@
       </div>
       <div class="book-main-div">
         <label for="room-type">Room Type</label>
-        <form action="">
         	<div>
             <input type="radio" id="AC" name="room-type" value="1" checked>
             <label for="AC">AC</label>
@@ -61,7 +60,6 @@
             <input type="radio" id="Non-AC" name="room-type" value="0">
             <label for="Non-AC">Non-AC</label>
           </div>
-        </form>
       </div>
       <div class="book-main-div">
         <label for="">No. of Guests</label>
