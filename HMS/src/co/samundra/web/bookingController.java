@@ -29,16 +29,20 @@ import co.samundra.web.dao.user_credentialsDAO;
 			String cout=request.getParameter("CoutDate");
 			System.out.println(cout);
 			String room=request.getParameter("roomnumber");
-			String email = request.getParameter("email");
+			HttpSession session=request.getSession();
+			String email = (String) session.getAttribute("email");
+			System.out.println(email);
+			//String email = request.getParameter("email");
 			//String name = request.getParameter("fullname");
 			//String cpassword = request.getParameter("cpassword");
 			user_credentialsDAO uc = new user_credentialsDAO();
 			//boolean result = uc.authenticateUser(email,password);
 			if(Hotel!=null && room!=null){
 				//uc.inputUserdetails(name,email,password);
-				uc.bookingDetails(Hotel,ac_nac,room,noofguest,cin,cout,email);
+				
 				//HttpSession session= request.getSession();
-				//session.setAttribute("Hotel", Hotel);
+				//session.setAttribute("email", email);
+				uc.bookingDetails(Hotel,ac_nac,room,noofguest,cin,cout,email);
 				//response.sendRedirect("./index.jsp");
 				out.print("Success");
 			}
