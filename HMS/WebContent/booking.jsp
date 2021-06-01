@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./static/style.css" />
     <title>Book Now</title>
   </head>
-  <body>
+  <body class = "booking">
   <form action="booking" method="post">
     <section class="main-page booking">
       <section class="book-main">

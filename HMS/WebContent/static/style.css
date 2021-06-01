@@ -85,7 +85,7 @@ nav a {
 }
 
 .general-SBH h2{
-  color: rgb(184, 171, 155);
+  color: #111;
   font-size: 50px;
   text-align: center;
 }
@@ -494,6 +494,10 @@ input::placeholder {
 }
 
 /* BOOKING Page  */
+.booking {
+	background: #ded891
+}
+
 .book-main {
   /* font-family: cursive; */
   font-size: 2rem;
@@ -505,7 +509,7 @@ input::placeholder {
 
 .book-main label {
   margin: auto;
-  color: rgb(184, 171, 155);
+  color: #111;
 }
 
 .book-main input, .book-main select{
@@ -517,7 +521,7 @@ input::placeholder {
   border: none;
   font-size: 20px;
   cursor: pointer;
-  color: rgb(184, 171, 155);
+  color: #111;
 }
 
 .book-main select option{
@@ -569,7 +573,7 @@ input::placeholder {
 
 .booking > input[type="submit"]{
   height: 50px;
-  background-color:rgb(163, 245, 207);
+  background-color: rgb(236, 189, 101);
 }
 
 /* Footer */
