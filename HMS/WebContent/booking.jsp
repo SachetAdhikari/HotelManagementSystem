@@ -11,14 +11,80 @@
     <link rel="stylesheet" href="./static/style.css" />
     <title>Book Now</title>
   </head>
-  <body class = "booking">
-  <form action="booking" method="post">
-    <section class="main-page booking">
+  <body class="booking-body">
+      <section class="booking">
       <section class="book-main">
       <div class="book-main-div">
         <label for="">Hotel</label>
         <select name="Hotel" id="">
-          <% 
+          <option value="Hotel-1">Hotel-1</option>
+          <option value="Hotel-2">Hotel-2</option>
+          <option value="Hotel-3">Hotel-3</option>
+        </select>
+      </div>
+      <div class="book-main-div">
+        <label for="room-type">Room Type</label>
+        <form action="">
+          <div>
+            <input type="radio" id="AC" name="room-type">
+            <label for="AC">AC</label>
+          </div>
+          <div>
+            <input type="radio" id="Non-AC" name="room-type">
+            <label for="Non-AC">Non-AC</label>
+          </div>
+        </form>
+      </div>
+      <div class="book-main-div">
+        <label for="">No. of Guests</label>
+        <select name="NoOfGuests" id="">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+      </div>
+      <div class="book-main-div">
+        <label for="">Checkin Date </label>
+        <input type="date" id="" name="CinDate" /><br />
+      </div>
+      <div class="book-main-div">
+        <label for="">Checkout Date </label>
+        <input type="date" id="" name="CoutDate" /><br />
+      </div>
+      <div class="book-main-div">
+        <label for="">Room Number</label>
+        <select name="RoomNumber" id="">
+          <option value="A1">A1</option>
+          <option value="B2">B2</option>
+          <option value="C3">C3</option>
+        </select>
+      </div>
+      </section>
+      <section class="general-SBH">
+        <h2>Quick Services</h2>
+        <div>
+          <div class="general-SBHbox addS">
+            <button>Add Service</button>
+          </div>
+          <div class="general-SBHbox addS">
+            <button>Add Service</button>
+          </div>
+          <div class="general-SBHbox addS">
+            <button>Add Service</button>
+          </div>
+        </div>
+      </section>
+        <input type="submit" class="button" value="Book Now" />
+    </section>
+    <div style="color:white;">
+    	<%@ include file="footer.jsp" %>
+    </div>
+  </body>
+ 	
+</html>
+
+
+<%--<% 
         	try{
         		//int num;
         		//String hotel=request.getParameter("Hotel");
@@ -37,7 +103,6 @@
         			System.out.println("connected on booking");
         	        ResultSet rs = st.executeQuery();
         	        while(rs.next()){
-        	        	%>
         	        	<option value="<%=rs.getInt("id") %>"><%=rs.getString("name")%></option>
         	        	<%
         	        }
@@ -48,64 +113,4 @@
         			System.out.println(e);
         		}
         	%>
-        </select>
-      </div>
-      <div class="book-main-div">
-        <label for="room-type">Room Type</label>
-        <form action="">
-        	<div>
-            <input type="radio" id="AC" name="room-type" value="1" checked>
-            <label for="AC">AC</label>
-          </div>
-          <div>
-            <input type="radio" id="Non-AC" name="room-type" value="0">
-            <label for="Non-AC">Non-AC</label>
-          </div>
-        </form>
-      </div>
-      <div class="book-main-div">
-        <label for="">No. of Guests</label>
-        <select name="NoOfGuests" id="">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="5">5</option>
-        </select>
-      </div>
-      <div class="book-main-div">
-        <label for="">Checkin Date </label>
-        <input type="date" id="" name="CinDate" /><br />
-      </div>
-      <div class="book-main-div">
-        <label for="">Checkout Date </label>
-        <input type="date" id="" name="CoutDate" /><br />
-      </div>
-      <div class="book-main-div">
-        <label for="">Room Number</label>
-        <select name="roomnumber" id="">
-          <option value="1">1</option>
-          <option value="2">2</option>
-        </select>
-      </div>
-      </section>
-      <section class="general-SBH">
-        <h2>Quick Services</h2>
-        <div>
-          <div class="general-SBHbox addS1">
-            <button>Add Service</button>
-          </div>
-          <div class="general-SBHbox addS2">
-            <button>Add Service</button>
-          </div>
-          <div class="general-SBHbox addS3">
-            <button>Add Service</button>
-          </div>
-        </div>
-      </section>
-        <input type="submit" class="button" value="Book Now" />
-    </section>
-    </form>
-    <br><br><br><br><br><br><br><br><br><br><br><br>
-    <%@ include file="footer.jsp" %>
-  </body>
-</html>
+  --%>

@@ -22,7 +22,7 @@
 	<section class="main-page current-status">
       <div class="user-profile">
         <div class="profilepic">
-          <img src="../static/images/avatar.png" alt="profilepic">
+          <img src="./static/images/avatar.png" alt="profilepic">
           <a href="#" class="button">Update Profile</a> <br />
         </div>
         <div class="user-details">

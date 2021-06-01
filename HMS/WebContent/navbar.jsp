@@ -28,7 +28,7 @@
             		<li><a href="./booking.jsp">Book Now</a></li>
             	<%}
             	else{ %>
-            		<li><a href="./booking.jsp">Book Now</a></li>
+            		<li><a href="./login.jsp">Book Now</a></li>
             	<%}
             %>
           </ul>

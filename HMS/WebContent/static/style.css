@@ -85,7 +85,7 @@ nav a {
 }
 
 .general-SBH h2{
-  color: #111;
+  color: white;
   font-size: 50px;
   text-align: center;
 }
@@ -100,7 +100,7 @@ nav a {
 .general-SBHbox {
   width: 100%;
   height: 350px;
-  border: #000 solid 2px;
+  border: #666 solid 2px;
   position: relative;
   border-radius: 5px;
 }
@@ -110,15 +110,17 @@ nav a {
   width: 100%;
   /* margin: 0; */
   border: none;
-  background-color: rgb(163, 245, 207);
+  background-color: rgb(141, 10, 39);
   height: 35px;
   cursor: pointer;
   border-radius: 5px;
+  font-size: 1rem;
+  color: white
 }
 
 .booking > input[type="submit"]:hover,
 .general-SBHbox button:hover{
-  background-color: rgba(163, 245, 207, 0.76);
+  background-color: rgb(141, 10, 39, 0.76);
   transition-duration: 0.3s;
 }
 
@@ -272,7 +274,7 @@ input::placeholder {
   box-sizing: border-box;
 
   /* background-repeat: round; */
-  /* background: url(./images/hotel.jpg) no-repeat center center fixed;
+  /*background: url(./images/hotel.jpg) no-repeat center center fixed;*/
   background-size: cover; */
 }
 
@@ -494,10 +496,6 @@ input::placeholder {
 }
 
 /* BOOKING Page  */
-.booking {
-	background: #ded891
-}
-
 .book-main {
   /* font-family: cursive; */
   font-size: 2rem;
@@ -505,11 +503,23 @@ input::placeholder {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-column-gap: 4px;
   height: 332px;
+  padding: 2%;
+}
+
+.booking-body {
+  background-image: url(./images/b3.jpg);
+  background-repeat: no-repeat;
+  /* background-size: cover; */
+  object-fit: cover;
+}
+
+.booking{
+	margin-top: 50px;
 }
 
 .book-main label {
   margin: auto;
-  color: #111;
+  color: white;
 }
 
 .book-main input, .book-main select{
@@ -521,11 +531,11 @@ input::placeholder {
   border: none;
   font-size: 20px;
   cursor: pointer;
-  color: #111;
+  color: white;
 }
 
 .book-main select option{
-  background: rgb(248, 248, 248);
+  background: #777;
 }
 
 .book-main-div{
@@ -573,7 +583,7 @@ input::placeholder {
 
 .booking > input[type="submit"]{
   height: 50px;
-  background-color: rgb(236, 189, 101);
+  background-color:rgb(141, 10, 39);
 }
 
 /* Footer */
