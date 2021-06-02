@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+//import com.sun.tools.javac.util.List;
+
 import co.samundra.web.dao.user_credentialsDAO;
 	@WebServlet("/booking")
 	public class bookingController extends HttpServlet {
@@ -33,6 +36,9 @@ import co.samundra.web.dao.user_credentialsDAO;
 			HttpSession session=request.getSession();
 			String email = (String) session.getAttribute("email");
 			System.out.println(email);
+			String s1= request.getParameter("service1");
+			String s2=request.getParameter("service2");
+			String s3=request.getParameter("service3");
 			//String email = request.getParameter("email");
 			//String name = request.getParameter("fullname");
 			//String cpassword = request.getParameter("cpassword");
@@ -43,7 +49,7 @@ import co.samundra.web.dao.user_credentialsDAO;
 				
 				//HttpSession session= request.getSession();
 				//session.setAttribute("email", email);
-				uc.bookingDetails(Hotel,ac_nac,room,noofguest,cin,cout,email);
+				uc.bookingDetails(Hotel,ac_nac,room,noofguest,cin,cout,email,s1,s2,s3);
 				//response.sendRedirect("./index.jsp");
 				out.print("Success");
 			}

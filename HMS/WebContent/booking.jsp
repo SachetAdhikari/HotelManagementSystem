@@ -90,13 +90,13 @@
         <h2>Quick Services</h2>
         <div>
           <div class="general-SBHbox addS">Hello
-            <button>Add Service</button>
+            <input type="checkbox" name="service1" value="1">Add Service
           </div>
           <div class="general-SBHbox addS">
-            <button>Add Service</button>
+            <input type="checkbox" name="service2" value="2">Add Service
           </div>
           <div class="general-SBHbox addS">
-            <button>Add Service</button>
+            <input type="checkbox" name="service3" value="3">Add Service
           </div>
         </div>
       </section>

@@ -60,10 +60,11 @@ public class user_credentialsDAO{
 		}
 		
 	}
-	public void bookingDetails(String hotel,String ac_nac,String room,String noofguest,String cin,String cout,String email) {
+	public void bookingDetails(String hotel,String ac_nac,String room,String noofguest,String cin,String cout,String email,String s1,String s2,String s3) {
 		String query = "insert into booking (checkindate,checkoutdate,noofguests,ratefactor,roomid,cusid)" +"values(?,?,?,?,?,?)";
 		String query2="select * from room join roomtype on room.roomtypeid=roomtype.id where hotelid='"+hotel+"' and status='"+0+"' and ac='"+ac_nac+"'";
 		String query3="select * from customer_credentials where email='"+email+"' ";
+		int customerid=0;
 		try{
 			Class.forName(dbDriver);
 			Connection con = DriverManager.getConnection(dbUrl, dbUsername,dbPassword);
@@ -80,12 +81,58 @@ public class user_credentialsDAO{
 	        st.setInt(4, 25);
 	        while(rs.next()) {
 	        	st.setInt(5, rs.getInt("id"));
-	        	
 	        }
 	        while (rs2.next()) {
 	        	st.setInt(6,rs2.getInt("id"));
+	        	customerid=rs2.getInt("id");
 	        }
 	        st.execute();
+	        if(s1!=null) {
+	        	int s11=0;
+				String query4="select * from services where id='"+s1+"'";
+				PreparedStatement st4= con.prepareStatement(query4);
+				ResultSet rs4 =st4.executeQuery();
+				while(rs4.next()) {
+					s11=rs4.getInt("id");
+				}
+				String q6="insert into customerservices (cusid,serviceid,usedate)"+"values(?,?,?)";
+				PreparedStatement st5= con.prepareStatement(q6);
+				st5.setInt(1,customerid);
+				st5.setInt(2,s11);
+				st5.setString(3,cin);
+				st5.execute();
+			}
+			if(s2!=null) {
+				int s22=0;
+				String query5="select * from services where id='"+s2+"'";
+				PreparedStatement st4= con.prepareStatement(query5);
+				ResultSet rs4 =st4.executeQuery();
+				while(rs4.next()) {
+					s22=rs4.getInt("id");
+				}
+				String q6="insert into customerservices (cusid,serviceid,usedate)"+"values(?,?,?)";
+				PreparedStatement st5= con.prepareStatement(q6);
+				st5.setInt(1,customerid);
+				st5.setInt(2,s22);
+				st5.setString(3,cin);
+				st5.execute();
+			}
+			if(s3!=null) {
+				int s33=0;
+				String query6="select * from services where id='"+s3+"'";
+				PreparedStatement st4= con.prepareStatement(query6);
+				ResultSet rs4 =st4.executeQuery();
+				while(rs4.next()) {
+					s33=rs4.getInt("id");
+				}
+				String q6="insert into customerservices (cusid,serviceid,usedate)"+"values(?,?,?)";
+				PreparedStatement st5= con.prepareStatement(q6);
+				st5.setInt(1,customerid);
+				st5.setInt(2,s33);
+				st5.setString(3,cin);
+				st5.execute();
+			}
+	        
 	        con.close();
 	        st.close();
 	        rs.close();
