@@ -12,6 +12,7 @@
     <title>Book Now</title>
   </head>
   <body class="booking-body">
+  <form action="booking" method="post">
       <section class="booking">
       <section class="book-main">
       <div class="book-main-div">
@@ -52,11 +53,11 @@
       <div class="book-main-div room-type-div">
         <label for="room-type">Room Type</label>
           <div>
-            <input type="radio" id="AC" name="room-type">
+            <input type="radio" id="AC" name="room-type" checked value="1">
             <label for="AC">AC</label>
           </div>
           <div>
-            <input type="radio" id="Non-AC" name="room-type">
+            <input type="radio" id="Non-AC" name="room-type" value="0">
             <label for="Non-AC">Non-AC</label>
           </div>
       </div>
@@ -66,6 +67,7 @@
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
+          <option value="3">5</option>
         </select>
       </div>
       <div class="book-main-div">
@@ -79,16 +81,15 @@
       <div class="book-main-div">
         <label for="">Room Number</label>
         <select name="RoomNumber" id="">
-          <option value="A1">A1</option>
-          <option value="B2">B2</option>
-          <option value="C3">C3</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
         </select>
       </div>
       </section>
       <section class="general-SBH">
         <h2>Quick Services</h2>
         <div>
-          <div class="general-SBHbox addS">
+          <div class="general-SBHbox addS">Hello
             <button>Add Service</button>
           </div>
           <div class="general-SBHbox addS">
@@ -101,6 +102,7 @@
       </section>
         <input type="submit" class="button" value="Book Now" />
     </section>
+    </form>
     <div style="color:white;">
     	<%@ include file="footer.jsp" %>
     </div>

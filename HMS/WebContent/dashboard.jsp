@@ -2,7 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@page import="java.sql.*" %>
-<%@page import="javax.servlet.http.HttpSession" %>
+
 <%
 String dbUrl = "jdbc:mysql://remotemysql.com:3306/jBsMU8OOWb";
 String dbUsername = "jBsMU8OOWb";

@@ -28,7 +28,8 @@ import co.samundra.web.dao.user_credentialsDAO;
 			System.out.println(cin);
 			String cout=request.getParameter("CoutDate");
 			System.out.println(cout);
-			String room=request.getParameter("roomnumber");
+			String room=request.getParameter("RoomNumber");
+			System.out.println(room);
 			HttpSession session=request.getSession();
 			String email = (String) session.getAttribute("email");
 			System.out.println(email);
@@ -37,7 +38,7 @@ import co.samundra.web.dao.user_credentialsDAO;
 			//String cpassword = request.getParameter("cpassword");
 			user_credentialsDAO uc = new user_credentialsDAO();
 			//boolean result = uc.authenticateUser(email,password);
-			if(Hotel!=null && room!=null){
+			if(Hotel!=null && room!=null && cin!=null && cout!=null){
 				//uc.inputUserdetails(name,email,password);
 				
 				//HttpSession session= request.getSession();
