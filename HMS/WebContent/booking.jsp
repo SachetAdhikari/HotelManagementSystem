@@ -86,28 +86,36 @@
         </select>
       </div>
       </section>
-      <section class="general-SBH">
+      <section class="box-section">
         <h2>Quick Services</h2>
-        <div>
-          <div class="general-SBHbox addS">Hello
-            <input type="checkbox" name="service1" value="1">Add Service
+        <div class="general-SBH">
+          <div class="general-SBHbox addS">
+            <input type="checkbox" name="service1" value="1"><label>Add Service</label>
           </div>
           <div class="general-SBHbox addS">
-            <input type="checkbox" name="service2" value="2">Add Service
+            <input type="checkbox" name="service2" value="2"><label>Add Service</label>
           </div>
           <div class="general-SBHbox addS">
-            <input type="checkbox" name="service3" value="3">Add Service
+            <input type="checkbox" name="service3" value="3"><label>Add Service</label>
+          </div>
+          <div class="general-SBHbox addS">
+            <input type="checkbox" name="service3" value="3"><label>Add Service</label>
+          </div>
+          <div class="general-SBHbox addS">
+            <input type="checkbox" name="service3" value="3"><label>Add Service</label>
+          </div>
+          <div class="general-SBHbox addS">
+            <input type="checkbox" name="service3" value="3"><label>Add Service</label>
           </div>
         </div>
       </section>
         <input type="submit" class="button" value="Book Now" />
     </section>
     </form>
-    <div style="color:white;">
+    <div style="color: rgb(245, 223, 184);">
     	<%@ include file="footer.jsp" %>
     </div>
   </body>
- 	
 </html>
 
 

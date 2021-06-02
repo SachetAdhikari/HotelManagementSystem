@@ -21,8 +21,8 @@
         <div class="navlink">
           <ul>
             <li><a href="./index.jsp">Home</a></li>
-            <li><a href="#">Hotels</a></li>
-            <li><a href="#">Services</a></li>
+            <li><a href="./index.jsp#hotels">Hotels</a></li>
+            <li><a href="./index.jsp#services">Services</a></li>
             <%
             	if (session.getAttribute("email") != null) { %>
             		<li><a href="./booking.jsp">Book Now</a></li>
