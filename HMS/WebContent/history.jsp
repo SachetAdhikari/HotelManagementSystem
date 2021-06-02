@@ -25,13 +25,14 @@ ResultSet rs=null;
 UserHistory
 </title>
 </head>
-<body>
+<body class="history-body">
 <h1>Your History</h1>
-<table border="1">
+<div  class="table">
+<table>
 <tr>
-<td>Check in</td>
-<td>Check out</td>
-<td>Guests</td>
+<th>Check in</th>
+<th>Check out</th>
+<th>Guests</th>
 
 </tr>
 <%
@@ -55,6 +56,7 @@ e.printStackTrace();
 }
 %>
 </table>
+</div>
 <%@ include file="footer.jsp" %>
 </body>
 </html>
