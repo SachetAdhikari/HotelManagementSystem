@@ -9,16 +9,40 @@
 </head>
 <body class="selectroom-body">
 	<h1>Available Rooms</h1>
-	<form>
+	<form class="select-room-buttons">
 		<ul>
-		<li><input type="checkbox"><label>101</label></li>
-		<li><input type="checkbox"><label>101</label></li>
-		<li><input type="checkbox"><label>101</label></li>
-		<li><input type="checkbox"><label>101</label></li>
-		<li><input type="checkbox"><label>101</label></li>
-		<li><input type="checkbox"><label>101</label></li>
-		<li><input type="checkbox"><label>101</label></li>
+		<li><input type="radio" name="roomno" checked><label>101</label></li>
+		<li><input type="radio" name="roomno"><label>101</label></li>
+		<li><input type="radio" name="roomno"><label>101</label></li>
+		<li><input type="radio" name="roomno"><label>101</label></li>
+		<li><input type="radio" name="roomno"><label>101</label></li>
+		<li><input type="radio" name="roomno"><label>101</label></li>
+		<li><input type="radio" name="roomno"><label>101</label></li>
+		<li><input type="radio" name="roomno"><label>101</label></li>
+		<li><input type="radio" name="roomno"><label>101</label></li>
+		<li><input type="radio" name="roomno"><label>101</label></li>
+		<li><input type="radio" name="roomno"><label>101</label></li>
+		<li><input type="radio" name="roomno"><label>101</label></li>
+		<li><input type="radio" name="roomno"><label>101</label></li>
+		<li><input type="radio" name="roomno"><label>101</label></li>
+		<li><input type="radio" name="roomno"><label>101</label></li>
+		<li><input type="radio" name="roomno"><label>101</label></li>
+		<li><input type="radio" name="roomno"><label>101</label></li>
+		<li><input type="radio" name="roomno"><label>101</label></li>
+		<li><input type="radio" name="roomno"><label>101</label></li>
+		<li><input type="radio" name="roomno"><label>101</label></li>
+		<li><input type="radio" name="roomno"><label>101</label></li>
+		<li><input type="radio" name="roomno"><label>101</label></li>
+		<li><input type="radio" name="roomno"><label>101</label></li>
+		<li><input type="radio" name="roomno"><label>101</label></li>
+		<li><input type="radio" name="roomno"><label>101</label></li>
+		<li><input type="radio" name="roomno"><label>101</label></li>
+		<li><input type="radio" name="roomno"><label>101</label></li>
+		<li><input type="radio" name="roomno"><label>101</label></li>
+		<li><input type="radio" name="roomno"><label>101</label></li>
+		<li><input type="radio" name="roomno"><label>101</label></li>
 		</ul>
+		<input type="submit" value="Select Room">
 	</form>
 </body>
 </html>
