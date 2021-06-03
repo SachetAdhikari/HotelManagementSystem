@@ -9,6 +9,8 @@ public class user_credentialsDAO{
 	String dbUsername = "jBsMU8OOWb";
 	String dbPassword = "GPkoS7miTH";
 	String dbDriver = "com.mysql.cj.jdbc.Driver";
+	int customerid=0;
+	String ciin;
 	public  void closeConnection(Connection con,PreparedStatement st, ResultSet rs ){
 		try { rs.close(); } catch (Exception e) { System.out.println(e); }
         try { st.close(); } catch (Exception e) {  System.out.println(e); }
@@ -64,7 +66,7 @@ public class user_credentialsDAO{
 		String query = "insert into booking (checkindate,checkoutdate,noofguests,ratefactor,roomid,cusid)" +"values(?,?,?,?,?,?)";
 		String query2="select * from room join roomtype on room.roomtypeid=roomtype.id where hotelid='"+hotel+"' and status='"+0+"' and ac='"+ac_nac+"'";
 		String query3="select * from customer_credentials where email='"+email+"' ";
-		int customerid=0;
+		ciin=cin;
 		try{
 			Class.forName(dbDriver);
 			Connection con = DriverManager.getConnection(dbUrl, dbUsername,dbPassword);
@@ -139,6 +141,72 @@ public class user_credentialsDAO{
 	        st2.close();
 	        rs2.close();
 	        st3.close();
+		}
+		catch(Exception e){
+			System.out.println(e);
+		}
+	}
+	public void food(String foodid,String email) {
+		System.out.println("in food DAO");
+		String query3="select * from customer_credentials where email='"+email+"' ";
+		int customerid=0;
+		int a=1;
+		try{
+			Class.forName(dbDriver);
+			Connection con = DriverManager.getConnection(dbUrl, dbUsername,dbPassword);
+			PreparedStatement stf= con.prepareStatement(query3);
+			ResultSet rsf=stf.executeQuery();
+			while(rsf.next()) {
+				customerid=rsf.getInt("id");
+			}
+			String q="insert into customerfood values('"+customerid+"','"+foodid+"',CURRENT_TIMESTAMP,'"+a+"')";
+			PreparedStatement stf1= con.prepareStatement(q);
+			stf1.execute();
+
+		}
+		catch(Exception e){
+			System.out.println(e);
+		}
+		
+		
+	}
+	public void removeservice(String serviceid,String email) {
+		System.out.println("in removeservice DAO");
+		try{
+			String query34="select * from customer_credentials where email='"+email+"' ";
+			int customerid=0;
+			Class.forName(dbDriver);
+			Connection con = DriverManager.getConnection(dbUrl, dbUsername,dbPassword);
+			PreparedStatement stf1= con.prepareStatement(query34);
+			ResultSet rsf=stf1.executeQuery();
+			while(rsf.next()) {
+				customerid=rsf.getInt("id");
+			}
+			String query3="delete from customerservices where cusid='"+customerid+"' and serviceid='"+serviceid+"'";
+			PreparedStatement stf= con.prepareStatement(query3);
+			stf.executeUpdate();
+		}
+		catch(Exception e){
+			System.out.println(e);
+		}
+		
+	}
+	public void addservice(String serviceid,String email) {
+		System.out.println("in addservice DAO");
+		try{
+			String query34="select * from customer_credentials where email='"+email+"' ";
+			int customerid=0;
+			//String query3="delete from customerservices where cusid='"+customerid+"' and serviceid='"+serviceid+"'and useddate='"+ciin+"' ";
+			Class.forName(dbDriver);
+			Connection con = DriverManager.getConnection(dbUrl, dbUsername,dbPassword);
+			PreparedStatement stf1= con.prepareStatement(query34);
+			ResultSet rsf=stf1.executeQuery();
+			while(rsf.next()) {
+				customerid=rsf.getInt("id");
+			}
+			String q6="insert into customerservices (cusid,serviceid,usedate)"+"values('"+customerid+"','"+serviceid+"',CURDATE())";
+			PreparedStatement st5= con.prepareStatement(q6);
+			st5.execute();
 		}
 		catch(Exception e){
 			System.out.println(e);

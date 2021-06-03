@@ -27,6 +27,7 @@ ResultSet rs=null;
     <title>Dashboard</title>
   </head>
   <body>
+  <form action="dashboard" method="post">
   <%
   response.setHeader("Cache-Control","no-cache, no-store, must-revalidate");//HTTP 1.1
   response.setHeader("Pragma","no-cache");// HTTP 1.0
@@ -142,11 +143,10 @@ ResultSet rs=null;
           <% PreparedStatement st6=con.prepareStatement("SELECT * FROM customerservices join hotelservices on customerservices.serviceid=hotelservices.idservice where customerservices.cusid='"+customerid+"' and hotelservices.idhotel='"+hotelid+"'");
         	 ResultSet rs6=st6.executeQuery();
         	 while(rs6.next()){
-        		 System.out.println(rs6.getString("description"));
+        		 //System.out.println(rs6.getString("description"));
         	        %>
             <div class="general-SBHbox myS">
-              <button>Remove Service</button>
-              <h2>Description:<%=rs6.getString("description")%></h2>
+              <button name="RemoveService" value="<%=rs6.getInt("serviceid")%>">Remove Service</button>
             </div>
             <% }%>
           </div>
@@ -157,10 +157,10 @@ ResultSet rs=null;
           <% PreparedStatement st7=con.prepareStatement("SELECT * FROM customerservices join hotelservices on customerservices.serviceid!=hotelservices.idservice where customerservices.cusid='"+customerid+"' and hotelservices.idhotel='"+hotelid+"'");
         	 ResultSet rs7=st7.executeQuery();
         	 while(rs7.next()){
-        		 System.out.println(rs7.getString("description"));
+        		 //System.out.println(rs7.getString("description"));
         	        %>
             <div class="general-SBHbox addS">
-              <button>Add Service</button>
+              <button name="AddService" value="<%=rs7.getInt("serviceid")%>">Add Service</button>
     
             </div>
             <%} %>
@@ -172,10 +172,10 @@ ResultSet rs=null;
           <% PreparedStatement st8=con.prepareStatement("SELECT * FROM hotelfood where hotelfood.hotelid='"+hotelid+"'");
         	 ResultSet rs8=st8.executeQuery();
         	 while(rs8.next()){
-        		 System.out.println(rs8.getString("description"));
+        		 //System.out.println(rs8.getString("description"));
         	        %>
             <div class="general-SBHbox orderF">
-              <button>Order this</button>
+              <button name="food" value="<%=rs8.getInt("foodid")%>">Order this</button>
             </div>
             <%} %>
           </div>
@@ -191,6 +191,7 @@ ResultSet rs=null;
         		}
        %> 
         </section>
+        </form>
     	<%@ include file="footer.jsp" %>
   </body>
 </html>
