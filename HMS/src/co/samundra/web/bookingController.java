@@ -44,14 +44,14 @@ import co.samundra.web.dao.user_credentialsDAO;
 			//String cpassword = request.getParameter("cpassword");
 			user_credentialsDAO uc = new user_credentialsDAO();
 			//boolean result = uc.authenticateUser(email,password);
-			if(Hotel!=null && room!=null && cin!=null && cout!=null){
+			if(Hotel!=null && cin!=null && cout!=null){
 				//uc.inputUserdetails(name,email,password);
 				
 				//HttpSession session= request.getSession();
 				//session.setAttribute("email", email);
 				uc.bookingDetails (Hotel,ac_nac,room,noofguest,cin,cout,email,s1,s2,s3);
-				//response.sendRedirect("./booking.jsp");
-				out.print("Success");
+				response.sendRedirect("./dashboard.jsp");
+				//out.print("Success");
 			}
 			else{
 				//response.sendRedirect("./signup.jsp");

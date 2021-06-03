@@ -67,7 +67,7 @@
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
-          <option value="3">5</option>
+          <option value="5">5</option>
         </select>
       </div>
       <div class="book-main-div">
@@ -78,6 +78,13 @@
         <label for="">Checkout Date </label>
         <input type="date" id="" name="CoutDate" /><br />
       </div>
+      <div class="book-main-div">
+        <label for="">Room Number</label>
+        <select name="RoomNumber" id="">
+          <option value="1">1</option>
+          <option value="2">2</option>
+        </select>
+      </div>
       </section>
       <section class="box-section">
         <h2>Quick Services</h2>
@@ -87,15 +94,6 @@
           </div>
           <div class="general-SBHbox addS">
             <input type="checkbox" name="service2" value="2"><label>Add Service</label>
-          </div>
-          <div class="general-SBHbox addS">
-            <input type="checkbox" name="service3" value="3"><label>Add Service</label>
-          </div>
-          <div class="general-SBHbox addS">
-            <input type="checkbox" name="service3" value="3"><label>Add Service</label>
-          </div>
-          <div class="general-SBHbox addS">
-            <input type="checkbox" name="service3" value="3"><label>Add Service</label>
           </div>
           <div class="general-SBHbox addS">
             <input type="checkbox" name="service3" value="3"><label>Add Service</label>

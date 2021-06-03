@@ -49,6 +49,7 @@ ResultSet rs=null;
         	try{
         	    int customerid=0;
         	    int roomid=0;
+        	    int hotelid=0;
         	    //int rs3=0;
         		//String hotel=request.getParameter("Hotel");
         		//int ac=1;
@@ -78,6 +79,7 @@ ResultSet rs=null;
         	        ResultSet rs4=st4.executeQuery();
         	        PreparedStatement st5=con.prepareStatement("SELECT * FROM booking WHERE booking.id=(SELECT max(id) FROM booking)");
         	        ResultSet rs5=st5.executeQuery();
+        	        
         	        while(rs.next()){
         	        	
         	        	%>
@@ -95,6 +97,7 @@ ResultSet rs=null;
       <div class="hotel-detail-profile">
           <ul>
           <% while(rs4.next()){  
+        	  hotelid=rs4.getInt("id");
            %>
             <li><h1>Hotel:<%=rs4.getString("name")%></h1></li>
             <% 
@@ -131,7 +134,51 @@ ResultSet rs=null;
             </li>
           </ul>
         </div>
- 		<%      
+ 		
+    </section>
+        <section class="box-section">
+          <h2 style="color: #000; font-family:cursive">Your Services</h2>
+          <div class="general-SBH">
+          <% PreparedStatement st6=con.prepareStatement("SELECT * FROM customerservices join hotelservices on customerservices.serviceid=hotelservices.idservice where customerservices.cusid='"+customerid+"' and hotelservices.idhotel='"+hotelid+"'");
+        	 ResultSet rs6=st6.executeQuery();
+        	 while(rs6.next()){
+        		 System.out.println(rs6.getString("description"));
+        	        %>
+            <div class="general-SBHbox myS">
+              <button>Remove Service</button>
+              <h2>Description:<%=rs6.getString("description")%></h2>
+            </div>
+            <% }%>
+          </div>
+        </section>
+        <section class="box-section">
+          <h2 style="color: #000; font-family:cursive">Other Services</h2>
+          <div class="general-SBH">
+          <% PreparedStatement st7=con.prepareStatement("SELECT * FROM customerservices join hotelservices on customerservices.serviceid!=hotelservices.idservice where customerservices.cusid='"+customerid+"' and hotelservices.idhotel='"+hotelid+"'");
+        	 ResultSet rs7=st7.executeQuery();
+        	 while(rs7.next()){
+        		 System.out.println(rs7.getString("description"));
+        	        %>
+            <div class="general-SBHbox addS">
+              <button>Add Service</button>
+            </div>
+            <%} %>
+          </div>
+        </section>
+        <section class="box-section">
+          <h2 style="color: #000; font-family:cursive">Available Food</h2>
+          <div class="general-SBH">
+          <% PreparedStatement st8=con.prepareStatement("SELECT * FROM hotelfood where hotelfood.hotelid='"+hotelid+"'");
+        	 ResultSet rs8=st8.executeQuery();
+        	 while(rs8.next()){
+        		 System.out.println(rs8.getString("description"));
+        	        %>
+            <div class="general-SBHbox orderF">
+              <button>Order this</button>
+            </div>
+            <%} %>
+          </div>
+          <%      
         	   
         	        con.close();
         	        st.close();
@@ -142,69 +189,6 @@ ResultSet rs=null;
         			System.out.println(e);
         		}
        %> 
-    </section>
-        <section class="box-section">
-          <h2 style="color: #000; font-family:cursive">Your Services</h2>
-          <div class="general-SBH">
-            <div class="general-SBHbox myS">
-              <button>Remove Service</button>
-            </div>
-            <div class="general-SBHbox myS">
-              <button>Remove Service</button>
-            </div>
-            <div class="general-SBHbox myS">
-              <button>Remove Service</button>
-            </div>
-            <div class="general-SBHbox myS">
-              <button>Remove Service</button>
-            </div>
-            <div class="general-SBHbox myS">
-              <button>Remove Service</button>
-            </div>
-          </div>
-        </section>
-        <section class="box-section">
-          <h2 style="color: #000; font-family:cursive">Other Services</h2>
-          <div class="general-SBH">
-            <div class="general-SBHbox addS">
-              <button>Add Service</button>
-            </div>
-            <div class="general-SBHbox assS">
-              <button>Add Service</button>
-            </div>
-            <div class="general-SBHbox addS">
-              <button>Add Service</button>
-            </div>
-            <div class="general-SBHbox addS">
-              <button>Add Service</button>
-            </div>
-            <div class="general-SBHbox addS">
-              <button>Add Service</button>
-            </div>
-            <div class="general-SBHbox addS">
-              <button>Add Service</button>
-            </div>
-          </div>
-        </section>
-        <section class="box-section">
-          <h2 style="color: #000; font-family:cursive">Available Food</h2>
-          <div class="general-SBH">
-            <div class="general-SBHbox orderF">
-              <button>Order this</button>
-            </div>
-            <div class="general-SBHbox orderF">
-              <button>Order this</button>
-            </div>
-            <div class="general-SBHbox orderF">
-              <button>Order this</button>
-            </div>
-            <div class="general-SBHbox orderF">
-              <button>Order this</button>
-            </div>
-            <div class="general-SBHbox orderF">
-              <button>Order this</button>
-            </div>
-          </div>
         </section>
     	<%@ include file="footer.jsp" %>
   </body>
