@@ -96,7 +96,7 @@
             <input type="checkbox" name="service2" value="2">Add Service
           </div>
           <div class="general-SBHbox addS">
-            <input type="checkbox" name="service3" value="3">Add Service
+             <input type="checkbox" name="service3" value="3">Add Service
           </div>
         </div>
       </section>
