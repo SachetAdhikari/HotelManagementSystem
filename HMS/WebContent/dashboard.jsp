@@ -161,6 +161,7 @@ ResultSet rs=null;
         	        %>
             <div class="general-SBHbox addS">
               <button>Add Service</button>
+    
             </div>
             <%} %>
           </div>
