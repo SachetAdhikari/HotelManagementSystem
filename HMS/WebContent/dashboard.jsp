@@ -1,6 +1,6 @@
 <%@ include file="navbar.jsp" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1" %>
 <%@page import="java.sql.*" %>
 
 <%
@@ -60,14 +60,24 @@ ResultSet rs=null;
         		
         		//Class.forName(dbDriver);
 				con = DriverManager.getConnection(dbUrl, dbUsername,dbPassword);
+				session=request.getSession();
+				String email = (String) session.getAttribute("email");
+				System.out.println(email);
         		//PreparedStatement st = con.prepareStatement("select * from room join roomtype on room.roomtypeid=roomtype.id where hotelid='"+1+"' and status='"+0+"' and ac='"+0+"'");
-        			PreparedStatement st1=con.prepareStatement("SELECT * FROM booking WHERE booking.id=(SELECT max(id) FROM booking)");
-        			System.out.println("on dashboard");
+        			//PreparedStatement st1=con.prepareStatement("SELECT * FROM booking WHERE booking.id=(SELECT max(id) FROM booking)");
+        			//System.out.println("on dashboard");
         	        //ResultSet rs = st.executeQuery();
+        	        PreparedStatement st1=con.prepareStatement("SELECT * FROM customer_credentials WHERE customer_credentials.email='"+email+"'");
         	        ResultSet rs1=st1.executeQuery();
         	        while(rs1.next()){
-        	        	customerid=rs1.getInt("cusid");
-        	        	roomid=rs1.getInt("roomid");
+        	        	customerid=rs1.getInt("id");
+        	        	//roomid=rs1.getInt("roomid");
+        	        }
+        	        PreparedStatement st11=con.prepareStatement("SELECT * FROM booking WHERE booking.cusid='"+customerid+"' and booking.id=(SELECT max(id) FROM booking)");
+        	        ResultSet rs11=st11.executeQuery();
+        	        while(rs11.next()){
+        	        	//customerid=rs1.getInt("id");
+        	        	roomid=rs11.getInt("roomid");
         	        }
         	        st = con.prepareStatement("select * from customer_credentials join booking where customer_credentials.id =?");
         	        PreparedStatement st3=con.prepareStatement("select * from room where id= ?");

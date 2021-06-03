@@ -97,7 +97,7 @@ public class user_credentialsDAO{
 				while(rs4.next()) {
 					s11=rs4.getInt("id");
 				}
-				String q6="insert into customerservices (cusid,serviceid,usedate)"+"values(?,?,?)";
+				String q6="insert into customerservices (cusid,serviceid,usedate,bookingid)"+"values(?,?,?)";
 				PreparedStatement st5= con.prepareStatement(q6);
 				st5.setInt(1,customerid);
 				st5.setInt(2,s11);
