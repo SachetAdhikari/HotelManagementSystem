@@ -37,7 +37,7 @@ ResultSet rs=null;
   //}
   %>
    
-	<section class="main-page current-status">
+	<section class="current-status">
       <div class="user-profile">
         <div class="profilepic">
           <img src="./static/images/avatar.png" alt="profilepic">
@@ -84,7 +84,7 @@ ResultSet rs=null;
         	        	<div class="user-details">
         	        	<h1 style="text-decoration: underline;">Name:<%=rs.getString("name")%></h1>
         	        	<h2>Email:<%=rs.getString("email") %></h2>
-        	        	 <a href="#" class="button">Your History</a>
+        	        	 <a href="./history.jsp" class="button">Your History</a>
         	    
         	        	 <%
         	        	 break;
@@ -143,9 +143,15 @@ ResultSet rs=null;
         		}
        %> 
     </section>
-        <section class="general-SBH">
-          <h2>Your Services</h2>
-          <div>
+        <section class="box-section">
+          <h2 style="color: #000; font-family:cursive">Your Services</h2>
+          <div class="general-SBH">
+            <div class="general-SBHbox myS">
+              <button>Remove Service</button>
+            </div>
+            <div class="general-SBHbox myS">
+              <button>Remove Service</button>
+            </div>
             <div class="general-SBHbox myS">
               <button>Remove Service</button>
             </div>
@@ -157,9 +163,9 @@ ResultSet rs=null;
             </div>
           </div>
         </section>
-        <section class="general-SBH">
-          <h2>Other Services</h2>
-          <div>
+        <section class="box-section">
+          <h2 style="color: #000; font-family:cursive">Other Services</h2>
+          <div class="general-SBH">
             <div class="general-SBHbox addS">
               <button>Add Service</button>
             </div>
@@ -169,11 +175,26 @@ ResultSet rs=null;
             <div class="general-SBHbox addS">
               <button>Add Service</button>
             </div>
+            <div class="general-SBHbox addS">
+              <button>Add Service</button>
+            </div>
+            <div class="general-SBHbox addS">
+              <button>Add Service</button>
+            </div>
+            <div class="general-SBHbox addS">
+              <button>Add Service</button>
+            </div>
           </div>
         </section>
-        <section class="general-SBH">
-          <h2>Available Food</h2>
-          <div>
+        <section class="box-section">
+          <h2 style="color: #000; font-family:cursive">Available Food</h2>
+          <div class="general-SBH">
+            <div class="general-SBHbox orderF">
+              <button>Order this</button>
+            </div>
+            <div class="general-SBHbox orderF">
+              <button>Order this</button>
+            </div>
             <div class="general-SBHbox orderF">
               <button>Order this</button>
             </div>

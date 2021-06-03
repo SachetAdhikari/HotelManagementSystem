@@ -10,14 +10,12 @@
     <title>Home</title>
   </head>
   <body>
-  <section class="main-page">
-      <section class="main-page intro">
+      <section class="intro">
         <h1>NAMASTE</h1>
       </section>
-      <section class="main-page hotels">
+      <section class="hotels box-section" id="hotels">
+      	<h2>Our Hotels</h2>
         <div class="general-SBH">
-          <h2>Our Hotels</h2>
-          <div>
             <div class="general-SBHbox bookH">
               <button>Book Now</button>
             </div>
@@ -27,10 +25,24 @@
             <div class="general-SBHbox bookH">
               <button>Book Now</button>
             </div>
-          </div>
+             <div class="general-SBHbox bookH">
+              <button>Book Now</button>
+            </div>
+             <div class="general-SBHbox bookH">
+              <button>Book Now</button>
+            </div>
+             <div class="general-SBHbox bookH">
+              <button>Book Now</button>
+            </div>
+             <div class="general-SBHbox bookH">
+              <button>Book Now</button>
+            </div>
+            <div class="general-SBHbox bookH">
+              <button>Book Now</button>
+            </div>
         </div>
       </section>
-      <section class="main-page service">
+      <section class="service" id="services">
         <h1>Services we provide</h1>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi quod sapiente facere, distinctio quis tempora consequuntur nostrum in perferendis optio impedit tenetur aliquam aliquid placeat.</p>
         <div class="row">
@@ -49,8 +61,9 @@
             </div>
         </div>
     </section>
-    <br><br><br><br><br><br><br><br><br><br><br><br>
-     <%@ include file="footer.jsp" %>
-   </section>>
+    <div class="index-footer">
+    	<%@ include file="footer.jsp" %>
+    </div>
   </body>
+  
 </html>
