@@ -639,3 +639,76 @@ a.photo-tala{
 .table tr:nth-child(even){
 	background-color: #f2f2f2;
 }
+
+/* selectroom page */
+
+.selectroom-body{
+	margin-top: 50px;
+	text-align: center;
+	background: rgb(245, 223, 184);
+}
+
+.selectroom-body h1{
+	margin-top: 100px;	
+	margin-bottom: 50px;
+	color: rgb(141, 10, 39);
+	text-decoration: underline;
+	font-size: 50px;
+}
+
+.select-room-buttons{
+	text-align: center;
+}
+
+.select-room-buttons ul{
+	display: grid;
+	list-style: none;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-row-gap: 10px;
+}
+
+.select-room-buttons li{
+	border: 1px solid #000;
+	margin: auto;
+	padding: 10px 15px;
+	border-radius: 50%;
+	background-color: rgb(141, 10, 39);
+	color: rgb(245, 223, 184);
+	border: none;
+}
+
+.select-room-buttons input[type="radio"]{
+	height: 20px;
+	width: 20px;	
+	margin: 3px;
+	background-color: rgb(245, 223, 184); 
+	cursor: pointer;
+}
+
+.select-room-buttons label{
+	font-size: 30px;
+	margin: 3px;
+}
+
+.select-room-buttons input[type="submit"]{
+	margin-top: 100px;
+	padding: 10px 20px;
+	border-radius: 10px;
+	border: none;
+	height: 80px;
+	color: rgb(245, 223, 184);
+	font-weight: bold;
+	background-color: rgb(141, 10, 39);
+	font-size: 30px;
+	cursor: pointer;
+}
+
+.select-room-buttons input[type="submit"]:hover{
+	background-color: rgb(141, 10, 39, 0.76);
+	transition: 0.3s;
+	color: rgb(245, 223, 184, 0.76);
+}
+
+
+
+
