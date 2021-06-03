@@ -504,7 +504,7 @@ a.photo-tala{
 .book-main{
   font-size: 2rem;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-column-gap: 4px;
   height: 332px;
   padding: 2%;

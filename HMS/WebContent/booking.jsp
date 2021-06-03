@@ -78,13 +78,6 @@
         <label for="">Checkout Date </label>
         <input type="date" id="" name="CoutDate" /><br />
       </div>
-      <div class="book-main-div">
-        <label for="">Room Number</label>
-        <select name="RoomNumber" id="">
-          <option value="1">1</option>
-          <option value="2">2</option>
-        </select>
-      </div>
       </section>
       <section class="box-section">
         <h2>Quick Services</h2>
