@@ -38,7 +38,7 @@
 			if (session.getAttribute("email") != null){ %>
 				<div class="signuplink">
 		        <ul>
-		          <li><a href="./dashboard.jsp"><i class="fa fa-user"></i></a></li>
+		          <li><a href="./dashboard.jsp"><i class="fa fa-user"><span style="padding-left:3px;">dashboard</span></i></a></li>
 		          <li><a href="logout"><i class="fa fa-sign-out"></i></a></li>
 		        </ul>
 		      	</div>	

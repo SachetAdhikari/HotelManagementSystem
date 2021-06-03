@@ -44,5 +44,6 @@
 		</ul>
 		<input type="submit" value="Select Room">
 	</form>
+	<%@ include file="footer.jsp" %>
 </body>
 </html>

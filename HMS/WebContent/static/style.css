@@ -67,7 +67,7 @@ nav a{
   content: "";
   width: 0;
   height: 5px;
-  background-color: rgb(161, 7, 41);
+  background-color: gold;
   display: block;
   margin: auto;
   transition: 0.5s;
@@ -709,6 +709,73 @@ a.photo-tala{
 	color: rgb(245, 223, 184, 0.76);
 }
 
+/* BILL page */
 
+.bill{
+	border: 1px solid #000;
+	height: 400px;
+	width: 500px;
+	position: absolute;
+	top: 150px;
+	left: calc(50% - 250px);
+	border: none;
+	border-radius: 5px;
+	background-image: url(./images/bill1.jpg);
+	color: white;
+	font-family: cursive;
+}
+
+.bill h1{
+	color: white;
+	text-align: center;
+	margin-top: 5px;
+	margin-bottom: 20px;
+}
+
+.bill ul{
+	margin-bottom: 20px;
+	list-style: none;
+	padding-left: 20px;
+}
+
+.bill hr{
+	width: 95%;
+	margin-left: 12.5px;	
+	margin-bottom: 20px;
+}
+
+.bill li{
+	margin-bottom: 10px;
+	font-size: 20px;
+}
+
+.bill span{
+	font-weight: bold;
+	font-size: 25px;
+	padding-left: 20px;
+}
+
+.bill form{
+	margin-top: 35px;
+	text-align: center;
+}
+
+.bill input{
+	width: 80%;
+	height: 60px;
+	text-align: center;
+	color: white;
+	font-family: cursive;
+	font-size: 30px;
+	background-color: rgb(141, 10, 39);
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.bill input:hover{
+	background-color: rgb(141, 10, 39, 0.76);
+	transition: 0.3s;
+}
 
 
