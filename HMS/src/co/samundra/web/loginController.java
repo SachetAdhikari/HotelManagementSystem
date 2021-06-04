@@ -26,10 +26,10 @@ public class loginController extends HttpServlet {
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 		user_credentialsDAO uc = new user_credentialsDAO();
-		boolean result = uc.authenticateUser(email,password);
+		boolean result = uc.authenticateUser(email, password, request);
 		if(result==true){
-			HttpSession session= request.getSession(true);
-			session.setAttribute("email", email);
+			//HttpSession session= request.getSession(true);
+			//session.setAttribute("email", email);
 			response.sendRedirect("./booking.jsp");
 			//response.sendRedirect("./booking.jsp");
 

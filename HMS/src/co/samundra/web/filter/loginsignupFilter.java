@@ -37,7 +37,7 @@ public class loginsignupFilter implements Filter {
 //		String email = request.getParameter("email");
 		HttpSession session= req.getSession();
 //		String email= session.getAttribute("email");
-		if(session.getAttribute("email")==null )
+		if(session.getAttribute("loggedInUserId")==null )
 			chain.doFilter(request, response);
 		else
 			out.println("Logout to continue");

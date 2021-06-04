@@ -8,6 +8,7 @@ String dbUrl = "jdbc:mysql://remotemysql.com:3306/jBsMU8OOWb";
 String dbUsername = "jBsMU8OOWb";
 String dbPassword = "GPkoS7miTH";
 String dbDriver = "com.mysql.cj.jdbc.Driver";
+String cus_id = String.valueOf(session.getAttribute("loggedInUserId"));
 try{
 Class.forName(dbDriver); 
 }
@@ -30,15 +31,19 @@ UserHistory
 <div  class="table">
 <table>
 <tr>
-<th>Check in</th>
-<th>Check out</th>
-<th>Guests</th>
+<th>Hotel</th>
+<th>Hotel Location</th>
+<th>Room No</th>
+<th>No of guests</th>
+<th>Check in Date</th>
+<th>Check out Date</th>
+<th>Total Amount</th>
 
 </tr>
 <%
 try{
 con = DriverManager.getConnection(dbUrl, dbUsername, dbPassword);
-st= con.prepareStatement("select * from booking where cusid=2");
+st= con.prepareStatement("SELECT h.name, h.address, r.roomno, b.noofguests, b.checkindate, b.checkoutdate, bi.`total amount` from hotels h inner join booking b inner join room r inner join bills bi inner join customerbill cb where h.id = r.hotelid and b.cusid =" +cus_id+ "b.roomid = r.id and cb.cusid = b.cusid");
 rs = st.executeQuery();
 int i = 1;
 while(rs.next()){

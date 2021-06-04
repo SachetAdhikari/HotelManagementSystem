@@ -3,6 +3,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import javax.servlet.http.HttpSession;
+import javax.servlet.http.HttpServletRequest;
+
 import co.samundra.web.loginController;
 public class user_credentialsDAO{
 	String dbUrl = "jdbc:mysql://remotemysql.com:3306/jBsMU8OOWb";
@@ -16,19 +19,22 @@ public class user_credentialsDAO{
         try { st.close(); } catch (Exception e) {  System.out.println(e); }
         try { con.close(); } catch (Exception e) {  System.out.println(e); }
 	}
-	public boolean authenticateUser(String email, String password){
+	public boolean authenticateUser(String email, String password, HttpServletRequest request){
 		String query = "SELECT * from customer_credentials WHERE email = ? and password=?";
 		try{
 			Class.forName(dbDriver);
 			Connection con = DriverManager.getConnection(dbUrl, dbUsername,dbPassword);
 			PreparedStatement st = con.prepareStatement(query);
-			System.out.println("connected"+email+password);
+			System.out.println("connected "+email+" "+password);
 	        st.setString(1, email);
 	        st.setString(2, password);
 	        ResultSet rs = st.executeQuery();
-	        
 	        if(rs.next()){
-	        	closeConnection(con,st,rs);
+	        	String cusid = String.valueOf(rs.getInt("id"));
+	        	HttpSession session= request.getSession(true);
+				session.setAttribute("loggedInUserId", cusid);
+				session.setAttribute("email", email);
+				closeConnection(con,st,rs);
 	        	return true;
 	        }
 	        else{

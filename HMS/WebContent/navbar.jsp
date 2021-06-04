@@ -24,7 +24,7 @@
             <li><a href="./index.jsp#hotels">Hotels</a></li>
             <li><a href="./index.jsp#services">Services</a></li>
             <%
-            	if (session.getAttribute("email") != null) { %>
+            	if (session.getAttribute("loggedInUserId") != null) { %>
             		<li><a href="./booking.jsp">Book Now</a></li>
             	<%}
             	else{ %>
@@ -35,10 +35,10 @@
         </div>
         
         <%
-			if (session.getAttribute("email") != null){ %>
+			if (session.getAttribute("loggedInUserId") != null){ %>
 				<div class="signuplink">
 		        <ul>
-		          <li><a href="./dashboard.jsp"><i class="fa fa-user"><p>dashboard</p></i></a></li>
+		          <li><a href="./dashboard.jsp"><i class="fa fa-user"></i></a></li>
 		          <li><a href="logout"><i class="fa fa-sign-out"></i></a></li>
 		        </ul>
 		      	</div>	

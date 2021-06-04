@@ -13,7 +13,7 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-@WebFilter({ "/dashboard.jsp", "/booking.jsp", "/history.jsp" })
+@WebFilter({ "/dashboard.jsp", "/booking.jsp", "/history.jsp", "/bill.jsp", "/selectroom.jsp" })
 public class sessionCheckFilter implements Filter {
 
     public sessionCheckFilter() {
@@ -37,7 +37,7 @@ public class sessionCheckFilter implements Filter {
 //		String email = request.getParameter("email");
 		HttpSession session= req.getSession();
 //		String email= session.getAttribute("email");
-		if(session.getAttribute("email")!=null )
+		if(session.getAttribute("loggedInUserId")!=null )
 			chain.doFilter(request, response);
 		else
 			out.println("Login to continue");
