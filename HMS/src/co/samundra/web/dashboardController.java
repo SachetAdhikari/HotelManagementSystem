@@ -24,6 +24,7 @@ import co.samundra.web.dao.user_credentialsDAO;
 			user_credentialsDAO uc = new user_credentialsDAO();
 			HttpSession session=request.getSession();
 			String email = (String) session.getAttribute("email");
+			String cusid = (String) session.getAttribute("loggedInUserId");
 			if(rserviceid!=null) {
 				uc.removeservice(rserviceid,email);
 				response.sendRedirect("./dashboard.jsp");
@@ -33,7 +34,7 @@ import co.samundra.web.dao.user_credentialsDAO;
 				response.sendRedirect("./dashboard.jsp");
 			}
 			else if(aserviceid!=null) {
-				uc.addservice(aserviceid,email);
+				uc.addservice(aserviceid,email,cusid);
 				response.sendRedirect("./dashboard.jsp");
 			}
 			else {

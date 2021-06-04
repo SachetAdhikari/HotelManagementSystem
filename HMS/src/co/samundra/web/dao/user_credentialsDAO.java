@@ -202,19 +202,19 @@ public class user_credentialsDAO{
 		}
 		
 	}
-	public void addservice(String serviceid,String email) {
+	public void addservice(String serviceid,String email ,String customerid ) {
 		System.out.println("in addservice DAO");
 		try{
-			String query34="select * from customer_credentials where email='"+email+"' ";
-			int customerid=0;
+			//String query34="select * from customer_credentials where email='"+email+"' ";
+			//int customerid=0;
 			//String query3="delete from customerservices where cusid='"+customerid+"' and serviceid='"+serviceid+"'and useddate='"+ciin+"' ";
 			Class.forName(dbDriver);
 			Connection con = DriverManager.getConnection(dbUrl, dbUsername,dbPassword);
-			PreparedStatement stf1= con.prepareStatement(query34);
-			ResultSet rsf=stf1.executeQuery();
-			while(rsf.next()) {
-				customerid=rsf.getInt("id");
-			}
+			//PreparedStatement stf1= con.prepareStatement(query34);
+			//ResultSet rsf=stf1.executeQuery();
+			//while(rsf.next()) {
+				//customerid=rsf.getInt("id");
+			//}
 			String q6="insert into customerservices (cusid,serviceid,usedate)"+"values('"+customerid+"','"+serviceid+"',CURDATE())";
 			PreparedStatement st5= con.prepareStatement(q6);
 			st5.execute();
