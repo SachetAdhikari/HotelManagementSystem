@@ -69,6 +69,7 @@ import co.samundra.web.dao.user_credentialsDAO;
 				//HttpSession session= request.getSession();
 				//session.setAttribute("email", email);
 				uc.bookingDetails (Hotel,ac_nac,room,noofguest,cin,cout,email,s1,s2,s3);
+				session.setAttribute("userStatus", "CurrentlyBooked");
 				response.sendRedirect("./dashboard.jsp");
 				//out.print("Success");
 			}

@@ -40,7 +40,11 @@
 			if (session.getAttribute("loggedInUserId") != null){ %>
 				<div class="signuplink">
 		        <ul>
-		          <li><a href="./dashboard.jsp"><i class="fa fa-user"></i></a></li>
+		        <%
+		        if (!session.getAttribute("userStatus").equals("NewUser")){%>
+		        	<li><a href="./dashboard.jsp"><i class="fa fa-user"></i></a></li>
+		        <%}
+		        %>	
 		          <li><a href="logout"><i class="fa fa-sign-out"></i></a></li>
 		        </ul>
 		      	</div>	

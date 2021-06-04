@@ -26,11 +26,12 @@ import co.samundra.web.dao.user_credentialsDAO;
 			user_credentialsDAO uc = new user_credentialsDAO();
 			//boolean result = uc.authenticateUser(email,password);
 			if(name!=null && email!=null && password.equals(cpassword)){
-				uc.inputUserdetails(name,email,password);
+				int cus_id = uc.inputUserdetails(name,email,password);
 				HttpSession session= request.getSession();
 				session.setAttribute("email", email);
-				//response.sendRedirect("./index.jsp");
-				out.print("Success");
+				session.setAttribute("loggedInUserId", cus_id);
+				session.setAttribute("userStatus", "NewUser");
+				response.sendRedirect("./index.jsp#hotels");
 			}
 			else{
 				//response.sendRedirect("./signup.jsp");

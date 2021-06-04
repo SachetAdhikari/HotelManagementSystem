@@ -32,7 +32,7 @@ public class loginController extends HttpServlet {
 				response.sendRedirect("./dashboard.jsp");
 			}
 			else {
-				response.sendRedirect("./booking.jsp");
+				response.sendRedirect("./index.jsp#hotels");
 			}
 		}
 		else{

@@ -65,7 +65,7 @@ public class user_credentialsDAO{
 		}
 		return false;
 	}
-	public void inputUserdetails(String name,String email,String password) {
+	public int inputUserdetails(String name,String email,String password) {
 		String query = "insert into customer_credentials(name,email,password,address,age)" +"values(?,?,?,?,?)";
 		try{
 			Class.forName(dbDriver);
@@ -78,11 +78,18 @@ public class user_credentialsDAO{
 	        st.setString(4, "Kathmandu");
 	        st.setInt(5, 20);
 	        st.execute();
+	        st = con.prepareStatement("select id from customer_credentials where email= "+email+" and password= "+password);
+	        ResultSet rs = st.executeQuery();
+	        rs.next();
+	        int cus_id = rs.getInt("id");
 	        con.close();
 	        st.close();
+	        rs.close();
+	        return cus_id;
 		}
 		catch(Exception e){
 			System.out.println(e);
+			return 0;
 		}
 		
 	}
@@ -164,6 +171,7 @@ public class user_credentialsDAO{
 			String query66="update room set status='"+1+"' where id ='"+room+"' and hotelid='"+hotel+"'";
 			PreparedStatement st66= con.prepareStatement(query66);
 			st66.executeUpdate();
+			
 	        con.close();
 	        st.close();
 	        //rs.close();
@@ -283,11 +291,108 @@ public class user_credentialsDAO{
 			System.out.println(service_rate + food_rate);
 			billDetail[7] = String.valueOf(food_rate);
 			billDetail[8] = String.valueOf(service_rate+food_rate+room_rate);
+			con.close();
+			st.close();
+			rs.close();
 			return billDetail;
 		}
 		catch(Exception e) {
 			System.out.println(e);
 			return null;
+		}
+	}
+	
+	public String insertIntoBill(float total_amount) {
+		String query = "insert into bills (date, `total amount`) values(?, ?)";
+		try {
+			Class.forName(dbDriver);
+			Connection con = DriverManager.getConnection(dbUrl, dbUsername, dbPassword);
+			PreparedStatement st = con.prepareStatement("select curdate() as cur_date");
+			ResultSet rs = st.executeQuery();
+			rs.next();
+			String date = rs.getString("cur_date");
+			st = con.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+			st.setString(1, date);
+			st.setString(2, String.valueOf(total_amount));
+			st.executeUpdate();
+			rs = st.getGeneratedKeys();
+			rs.next();
+			String bill_id = String.valueOf(rs.getInt(1));
+			con.close();
+			rs.close();
+			st.close();
+			return bill_id;
+		}
+		catch (Exception e){
+			System.out.println(e);
+			return null;
+		}
+		
+	}
+	
+	public void setBookingstatus(String cus_id) {
+		String query = "UPDATE booking SET bookingstatus = 1 WHERE booking.cusid = ? and bookingstatus=0";
+		try {
+			Class.forName(dbDriver);
+			Connection con = DriverManager.getConnection(dbUrl, dbUsername, dbPassword);
+			PreparedStatement st = con.prepareStatement(query);
+			st.setString(1, cus_id);
+			st.executeUpdate();
+			con.close();
+			st.close();
+		}
+		catch (Exception e){
+			System.out.println(e);
+		}
+				
+	}
+	
+	public void insertIntoCustomerBill(String bill_id, String cus_id) {
+		String query = "insert into customerbill (billid, cusid) values(?, ?)";
+		try {
+			Class.forName(dbDriver);
+			Connection con = DriverManager.getConnection(dbUrl, dbUsername, dbPassword);
+			PreparedStatement st = con.prepareStatement(query);
+			st.setString(1, bill_id);
+			st.setString(2, cus_id);
+			st.executeUpdate();
+			con.close();
+			st.close();
+		}
+		catch (Exception e) {
+			System.out.println(e);
+		}
+	}
+	
+	public void deleteFromCustomerFood(String cus_id) {
+		String query = "DELETE FROM customerfood WHERE customerfood.cusid = ?";
+		try {
+			Class.forName(dbDriver);
+			Connection con = DriverManager.getConnection(dbUrl, dbUsername, dbPassword);
+			PreparedStatement st = con.prepareStatement(query);
+			st.setString(1, cus_id);
+			st.executeUpdate();
+			con.close();
+			st.close();
+		}
+		catch (Exception e) {
+			System.out.println(e);
+		}
+	}
+	
+	public void deleteFromCustomerServices(String cus_id) {
+		String query = "DELETE FROM customerservices WHERE customerservices.cusid = ?";
+		try {
+			Class.forName(dbDriver);
+			Connection con = DriverManager.getConnection(dbUrl, dbUsername, dbPassword);
+			PreparedStatement st = con.prepareStatement(query);
+			st.setString(1, cus_id);
+			st.executeUpdate();
+			con.close();
+			st.close();
+		}
+		catch (Exception e) {
+			System.out.println(e);
 		}
 	}
 }
