@@ -12,7 +12,7 @@
     <title>Book Now</title>
   </head>
   <body class="booking-body">
-  <form action="booking" method="post">
+  <form action="selectroom.jsp" method="post">
       <section class="booking">
       <section class="book-main">
       <div class="book-main-div">
