@@ -28,7 +28,6 @@ session.setAttribute("NoOfGuests",nog);
 session.setAttribute("service1",service1);
 session.setAttribute("service2",service2);
 session.setAttribute("service3",service3);
-
 %>
 	<h1>Available Rooms</h1>
 	<form class="select-room-buttons" action="booking" method="post">

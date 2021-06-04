@@ -26,7 +26,6 @@ public class user_credentialsDAO{
 	        st.setString(1, email);
 	        st.setString(2, password);
 	        ResultSet rs = st.executeQuery();
-	        
 	        if(rs.next()){
 	        	closeConnection(con,st,rs);
 	        	return true;
@@ -81,7 +80,7 @@ public class user_credentialsDAO{
 	        st.setString(2, cout);
 	        st.setString(3, noofguest);
 	        st.setInt(4, 25);
-	        st.setInt(5, 1);
+	        st.setString(5, room);
 	        //while(rs.next()) {
 	        	//st.setInt(5, rs.getInt("id"));
 	        //}
@@ -102,6 +101,7 @@ public class user_credentialsDAO{
 				PreparedStatement st5= con.prepareStatement(q6);
 				st5.setInt(1,customerid);
 				st5.setInt(2,s11);
+				
 				st5.setString(3,cin);
 				st5.execute();
 			}
@@ -135,7 +135,9 @@ public class user_credentialsDAO{
 				st5.setString(3,cin);
 				st5.execute();
 			}
-	        
+			String query66="update room set status='"+1+"' where id ='"+room+"' and hotelid='"+hotel+"'";
+			PreparedStatement st66= con.prepareStatement(query66);
+			st66.executeUpdate();
 	        con.close();
 	        st.close();
 	        //rs.close();
