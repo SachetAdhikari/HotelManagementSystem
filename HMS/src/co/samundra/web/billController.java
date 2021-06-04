@@ -28,6 +28,10 @@ public class billController extends HttpServlet{
 		request.setAttribute("RoomNo", billDetail[2]);
 		request.setAttribute("NoOfGuests", billDetail[3]);
 		request.setAttribute("CurrentDate", billDetail[4]);
+		request.setAttribute("RoomRate", billDetail[5]);
+		request.setAttribute("ServiceRate", billDetail[6]);
+		request.setAttribute("FoodRate", billDetail[7]);
+		request.setAttribute("TotalBill", billDetail[8]);
 		request.getRequestDispatcher("bill.jsp").forward(request, response);
 	}
 }

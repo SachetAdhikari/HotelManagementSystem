@@ -16,9 +16,12 @@
 			<li>Hotel Name: <%= request.getAttribute("Name") %></li>
 			<li>Room Number: <%= request.getAttribute("RoomNo") %></li>
 			<li>Guests: <%= request.getAttribute("NoOfGuests") %></li>
+			<li>Service Charge: <%= request.getAttribute("ServiceRate") %></li>
+			<li>Food Charge: <%= request.getAttribute("FoodRate") %></li>
+			<li>Room Charge: <%= request.getAttribute("RoomRate") %></li>
 		</ul>
 		<hr>
-		<span>Bill Amount: Rs 500</span>
+		<span>Bill Amount: <%= request.getAttribute("TotalBill") %></span>
 		<form>
 			<input type="submit" value="Pay">
 		</form>

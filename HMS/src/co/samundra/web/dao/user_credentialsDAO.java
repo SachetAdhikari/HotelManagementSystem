@@ -2,6 +2,7 @@ package co.samundra.web.dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.Statement;
 import java.sql.ResultSet;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.HttpServletRequest;
@@ -225,30 +226,45 @@ public class user_credentialsDAO{
 	
 	public String[] getBillDetails(String cus_id) {
 		try {
-			String[] billDetail = new String[6];
-			String query = "select b.id, h.name, r.roomno, b.noofguests from booking b inner join room r on b.roomid = r.id inner join hotels h on h.id = r.hotelid inner join roomtype rt on r.roomtypeid = rt.id where b.id=(select max(id) from booking where booking.cusid ="+cus_id+")";
-			String query1 = "select curdate() as cur_date";
-			String query2 = "";
+			String[] billDetail = new String[9];
+			String query = "select b.id,b.roomid, b.ratefactor, h.name, r.roomno, b.noofguests from booking b inner join room r on b.roomid = r.id inner join hotels h on h.id = r.hotelid inner join roomtype rt on r.roomtypeid = rt.id where b.id=(select max(id) from booking where booking.cusid ="+cus_id+")";
+			query = "select curdate() as cur_date";
 			Class.forName(dbDriver);
 			Connection con = DriverManager.getConnection(dbUrl, dbUsername, dbPassword);
-			PreparedStatement st = con.prepareStatement(query);
-			ResultSet rs = st.executeQuery();
-			if (rs.next()) {
-				billDetail[0] = String.valueOf(rs.getInt("id"));
-				billDetail[1] = rs.getString("name");
-				billDetail[2] = String.valueOf(rs.getInt("roomno"));
-				billDetail[3] = String.valueOf(rs.getInt("noofguests"));
-			}
-			st = con.prepareStatement(query1);
-			rs = st.executeQuery();
+			Statement st = con.createStatement();
+			ResultSet rs = st.executeQuery(query);
+			rs.next();
+			billDetail[0] = String.valueOf(rs.getInt("id"));
+			billDetail[1] = rs.getString("name");
+			billDetail[2] = String.valueOf(rs.getInt("roomno"));
+			billDetail[3] = String.valueOf(rs.getInt("noofguests"));
+			String room_id = String.valueOf(rs.getInt("roomid"));
+			float ratefactor = rs.getFloat("ratefactor");
+			query = "select curdate() as cur_date";
+			rs = st.executeQuery(query);
 			if (rs.next()) {
 				billDetail[4] = rs.getString("cur_date");
 			}
-			st = con.prepareStatement(query2);
-			rs = st.executeQuery();
-			if (rs.next()) {
-				billDetail[4] = rs.getString("total_amount");
+			query = "select rt.rate from roomtype rt inner join room r on r.roomtypeid = rt.id where r.id ="+ room_id;
+			rs = st.executeQuery(query);
+			rs.next();
+			float room_rate = ratefactor*rs.getFloat("rate");
+			billDetail[5] = String.valueOf(room_rate);
+			query = "select sum(hs.rate) as servicerate from hotelservices hs inner join customerservices cs on hs.idservice=cs.serviceid where cs.cusid = " + cus_id;
+			rs = st.executeQuery(query);
+			float service_rate = 0;
+			while (rs.next()) {
+			 service_rate += rs.getFloat("servicerate");
 			}
+			billDetail[6] = String.valueOf(service_rate);
+			query = "select sum(f.rate) as foodrate from food f inner join customerfood cf on cf.foodid=f.id where cf.cusid = " + cus_id;
+			float food_rate = 0;
+			while (rs.next()) {
+			 food_rate += rs.getFloat("foodrate");
+			}
+			System.out.println(service_rate + food_rate);
+			billDetail[7] = String.valueOf(food_rate);
+			billDetail[8] = String.valueOf(service_rate+food_rate+room_rate);
 			return billDetail;
 		}
 		catch(Exception e) {

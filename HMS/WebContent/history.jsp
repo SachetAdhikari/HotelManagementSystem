@@ -43,15 +43,20 @@ UserHistory
 <%
 try{
 con = DriverManager.getConnection(dbUrl, dbUsername, dbPassword);
-st= con.prepareStatement("SELECT h.name, h.address, r.roomno, b.noofguests, b.checkindate, b.checkoutdate, bi.`total amount` from hotels h inner join booking b inner join room r inner join bills bi inner join customerbill cb where h.id = r.hotelid and b.cusid =" +cus_id+ "b.roomid = r.id and cb.cusid = b.cusid");
+//st= con.prepareStatement("SELECT h.name, h.address, r.roomno, b.noofguests, b.checkindate, b.checkoutdate, bi.`total amount` from hotels h inner join booking b inner join room r inner join bills bi inner join customerbill cb where h.id = r.hotelid and b.cusid =" +cus_id+ "b.roomid = r.id and cb.cusid = b.cusid");
+st= con.prepareStatement("select b.id, h.name,b.checkindate, b.checkoutdate, h.address, r.roomno, b.noofguests from booking b inner join room r on b.roomid = r.id inner join hotels h on h.id = r.hotelid inner join roomtype rt on r.roomtypeid = rt.id where b.cusid="+ cus_id +" order by b.id desc");
 rs = st.executeQuery();
 int i = 1;
 while(rs.next()){
 %>
 <tr>
+<td><%=rs.getString("name") %></td>
+<td><%=rs.getString("address") %></td>
+<td><%=rs.getString("roomno") %></td>
+<td><%=rs.getInt("noofguests") %></td>
 <td><%=rs.getString("checkindate") %></td>
 <td><%=rs.getString("checkoutdate") %></td>
-<td><%=rs.getString("noofguests") %></td>
+<td>1000</td>
 </tr>
 <%
 }

@@ -19,7 +19,6 @@ public class loginController extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
-    String email1;
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("in logincontroller");
 		PrintWriter out= response.getWriter();
@@ -28,15 +27,9 @@ public class loginController extends HttpServlet {
 		user_credentialsDAO uc = new user_credentialsDAO();
 		boolean result = uc.authenticateUser(email, password, request);
 		if(result==true){
-			//HttpSession session= request.getSession(true);
-			//session.setAttribute("email", email);
 			response.sendRedirect("./booking.jsp");
-			//response.sendRedirect("./booking.jsp");
-
-			//out.print("Success");
 		}
 		else{
-//			response.sendRedirect("index.jsp");
 			out.print("Nope");
 		}
 		
