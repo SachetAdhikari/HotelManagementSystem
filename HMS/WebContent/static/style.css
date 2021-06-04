@@ -723,24 +723,22 @@ a.photo-tala{
 	background-image: url(./images/bill1.jpg);
 	color: white;
 	font-family: cursive;
+	padding: 20px;
 }
 
 .bill h1{
 	color: white;
 	text-align: center;
-	margin-top: 5px;
 	margin-bottom: 20px;
 }
 
 .bill ul{
 	margin-bottom: 20px;
 	list-style: none;
-	padding-left: 20px;
 }
 
 .bill hr{
-	width: 95%;
-	margin-left: 12.5px;	
+	width: 100%;	
 	margin-bottom: 20px;
 }
 
@@ -752,7 +750,6 @@ a.photo-tala{
 .bill span{
 	font-weight: bold;
 	font-size: 25px;
-	padding-left: 20px;
 }
 
 .bill form{

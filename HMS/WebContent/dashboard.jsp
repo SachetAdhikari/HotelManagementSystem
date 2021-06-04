@@ -42,7 +42,7 @@ ResultSet rs=null;
       <div class="user-profile">
         <div class="profilepic">
           <img src="./static/images/avatar.png" alt="profilepic">
-          <a href="#" class="button">Update Profile</a> <br />
+          <a href="billController" class="button">Check Out</a> <br />
         </div>
         
             

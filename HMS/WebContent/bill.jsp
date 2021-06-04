@@ -10,11 +10,12 @@
 <body>
 	<div class="bill">
 		<h1>Bill</h1>
-		<ul>
-			<li>Bill Number: 123456</li>
-			<li>Hotel Name: xyz</li>
-			<li>Room Number: 101</li>
-			<li>Guests: 5</li>
+		<p style="text-align: right;"><%= request.getAttribute("CurrentDate") %></p>
+		<ul> 
+			<li>Booking Number: <%= request.getAttribute("BookingId") %> </li>
+			<li>Hotel Name: <%= request.getAttribute("Name") %></li>
+			<li>Room Number: <%= request.getAttribute("RoomNo") %></li>
+			<li>Guests: <%= request.getAttribute("NoOfGuests") %></li>
 		</ul>
 		<hr>
 		<span>Bill Amount: Rs 500</span>

@@ -222,4 +222,38 @@ public class user_credentialsDAO{
 			System.out.println(e);
 		}
 	}
+	
+	public String[] getBillDetails(String cus_id) {
+		try {
+			String[] billDetail = new String[6];
+			String query = "select b.id, h.name, r.roomno, b.noofguests from booking b inner join room r on b.roomid = r.id inner join hotels h on h.id = r.hotelid inner join roomtype rt on r.roomtypeid = rt.id where b.id=(select max(id) from booking where booking.cusid ="+cus_id+")";
+			String query1 = "select curdate() as cur_date";
+			String query2 = "";
+			Class.forName(dbDriver);
+			Connection con = DriverManager.getConnection(dbUrl, dbUsername, dbPassword);
+			PreparedStatement st = con.prepareStatement(query);
+			ResultSet rs = st.executeQuery();
+			if (rs.next()) {
+				billDetail[0] = String.valueOf(rs.getInt("id"));
+				billDetail[1] = rs.getString("name");
+				billDetail[2] = String.valueOf(rs.getInt("roomno"));
+				billDetail[3] = String.valueOf(rs.getInt("noofguests"));
+			}
+			st = con.prepareStatement(query1);
+			rs = st.executeQuery();
+			if (rs.next()) {
+				billDetail[4] = rs.getString("cur_date");
+			}
+			st = con.prepareStatement(query2);
+			rs = st.executeQuery();
+			if (rs.next()) {
+				billDetail[4] = rs.getString("total_amount");
+			}
+			return billDetail;
+		}
+		catch(Exception e) {
+			System.out.println(e);
+			return null;
+		}
+	}
 }
