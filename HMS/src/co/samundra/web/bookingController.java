@@ -53,6 +53,7 @@ import co.samundra.web.dao.user_credentialsDAO;
 //			System.out.println(room);
 //			HttpSession session=request.getSession();
 			String email = (String) session.getAttribute("email");
+			
 //			System.out.println(email);
 //			String s1= request.getParameter("service1");
 //			String s2=request.getParameter("service2");

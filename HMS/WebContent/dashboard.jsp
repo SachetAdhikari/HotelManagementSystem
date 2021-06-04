@@ -73,7 +73,7 @@ ResultSet rs=null;
         	        	customerid=rs1.getInt("id");
         	        	//roomid=rs1.getInt("roomid");
         	        }
-        	        PreparedStatement st11=con.prepareStatement("SELECT * FROM booking WHERE booking.cusid='"+customerid+"' and booking.id=(SELECT max(id) FROM booking)");
+        	        PreparedStatement st11=con.prepareStatement("SELECT * FROM booking WHERE booking.id=(SELECT max(id) FROM booking where booking.id='"+customerid+"')");
         	        ResultSet rs11=st11.executeQuery();
         	        while(rs11.next()){
         	        	//customerid=rs1.getInt("id");
@@ -164,13 +164,13 @@ ResultSet rs=null;
         <section class="box-section">
           <h2 style="color: #000; font-family:cursive">Other Services</h2>
           <div class="general-SBH">
-          <% PreparedStatement st7=con.prepareStatement("SELECT * FROM customerservices join hotelservices on customerservices.serviceid!=hotelservices.idservice where customerservices.cusid='"+customerid+"' and hotelservices.idhotel='"+hotelid+"'");
+          <% PreparedStatement st7=con.prepareStatement("SELECT * FROM hotelservices where hotelservices.idservice not in (select customerservices.serviceid from customerservices where customerservices.cusid='"+customerid+"') and hotelservices.idhotel='"+hotelid+"'");
         	 ResultSet rs7=st7.executeQuery();
         	 while(rs7.next()){
         		 //System.out.println(rs7.getString("description"));
         	        %>
             <div class="general-SBHbox addS">
-              <button name="AddService" value="<%=rs7.getInt("serviceid")%>">Add Service</button>
+              <button name="AddService" value="<%=rs7.getInt("idservice")%>">Add Service</button>
     
             </div>
             <%} %>
