@@ -26,8 +26,14 @@ public class loginController extends HttpServlet {
 		String password = request.getParameter("password");
 		user_credentialsDAO uc = new user_credentialsDAO();
 		boolean result = uc.authenticateUser(email, password, request);
+		HttpSession session = request.getSession();
 		if(result==true){
-			response.sendRedirect("./booking.jsp");
+			if(session.getAttribute("userStatus").equals("CurrentlyBooked")) {
+				response.sendRedirect("./dashboard.jsp");
+			}
+			else {
+				response.sendRedirect("./booking.jsp");
+			}
 		}
 		else{
 			out.print("Nope");

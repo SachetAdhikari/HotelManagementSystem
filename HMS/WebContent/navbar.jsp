@@ -24,9 +24,11 @@
             <li><a href="./index.jsp#hotels">Hotels</a></li>
             <li><a href="./index.jsp#services">Services</a></li>
             <%
-            	if (session.getAttribute("loggedInUserId") != null) { %>
-            		<li><a href="./booking.jsp">Book Now</a></li>
-            	<%}
+            	if (session.getAttribute("loggedInUserId") != null) { 
+            		if(session.getAttribute("userStatus").equals("CurrentlyVacant")||session.getAttribute("userStatus").equals("NewUser")){%>
+            			<li><a href="./booking.jsp">Book Now</a></li>  
+            			        		
+            	<%}}
             	else{ %>
             		<li><a href="./login.jsp">Book Now</a></li>
             	<%}

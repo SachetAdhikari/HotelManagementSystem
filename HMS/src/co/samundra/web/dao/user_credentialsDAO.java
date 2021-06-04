@@ -30,11 +30,28 @@ public class user_credentialsDAO{
 	        st.setString(1, email);
 	        st.setString(2, password);
 	        ResultSet rs = st.executeQuery();
+	        query = "select b.bookingstatus from booking b where b.id = (select max(id) from booking where booking.cusid = ?)";
 	        if(rs.next()){
 	        	String cusid = String.valueOf(rs.getInt("id"));
+	        	st = con.prepareStatement(query);
+	        	st.setString(1, cusid);
+	        	rs = st.executeQuery();
 	        	HttpSession session= request.getSession(true);
-				session.setAttribute("loggedInUserId", cusid);
+	        	if (rs.next()) {
+	        		int booking_status = rs.getInt("bookingstatus");
+	        		if (booking_status == 0) {
+	        			session.setAttribute("userStatus", "CurrentlyBooked");
+	        		}
+	        		else {
+	        			session.setAttribute("userStatus", "CurrentlyVacant");
+	        		}
+	        	}
+	        	else {
+	        		session.setAttribute("userStatus", "NewUser");
+	        	}
+	        	session.setAttribute("loggedInUserId", cusid);
 				session.setAttribute("email", email);
+	        	
 				closeConnection(con,st,rs);
 	        	return true;
 	        }
@@ -70,7 +87,7 @@ public class user_credentialsDAO{
 		
 	}
 	public void bookingDetails(String hotel,String ac_nac,String room,String noofguest,String cin,String cout,String email,String s1,String s2,String s3) {
-		String query = "insert into booking (checkindate,checkoutdate,noofguests,ratefactor,roomid,cusid)" +"values(?,?,?,?,?,?)";
+		String query = "insert into booking (checkindate,checkoutdate,noofguests,ratefactor,roomid,cusid,bookingstatus)" +"values(?,?,?,?,?,?,?)";
 		//String query2="select * from room join roomtype on room.roomtypeid=roomtype.id where hotelid='"+hotel+"' and status='"+0+"' and ac='"+ac_nac+"'";
 		String query3="select * from customer_credentials where email='"+email+"' ";
 		ciin=cin;
@@ -96,6 +113,7 @@ public class user_credentialsDAO{
 	        	st.setInt(6,rs2.getInt("id"));
 	        	customerid=rs2.getInt("id");
 	        }
+	        st.setInt(7, 0);
 	        st.execute();
 	        if(s1!=null) {
 	        	int s11=0;
@@ -227,8 +245,8 @@ public class user_credentialsDAO{
 	public String[] getBillDetails(String cus_id) {
 		try {
 			String[] billDetail = new String[9];
-			String query = "select b.id,b.roomid, b.ratefactor, h.name, r.roomno, b.noofguests from booking b inner join room r on b.roomid = r.id inner join hotels h on h.id = r.hotelid inner join roomtype rt on r.roomtypeid = rt.id where b.id=(select max(id) from booking where booking.cusid ="+cus_id+")";
-			query = "select curdate() as cur_date";
+			//String query = "select b.id,b.roomid, b.ratefactor, h.name, r.roomno, b.noofguests from booking b inner join room r on b.roomid = r.id inner join hotels h on h.id = r.hotelid inner join roomtype rt on r.roomtypeid = rt.id where b.id=(select max(id) from booking where booking.cusid ="+cus_id+")";
+			String query = "select b.id,b.roomid, b.ratefactor, h.name, r.roomno, b.noofguests from booking b inner join room r on b.roomid = r.id inner join hotels h on h.id = r.hotelid inner join roomtype rt on r.roomtypeid = rt.id where b.bookingstatus=0 and b.cusid="+cus_id;
 			Class.forName(dbDriver);
 			Connection con = DriverManager.getConnection(dbUrl, dbUsername, dbPassword);
 			Statement st = con.createStatement();
