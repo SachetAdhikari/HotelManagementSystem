@@ -788,4 +788,14 @@ a.photo-tala{
 	transition: 0.3s;
 }
 
+.notBooked{
+	position: absolute;
+	left: 29%;
+	top: 29%;
+}
 
+.notBookedFooter{
+	position: absolute;
+	bottom: 0;
+	left: 29%;
+}
