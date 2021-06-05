@@ -27,6 +27,17 @@ ResultSet rs=null;
     <title>Dashboard</title>
   </head>
   <body>
+    <%
+  	session = request.getSession();
+   	if (session.getAttribute("userStatus").equals("CurrentlyVacant")){%>
+   		<div>
+   		<h1>You've not booked a hotel currently!</h1>
+   		<a href="./history.jsp" class="button">Your History</a>
+   		<a href="./index.jsp#hotels" class="button">BookNow</a>
+   		</div>
+   	<%}
+   	else {
+   %>
   <form action="dashboard" method="post">
   <%
   response.setHeader("Cache-Control","no-cache, no-store, must-revalidate");//HTTP 1.1
@@ -37,15 +48,12 @@ ResultSet rs=null;
 //	  response.sendRedirect("index.jsp");
   //}
   %>
-   
 	<section class="current-status">
       <div class="user-profile">
         <div class="profilepic">
           <img src="./static/images/avatar.png" alt="profilepic">
           <a href="billController" class="button">Check Out</a> <br />
-        </div>
-        
-            
+        </div>            
             <% 
         	try{
         	    int customerid=0;
@@ -203,5 +211,8 @@ ResultSet rs=null;
         </section>
         </form>
     	<%@ include file="footer.jsp" %>
+    	<%
+   	}
+    	%>
   </body>
 </html>

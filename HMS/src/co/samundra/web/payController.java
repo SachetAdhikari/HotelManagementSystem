@@ -21,7 +21,7 @@ public class payController extends HttpServlet{
     	String cus_id = String.valueOf(session.getAttribute("loggedInUserId"));
     	user_credentialsDAO uc = new user_credentialsDAO();
     	float total_amount = Float.parseFloat(request.getParameter("pay"));
-    	String bill_id = uc.insertIntoBill(total_amount);
+    	String bill_id = uc.insertIntoBill(total_amount, cus_id);
     	uc.setBookingstatus(cus_id);
     	uc.insertIntoCustomerBill(bill_id, cus_id);
     	uc.deleteFromCustomerFood(cus_id);

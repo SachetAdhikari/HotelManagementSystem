@@ -302,8 +302,8 @@ public class user_credentialsDAO{
 		}
 	}
 	
-	public String insertIntoBill(float total_amount) {
-		String query = "insert into bills (date, `total amount`) values(?, ?)";
+	public String insertIntoBill(float total_amount, String cus_id) {
+		String query = "insert into bills (date, `total amount`, bookingid) values(?, ?, ?)";
 		try {
 			Class.forName(dbDriver);
 			Connection con = DriverManager.getConnection(dbUrl, dbUsername, dbPassword);
@@ -311,9 +311,14 @@ public class user_credentialsDAO{
 			ResultSet rs = st.executeQuery();
 			rs.next();
 			String date = rs.getString("cur_date");
+			st = con.prepareStatement("select id from booking where booking.bookingstatus = 0 and booking.cusid= " + cus_id);
+			rs = st.executeQuery();
+			rs.next();
+			String bookingid = String.valueOf(rs.getInt("id")); 
 			st = con.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
 			st.setString(1, date);
 			st.setString(2, String.valueOf(total_amount));
+			st.setString(3, bookingid);
 			st.executeUpdate();
 			rs = st.getGeneratedKeys();
 			rs.next();
