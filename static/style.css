@@ -7,6 +7,14 @@ a {
   text-decoration: none;
 }
 
+input{
+  outline: none;
+}
+
+select{
+  outline: none;
+}
+
 /* NAVBAR  */
 nav {
   /* background-color: rgb(128, 93, 29); */
@@ -64,6 +72,56 @@ nav a {
 
 .signuplink li a:hover {
   text-decoration: underline;
+}
+
+
+/* SERVICES  */
+.general-SBH {
+  /* background-color: rgb(11, 85, 107); */
+  background: transparent;
+  display: grid;
+  grid-template-rows: 10% 80% 10%;
+  margin: 20px 0px;
+}
+
+.general-SBH h2{
+  color: white;
+  font-size: 50px;
+  text-align: center;
+}
+
+.general-SBH > div{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 50px;
+  margin: 30px 10px;
+}
+
+.general-SBHbox {
+  width: 100%;
+  height: 350px;
+  border: #000 solid 2px;
+  position: relative;
+  border-radius: 5px;
+}
+
+.booking > input[type="submit"],
+.general-SBHbox button {
+  width: 100%;
+  /* margin: 0; */
+  border: none;
+  background-color: rgb(141, 10, 39);
+  height: 35px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: white
+}
+
+.booking > input[type="submit"]:hover,
+.general-SBHbox button:hover{
+  background-color: rgb(141, 10, 39, 0.76);
+  transition-duration: 0.3s;
 }
 
 /* @media screen and (max-width: 550px) {
@@ -206,6 +264,7 @@ input::placeholder {
 }
 
 /* HOME PAGE  */
+
 .main-page {
   margin-top: 50px;
   /* margin-right: 0;
@@ -219,13 +278,13 @@ input::placeholder {
   background-size: cover; */
 }
 
-.p1 {
+.intro {
   /* margin-top: 0; */
   background-image: url(./images/try2.jpg);
   background-size: 100% 100%;
   background-attachment: fixed;
 }
-.p1 h1 {
+.intro h1 {
   font-size: 100px;
   color: white;
   font-family: "Yatra One", cursive;
@@ -234,16 +293,78 @@ input::placeholder {
   position: relative;
   top: calc(50% - 50px);
 }
-.p2 {
+
+.hotels {
   background-image: url(./images/booking8.jpeg);
   background-size: 100% 100%;
   background-attachment: fixed;
 }
-.p3 {
-  background-image: url(./images/hotel.jpg);
-  background-size: 100% 100%;
-  background-attachment: fixed;
+
+.hotels h2{
+  margin-top: 100px;
+  margin-bottom: 1000px;
+  color:rgb(114, 6, 51);
 }
+
+.bookH button{
+  background-color: rgb(245, 91, 155);
+}
+
+.bookH button:hover{
+  background-color: rgba(245, 91, 155, 0.76);
+}
+
+.service{
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 100px;
+}
+
+.service h1{
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 50px;
+}
+
+.service p{
+  color: #777;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 22px;
+  padding: 10px;
+}
+
+.row{
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.service-col{
+  flex-basis: 31%;
+  height: 500px;
+  background: #f5c1c1;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  margin-top: 50px;
+  padding: 20px 12px;
+  box-sizing: border-box;
+  transition: 0.5s;
+}
+
+.service h3{
+  text-align: center;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.service-col:hover{
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+}
+
+
+
 
 /* Profile Page */
 .current-status {
@@ -289,6 +410,23 @@ input::placeholder {
 .hotel-detail-profile li {
   margin-bottom: 10px;
 }
+
+.hotel-detail-profile h1{
+  font-size: 3rem;
+  padding: 10px 0px 5px;
+}
+
+.hotel-detail-profile h2{
+  font-size: 1.2rem;
+  margin: 10px;
+  margin-top: 20px;
+}
+
+.hotel-detail-profile h3{
+  font-size: 1rem;
+  margin-left: 20px;
+}
+
 .button {
   font-size: medium;
   margin-top: 3px;
@@ -303,6 +441,7 @@ input::placeholder {
   font-weight: bold;
   line-height: 25px;
   border: cadetblue solid 2px;
+  cursor: pointer;
 }
 
 .current-status .button:hover{
@@ -340,15 +479,10 @@ input::placeholder {
   margin-top: 20px;
 }
 
-/* SERVICES  */
-.general-SBH {
-  /* background-color: rgb(11, 85, 107); */
-  background: transparent;
-  height: 50vh;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+.myS button{
+  background-color: rgb(245, 163, 238);
 }
+
 
 .general-SBHbox {
   width: 30%;
@@ -375,22 +509,124 @@ input::placeholder {
   height: 10%;
   cursor: pointer;
 }
-.general-SBHbox button:hover {
-  background-color: hotpink;
-  transition-duration: 0.3s;
+
+.myS button:hover{
+  background-color: rgba(245, 163, 238, 0.76);
+}
+
+.orderF button:hover{
+  background-color: rgba(164, 163, 245, 0.76);
 }
 
 /* BOOKING Page  */
-.booking {
-  background-image: url(..//static/images/booking1.jpeg);
-  padding: 10px;
-}
-
 .book-main {
   /* font-family: cursive; */
   font-size: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-column-gap: 4px;
+  height: 332px;
+  padding: 2%;
 }
+
+.booking-body {
+  background-image: url(..//static/images/b3.jpg);
+  background-repeat: no-repeat;
+  /* background-size: cover; */
+  object-fit: cover;
+}
+
 .book-main label {
-  /* padding: 10px; */
-  margin: 20px;
+  margin: auto;
+  color: white;
 }
+
+.book-main input, .book-main select{
+  height: 20%;
+  width: 80%;
+  background: transparent;
+  margin: auto;
+  margin-top: 0;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: white;
+}
+
+.book-main select option{
+  background: rgb(248, 248, 248);
+}
+
+.book-main-div{
+  text-align: center;
+  display: grid;
+  grid-template-rows: 40% 60%;
+  grid-row-gap: 20px;
+  border: 1px solid rgba(83, 82, 82, 0);
+  margin: 10px 10px 0px;
+  border-radius: 5px;
+}
+
+.book-main-div > label{
+  border: 1px solid #000;
+  width: 80%;
+  padding: 3px 0;
+  box-shadow: 5px 5px 2.5px #000;
+  border-radius: 5px;
+}
+
+.book-main-div div{
+  display: grid;
+  grid-template-columns: 30% 70%;
+}
+
+.book-main-div form{
+  display: grid;
+  grid-template-rows: 22% 22%;
+}
+
+.book-main-div form input{
+  border: 0px;
+  width: 100%;
+  height: 2em;
+  margin: auto;
+  margin-left: 20px;
+  font-size: 13px;
+}
+
+.book-main-div form label[for="AC"],
+.book-main-div form label[for="Non-AC"]{
+  font-size: 20px;
+  margin: auto;
+}
+
+.booking > input[type="submit"]{
+  height: 50px;
+  background-color:rgb(141, 10, 39);
+}
+
+/* Footer */
+
+.footer{
+  width: 100%;
+  text-align: center;
+  padding: 30px 0;
+}
+
+.footer h4{
+  margin-top: 25px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.icons .fa{
+  color: #f44336;
+  margin: 0 13px;
+  cursor: pointer;
+  padding: 18px 0;
+}
+
+.fa-heart-o{
+  color: #f44336;
+}
+
