@@ -102,8 +102,7 @@ ResultSet rs=null;
         	        PreparedStatement st4=con.prepareStatement("select * from hotels join room where room.hotelid = hotels.id and room.id='"+roomid+"'");
         	        ResultSet rs4=st4.executeQuery();
         	        PreparedStatement st5=con.prepareStatement("SELECT * FROM booking WHERE booking.cusid='"+customerid+"'and booking.bookingstatus='"+0+"'");
-        	        ResultSet rs5=st5.executeQuery();
-        	        
+        	        ResultSet rs5=st5.executeQuery();        	
         	        while(rs.next()){
         	        	
         	        	%>
@@ -133,21 +132,13 @@ ResultSet rs=null;
             	%>
             <li><h2>Room Number: <%=rs3.getInt("roomno")%></h2></li><% 
             }
+            while(rs5.next()){
+           		
             %>
             <li>
-              <h2>Guests</h2>
-              <ul>
-                <li><h3>guest1</h3></li>
-                <li><h3>guest2</h3></li>
-                <li><h3>guest3</h3></li>
-              </ul>
+              <h2>No of Guests: <%= rs5.getString("noofguests")%></h2>
             </li>
             <li>
-            <%
-            while(rs5.next()){
-            	
-            %>
-            
             <li><h2>Checkin Date:<%=rs5.getString("checkindate")%></h2></li>
             <li>
               <h2>Checkout Date: <%=rs5.getString("checkoutdate") %> 
