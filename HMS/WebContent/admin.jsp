@@ -9,7 +9,7 @@
 <title>Admin</title>
 </head>
 <body class="admin-body">
-	<form action="admin">
+	<form method="post" action="admin" enctype="multipart/form-data">
 		<div class="admin-hotel">
 		<h1>Select Hotel</h1>
 		<select name = "hotel" id = "">
@@ -66,6 +66,7 @@
 			<input type="text" id="servicerate" name="servicerate"><br>
 			<label for="servicedescription" >Description</label><br>
 			<input type="text" id="servicedescription" name="servicedescription"><br>
+    		<input type="file" name="file" /> <br>
 			<button name="addservice" value="1">Add Service</button>
 		</div>
 		<div class="admin-addfood">
@@ -78,6 +79,7 @@
 			<input type="text" id="foodrate" name="foodrate"><br>
 			<label for="fooddescription" >Description</label><br>
 			<input type="text" id="fooddescription" name="fooddescription"><br>
+			<input type="file" name="file" /> <br>
 			<button name="addfood" value="1">Add Food</button>
 		</div>
 		

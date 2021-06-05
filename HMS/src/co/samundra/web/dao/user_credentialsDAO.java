@@ -468,7 +468,7 @@ public class user_credentialsDAO{
 			int sid=0;
 			Class.forName(dbDriver);
 			Connection con = DriverManager.getConnection(dbUrl, dbUsername,dbPassword);
-			String q7="insert into services (name)"+"values('"+name+"')";
+			String q7="insert into services (name, fileName)"+"values('"+name+"','"+name+".png')";
 			PreparedStatement st6=con.prepareStatement(q7);
 			st6.executeUpdate();
 			String q8="select * from services where name='"+name+"'";
@@ -510,7 +510,7 @@ public class user_credentialsDAO{
 			int foodid=0;
 			Class.forName(dbDriver);
 			Connection con = DriverManager.getConnection(dbUrl, dbUsername,dbPassword);
-			String q7="insert into food (name,type,rate)"+"values('"+name+"','"+type+"','"+rate+"')";
+			String q7="insert into food (name,type,rate,fileName)"+"values('"+name+"','"+type+"','"+rate+"','"+name+".png')";
 			PreparedStatement st6=con.prepareStatement(q7);
 			st6.execute();
 			String q8="select * from food where name='"+name+"'";
