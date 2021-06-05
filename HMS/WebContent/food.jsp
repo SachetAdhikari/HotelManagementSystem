@@ -42,7 +42,7 @@ ResultSet rs=null;
         	 while(rs6.next()){
         		 //System.out.println(rs6.getString("description"));
         	        %>
-            <div class="general-SBHbox myS">
+            <div class="general-SBHbox SF">
             <div class="imgg">
         	        	<img src="./static/images/hotel1.jpg" alt="hotel">
         	        	</div>
@@ -64,7 +64,7 @@ ResultSet rs=null;
         	 while(rs8.next()){
         		 //System.out.println(rs8.getString("description"));
         	        %>
-            <div class="general-SBHbox orderF">
+            <div class="general-SBHbox SF">
             <div class="imgg">
         	        	<img src="./static/images/hotel1.jpg" alt="hotel">
         	        	</div>

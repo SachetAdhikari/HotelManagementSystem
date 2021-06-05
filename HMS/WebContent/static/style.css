@@ -87,6 +87,7 @@ nav a{
   width: 100%;
   text-align: center;
   padding: 30px 0;
+  color: white;
 }
 
 .footer h4{
@@ -136,32 +137,42 @@ nav a{
   position: relative;
   border-radius: 2px;
 }
-.general-SBHbox .imgg {
-  height: 60%;
-  width: 100%;
-}
+
 .general-SBHbox .imgg img{
   height: 100%;
   width: 100%; 
 }
 .general-SBHbox .description{
 	background-color: lightgreen;
+	text-align: center;
+	padding-top: 10px;
 }
+
 .general-SBHbox .rate{
 	background-color: lightblue ;
+	text-align: center;
+	padding-top: 10px;
 }
 
 .general-SBHbox button{
   width: 100%;
   border: none;
   background-color: rgb(141, 10, 39);
-  height: 35px;
+  height: 56px;
   cursor: pointer;
   border-radius: 2px;
   font-size: 1rem;
-  color: white
+  color: white;
+  
 }
-
+.SF{
+	display: grid;
+	grid-template-rows: 60% 12% 12% 16% ;
+}
+.SF button{
+  position: absolute;
+  bottom: 0;
+}
 .general-SBHbox button:hover{
   background-color: rgb(141, 10, 39, 0.76);
   transition-duration: 0.3s;
@@ -349,20 +360,26 @@ nav a{
   margin: auto;
   text-align: center;
   padding-top: 100px;
+  
 }
 
 .service h1{
+	color: white;
   font-size: 36px;
   font-weight: 600;
   margin-bottom: 50px;
 }
 
 .service p{
+	
   color: #777;
   font-size: 14px;
   font-weight: 300;
   line-height: 22px;
   padding: 10px;
+}
+.service #mainp{
+	color:white;
 }
 
 .row{
@@ -791,4 +808,6 @@ a.photo-tala{
 	transition: 0.3s;
 }
 
-
+.last-part{
+	 background: linear-gradient(rgba(128, 0, 128, 0.8),rgba(139, 0, 0, 0.729));
+}

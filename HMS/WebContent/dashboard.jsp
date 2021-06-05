@@ -166,7 +166,7 @@ ResultSet rs=null;
         	 while(rs6.next()){
         		 //System.out.println(rs6.getString("description"));
         	        %>
-            <div class="general-SBHbox myS">
+            <div class="general-SBHbox SF myS">
             <div class="imgg">
         	        	<img src="./static/images/hotel1.jpg" alt="hotel">
         	        	</div>
@@ -185,11 +185,11 @@ ResultSet rs=null;
         	 while(rs7.next()){
         		 //System.out.println(rs7.getString("description"));
         	        %>
-            <div class="general-SBHbox addS">
+            <div class="general-SBHbox SF addS">
             <div class="imgg">
         	        	<img src="./static/images/hotel1.jpg" alt="hotel">
         	        	</div>
-        	        	<div class="description"><%=rs7.getString("description")%></div>
+        	        	<div class="description"><p><%=rs7.getString("description")%></p></div>
         	        	<div class="rate"><h3>Rate: $<%=rs7.getString("rate")%> </h3></div>
         	        	
               <button name="AddService" value="<%=rs7.getInt("idservice")%>">Add Service</button>

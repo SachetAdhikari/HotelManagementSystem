@@ -59,9 +59,10 @@
         <% } 
         %>
       </section>
+      <section class="last-part">
       <section class="service" id="services">
         <h1>Services we provide</h1>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi quod sapiente facere, distinctio quis tempora consequuntur nostrum in perferendis optio impedit tenetur aliquam aliquid placeat.</p>
+        <p id="mainp">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi quod sapiente facere, distinctio quis tempora consequuntur nostrum in perferendis optio impedit tenetur aliquam aliquid placeat.</p>
         <div class="row">
             <div class="service-col">
                 <h3>Blogs</h3>
@@ -81,6 +82,7 @@
     <div class="index-footer">
     	<%@ include file="footer.jsp" %>
     </div>
+    </section>
   </body>
   
 </html>
