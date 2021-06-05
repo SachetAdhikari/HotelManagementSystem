@@ -155,7 +155,7 @@ nav a{
   transition-duration: 0.3s;
 }
 
-
+/*
 .addF-hidden,
 .myF-hidden,
 .addS-hidden,
@@ -165,7 +165,7 @@ nav a{
 	bottom: 0;
 	width: 100%
 }
-/*
+
 .addF:hover .addF-hidden,
 .myF:hover .myF-hidden,
 .addS:hover .addS-hidden,
@@ -176,6 +176,62 @@ nav a{
 
 */
 	
+	
+	
+.general-SBH{
+  background: transparent;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 50px;
+}
+
+.general-SBHbox{
+  width: 100%;
+  height: 350px;
+  border: none;
+  position: relative;
+  border-radius: 2px;
+}
+
+.general-SBHbox .imgg img{
+  height: 100%;
+  width: 100%; 
+}
+.general-SBHbox .description{
+	background-color: lightgreen;
+	text-align: center;
+	padding-top: 10px;
+}
+
+.general-SBHbox .rate{
+	background-color: lightblue ;
+	text-align: center;
+	padding-top: 10px;
+}
+
+.general-SBHbox button{
+  width: 100%;
+  border: none;
+  background-color: rgb(141, 10, 39);
+  height: 56px;
+  cursor: pointer;
+  border-radius: 2px;
+  font-size: 1rem;
+  color: white;
+  
+}
+.SF{
+	display: grid;
+	grid-template-rows: 60% 12% 12% 16% ;
+}
+.SF button{
+  position: absolute;
+  bottom: 0;
+}
+.general-SBHbox button:hover{
+  background-color: rgb(141, 10, 39, 0.76);
+  transition-duration: 0.3s;
+}
 /* Button */
 
 

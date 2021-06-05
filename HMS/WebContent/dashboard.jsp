@@ -162,12 +162,13 @@ ResultSet rs=null;
         	 while(rs6.next()){
         		 //System.out.println(rs6.getString("description"));
         	        %>
-            <div class="general-SBHbox myS" style="background-image: url(./static/images/hotel1.jpg); background-size:cover;">
-        	    <div class="myS-hidden">
-        	    <div class="mySdescription"><%=rs6.getString("description")%></div>
-        	    <div class="mySrate"><h3>Rate: $<%=rs6.getString("rate")%> </h3></div>
-              	<button name="RemoveService" value="<%=rs6.getInt("serviceid")%>">Remove Service</button>
-            	</div>
+           <div class="general-SBHbox SF myS">
+            <div class="imgg">
+        	        	<img src="./static/images/hotel1.jpg" alt="hotel">
+        	        	</div>
+        	        	<div class="description"><%=rs6.getString("description")%></div>
+        	        	<div class="rate"><h3>Rate: $<%=rs6.getString("rate")%> </h3></div>
+              <button name="RemoveService" value="<%=rs6.getInt("serviceid")%>">Remove Service</button>
             </div>
             <% }%>
           </div>
@@ -180,12 +181,15 @@ ResultSet rs=null;
         	 while(rs7.next()){
         		 //System.out.println(rs7.getString("description"));
         	        %>
-            <div class="general-SBHbox addS" style="background-image: url(./static/images/hotel1.jpg); background-size:cover;">
-        		<div class="addS-hidden">
-        		<div class="addSdescription"><%=rs7.getString("description")%></div>
-        	    <div class="addSrate"><h3>Rate: $<%=rs7.getString("rate")%> </h3></div>    	
-              	<button name="AddService" value="<%=rs7.getInt("idservice")%>">Add Service</button>
-    			</div>
+            <div class="general-SBHbox SF addS">
+            <div class="imgg">
+        	        	<img src="./static/images/hotel1.jpg" alt="hotel">
+        	        	</div>
+        	        	<div class="description"><p><%=rs7.getString("description")%></p></div>
+        	        	<div class="rate"><h3>Rate: $<%=rs7.getString("rate")%> </h3></div>
+        	        	
+              <button name="AddService" value="<%=rs7.getInt("idservice")%>">Add Service</button>
+    
             </div>
             <%} %>
           </div>
