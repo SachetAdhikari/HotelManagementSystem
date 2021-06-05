@@ -15,6 +15,14 @@
         <h1>NAMASTE</h1>
       </section>
       <section class="hotels box-section" id="hotels">
+      <%
+      session = request.getSession();
+      if (session.getAttribute("userStatus").equals("CurrentlyBooked")&&session.getAttribute("loggedInUserId")!=null){%>
+      	<h1>You're Currently Booked in one of Our Hotels</h1>
+      	<a href="./dashboard.jsp" class="button">View Dashboard</a>
+      <%}
+      else{
+      %>
       	<h2>Our Hotels</h2>
         <div class="general-SBH">
         <% 
@@ -48,6 +56,8 @@
         		}
         	%>
         </div>
+        <% } 
+        %>
       </section>
       <section class="service" id="services">
         <h1>Services we provide</h1>
