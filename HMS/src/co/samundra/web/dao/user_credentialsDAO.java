@@ -547,5 +547,18 @@ public class user_credentialsDAO{
 		}
 	}
 	
+	public void setRoomStatus(String cus_id) {
+		String query = "UPDATE room SET room.status = 0 WHERE room.id = (select booking.roomid from booking where booking.bookingstatus=0 and booking.cusid="+cus_id+")";
+		try{
+			Class.forName(dbDriver);
+			Connection con = DriverManager.getConnection(dbUrl, dbUsername,dbPassword);
+			PreparedStatement st=con.prepareStatement(query);
+			st.executeUpdate();
+		}
+		catch(Exception e){
+			System.out.println(e);
+		}
+	}
+	
 }
 
