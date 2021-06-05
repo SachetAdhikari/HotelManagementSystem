@@ -97,7 +97,8 @@ public class user_credentialsDAO{
 		String query = "insert into booking (checkindate,checkoutdate,noofguests,ratefactor,roomid,cusid,bookingstatus)" +"values(?,?,?,?,?,?,?)";
 		//String query2="select * from room join roomtype on room.roomtypeid=roomtype.id where hotelid='"+hotel+"' and status='"+0+"' and ac='"+ac_nac+"'";
 		String query3="select * from customer_credentials where email='"+email+"' ";
-		ciin=cin;
+		//ciin=cin;
+		int customerid=0;
 		try{
 			Class.forName(dbDriver);
 			Connection con = DriverManager.getConnection(dbUrl, dbUsername,dbPassword);

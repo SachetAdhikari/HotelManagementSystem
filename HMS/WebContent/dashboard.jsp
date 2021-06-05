@@ -2,7 +2,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" %>
 <%@page import="java.sql.*" %>
-
 <%
 String dbUrl = "jdbc:mysql://remotemysql.com:3306/jBsMU8OOWb";
 String dbUsername = "jBsMU8OOWb";
@@ -27,7 +26,7 @@ ResultSet rs=null;
     <title>Dashboard</title>
   </head>
   <body>
-    <%
+  <%
   	session = request.getSession();
    	if (session.getAttribute("userStatus").equals("CurrentlyVacant")){%>
    		<div>
@@ -81,7 +80,7 @@ ResultSet rs=null;
         	        	customerid=rs1.getInt("id");
         	        	//roomid=rs1.getInt("roomid");
         	        }
-        	        PreparedStatement st11=con.prepareStatement("SELECT * FROM booking WHERE booking.id=(SELECT max(id) FROM booking where booking.id='"+customerid+"')");
+        	        PreparedStatement st11=con.prepareStatement("SELECT * FROM booking WHERE booking.cusid='"+customerid+"' and booking.bookingstatus='"+0+"'");
         	        ResultSet rs11=st11.executeQuery();
         	        while(rs11.next()){
         	        	//customerid=rs1.getInt("id");
@@ -96,7 +95,7 @@ ResultSet rs=null;
         	        rs = st.executeQuery();
         	        PreparedStatement st4=con.prepareStatement("select * from hotels join room where room.hotelid = hotels.id and room.id='"+roomid+"'");
         	        ResultSet rs4=st4.executeQuery();
-        	        PreparedStatement st5=con.prepareStatement("SELECT * FROM booking WHERE booking.id=(SELECT max(id) FROM booking)");
+        	        PreparedStatement st5=con.prepareStatement("SELECT * FROM booking WHERE booking.cusid='"+customerid+"'and booking.bookingstatus='"+0+"'");
         	        ResultSet rs5=st5.executeQuery();
         	        
         	        while(rs.next()){
