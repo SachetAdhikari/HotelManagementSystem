@@ -146,7 +146,6 @@ ResultSet rs=null;
             <li><h2>Checkin Date:<%=rs5.getString("checkindate")%></h2></li>
             <li>
               <h2>Checkout Date: <%=rs5.getString("checkoutdate") %> 
-              <a href="#" class="button">Update</a></h2>
 			<%
 			}
             %>
