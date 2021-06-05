@@ -18,8 +18,10 @@
       <%
       session = request.getSession();
       if (session.getAttribute("loggedInUserId")!=null && session.getAttribute("userStatus").equals("CurrentlyBooked")){%>
-      	<h1>You're Currently Booked in one of Our Hotels</h1>
-      	<a href="./dashboard.jsp" class="button">View Dashboard</a>
+      	<div class="booked">
+      		<h1>You're Currently Booked in one of Our Hotels</h1>
+      		<a href="./dashboard.jsp" class="button">View Dashboard</a>
+      	</div>
       <%}
       else{
       %>

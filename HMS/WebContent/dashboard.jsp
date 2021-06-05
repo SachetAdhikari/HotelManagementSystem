@@ -29,10 +29,15 @@ ResultSet rs=null;
   <%
   	session = request.getSession();
    	if (session.getAttribute("userStatus").equals("CurrentlyVacant")){%>
-   		<div>
+   		<div class = "notBooked">
    		<h1>You've not booked a hotel currently!</h1>
+   		<div>
    		<a href="./history.jsp" class="button">Your History</a>
    		<a href="./index.jsp#hotels" class="button">BookNow</a>
+   		</div>
+   		</div>
+   		<div class="notBookedFooter">
+   		<%@ include file="footer.jsp" %>
    		</div>
    	<%}
    	else {

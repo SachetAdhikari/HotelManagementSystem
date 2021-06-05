@@ -809,5 +809,47 @@ a.photo-tala{
 }
 
 .last-part{
-	 background: linear-gradient(rgba(128, 0, 128, 0.8),rgba(139, 0, 0, 0.729));
+	 background: linear-gradient(rgba(128, 0, 128, 0.8),rgba(139, 0, 0, 0.729));}
+.notBooked{
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	text-align: center;
+    gap: 24px;
+	left: 35%;
+	top: 35%;
+}
+
+.notBooked a{
+	margin: 0 3px;
+}
+
+.notBookedFooter{
+	position: absolute;
+	bottom: 0;
+	left: 29%;
+}
+
+.booked{
+	text-align: center;
+	margin-top: 300px;
+	line-height: 80px;
+	color: white;
+}
+
+.booked h1{
+	font-size: 35px;
+	font-family: cursive;
+}
+
+.booked a{
+	color: white;
+	height: 50px;
+	line-height: 50px;
+	font-size: 28px;
+}
+
+.booked a:hover{
+	color: #000;
 }
