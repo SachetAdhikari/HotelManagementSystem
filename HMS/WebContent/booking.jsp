@@ -24,7 +24,7 @@
         		//String hotel=request.getParameter("Hotel");
         		//int ac=1;
         		//int no = Integer.parseInt(request.getParameter("Hotel"));
-        		
+        		//Helloo Sachet 
         		//System.out.println(hotel);
         		String dbUrl = "jdbc:mysql://remotemysql.com:3306/jBsMU8OOWb";
         		String dbUsername = "jBsMU8OOWb";
