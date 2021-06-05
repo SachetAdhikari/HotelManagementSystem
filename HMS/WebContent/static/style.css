@@ -137,21 +137,6 @@ nav a{
   border-radius: 2px;
 }
 
-.general-SBHbox .imgg img{
-  height: 100%;
-  width: 100%; 
-}
-.general-SBHbox .description{
-	background-color: lightgreen;
-	text-align: center;
-	padding-top: 10px;
-}
-
-.general-SBHbox .rate{
-	background-color: lightblue ;
-	text-align: center;
-	padding-top: 10px;
-}
 
 .general-SBHbox button{
   width: 100%;
@@ -164,19 +149,32 @@ nav a{
   color: white;
   
 }
-.SF{
-	display: grid;
-	grid-template-rows: 60% 12% 12% 16% ;
-}
-.SF button{
-  position: absolute;
-  bottom: 0;
-}
+
 .general-SBHbox button:hover{
   background-color: rgb(141, 10, 39, 0.76);
   transition-duration: 0.3s;
 }
 
+
+.addF-hidden,
+.myF-hidden,
+.addS-hidden,
+.myS-hidden,
+.bookH-hidden{
+	position: absolute;
+	bottom: 0;
+	display: none;
+	width: 100%
+}
+
+.addF:hover .addF-hidden,
+.myF:hover .myF-hidden,
+.addS:hover .addS-hidden,
+.myS:hover .myS-hidden,
+.bookH:hover .bookH-hidden{
+	display: block;
+}	
+	
 /* Button */
 
 .button{
@@ -346,6 +344,21 @@ nav a{
   height: 100vh;
 }
 
+
+
+.bookHname{
+	background-color: lightblue ;
+	text-align: center;
+	padding-top: 10px;
+}
+
+.bookHdescription{
+	background-color: lightgreen;
+	text-align: center;
+	padding-top: 10px;	
+}
+
+
 .bookH button{
   background-color: rgb(240, 161, 191);
 }
@@ -419,10 +432,10 @@ nav a{
   flex-direction: column;
   padding: 20px;
   background-image: url(..//static/images/booking3.jpeg);
-  width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
   margin-top: 50px;
+  height: 100vh;
 }
 
 .user-profile{
@@ -507,11 +520,28 @@ a.photo-tala{
   margin-top: 20px;
 }
 
+.addFrate,
+.addSrate,
+.mySrate{
+	background-color: lightblue ;
+	text-align: center;
+	padding-top: 10px;
+}
+
+.addFdescription,
+.myFdescription,
+.addSdescription,
+.mySdescription{
+	background-color: lightgreen;
+	text-align: center;
+	padding-top: 10px;	
+}
+
 .myS button{
   background-color: rgb(245, 163, 238);
 }
 
-.orderF button{
+.myF button{
   background-color: rgb(164, 163, 245);
 }
 
@@ -519,9 +549,11 @@ a.photo-tala{
   background-color: rgba(245, 163, 238, 0.76);
 }
 
-.orderF button:hover{
+.myF button:hover{
   background-color: rgba(164, 163, 245, 0.76);
 }
+
+
 
 /* BOOKING Page  */
 

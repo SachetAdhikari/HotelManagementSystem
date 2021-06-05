@@ -45,7 +45,7 @@
 		        	<li><a href="./dashboard.jsp"><i class="fa fa-user"></i></a></li>
 		        <%}
 		        %>	
-		          <li><a href="logout"><i class="fa fa-sign-out"></i></a></li>
+		        <li><a href="logout"><i class="fa fa-sign-out"></i></a></li>
 		        </ul>
 		      	</div>	
 			<% }
