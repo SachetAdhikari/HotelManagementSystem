@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
   </head>
-  <body>
+  <body class="index-body">
       <section class="intro">
         <h1>NAMASTE</h1>
       </section>
@@ -61,7 +61,6 @@
         <% } 
         %>
       </section>
-      <section class="last-part">
       <section class="service" id="services">
         <h1>Services we provide</h1>
         <p id="mainp">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi quod sapiente facere, distinctio quis tempora consequuntur nostrum in perferendis optio impedit tenetur aliquam aliquid placeat.</p>
@@ -84,7 +83,6 @@
     <div class="index-footer">
     	<%@ include file="footer.jsp" %>
     </div>
-    </section>
   </body>
   
 </html>

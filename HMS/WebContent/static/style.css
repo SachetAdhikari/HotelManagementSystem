@@ -343,8 +343,8 @@ nav a{
 .hotels{
   background-image: url(./images/booking10.jpg);
   background-attachment: fixed;
+  background-size: cover;
   height: 100vh;
-  /*width: 100vw;*/
 }
 
 .bookH button{
@@ -364,7 +364,7 @@ nav a{
 }
 
 .service h1{
-	color: white;
+  color: white;
   font-size: 36px;
   font-weight: 600;
   margin-bottom: 50px;
@@ -808,8 +808,12 @@ a.photo-tala{
 	transition: 0.3s;
 }
 
-.last-part{
-	 background: linear-gradient(rgba(128, 0, 128, 0.8),rgba(139, 0, 0, 0.729));}
+.index-body{
+	background: linear-gradient(rgba(128, 0, 128, 0.8),rgba(139, 0, 0, 0.729));
+	margin:0;
+}
+
+
 .notBooked{
 	position: absolute;
 	display: flex;
@@ -853,3 +857,67 @@ a.photo-tala{
 .booked a:hover{
 	color: #000;
 }
+
+.admin-body form{
+	text-align: center;
+	position: absolute;
+	top: 10%;
+	width: 50%;
+	left: 20%;
+	border: 1px solid #000;
+	display: grid;
+	grid-template-areas: 'header header header' 'add1 add2 add3' 'del1 del2 del3';
+	grid-row-gap: 50px;
+	padding: 50px 10px;
+}
+
+.admin-body h1{
+	margin: 5px 0;
+}
+
+.admin-body button{
+	margin-top: 5px;	
+}
+
+.admin-hotel{
+	grid-area: header;
+}
+
+.admin-hotel select{
+	height: 30px;
+}
+
+
+.admin-addroom{
+	grid-area: add1;
+}
+
+.admin-addservice{
+	grid-area: add2;
+}
+.admin-addfood{
+	grid-area: add3;
+}
+
+.admin-deleteroom{
+	grid-area: del1;	
+}
+.admin-deleteservice{
+	grid-area: del2;	
+}
+.admin-deletefood{
+	grid-area: del3;	
+}
+
+
+.admin-addservice,
+.admin-deleteservice,
+.admin-addfood,
+.admin-deletefood,
+.admin-deleteroom,
+.admin-addroom{
+	text-align: left;
+	padding-left: 20px;
+}
+
+
