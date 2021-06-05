@@ -483,8 +483,31 @@ input::placeholder {
   background-color: rgb(245, 163, 238);
 }
 
-.orderF button{
-  background-color: rgb(164, 163, 245);
+
+.general-SBHbox {
+  width: 30%;
+  height: 90%;
+  border: rgb(138, 44, 7) solid 3px;
+  position: relative;
+}
+.general-SBHbox .imgg {
+  height: 60%;
+  width: 100%;
+}
+.general-SBHbox .imgg img{
+  height: 100%;
+  width: 100%; 
+}
+
+.general-SBHbox button {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* margin: 0; */
+  border: none;
+  background-color: grey;
+  height: 10%;
+  cursor: pointer;
 }
 
 .myS button:hover{
