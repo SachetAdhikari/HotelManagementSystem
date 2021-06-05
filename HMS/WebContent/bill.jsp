@@ -22,8 +22,9 @@
 		</ul>
 		<hr>
 		<span>Bill Amount: <%= request.getAttribute("TotalBill") %></span>
+		
 		<form action="pay">
-			<input type="submit" name = "pay" value="<%=request.getAttribute("TotalBill")%>">
+			<input type="submit" name = "pay" value="Pay and Checkout">
 		</form>
 	</div>
 </body>
