@@ -52,6 +52,8 @@ ResultSet rs=null;
         <div class="profilepic">
           <img src="./static/images/avatar.png" alt="profilepic">
           <a href="billController" class="button">Check Out</a> <br />
+          <a href="billController" class="button">View Bill</a> <br />
+          <a href="./food.jsp" class="button">Order Food</a> <br />
         </div>            
             <% 
         	try{
@@ -151,6 +153,10 @@ ResultSet rs=null;
             %>
             </li>
           </ul>
+          <% session.setAttribute("hotelid", hotelid);
+          session.setAttribute("cusid", customerid);
+          
+          %>
         </div>
  		
     </section>
