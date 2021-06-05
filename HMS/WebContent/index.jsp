@@ -17,7 +17,7 @@
       <section class="hotels box-section" id="hotels">
       <%
       session = request.getSession();
-      if (session.getAttribute("loggedInUserId")!=null&&session.getAttribute("userStatus").equals("CurrentlyBooked")){%>
+      if (session.getAttribute("loggedInUserId")!=null && session.getAttribute("userStatus").equals("CurrentlyBooked")){%>
       	<h1>You're Currently Booked in one of Our Hotels</h1>
       	<a href="./dashboard.jsp" class="button">View Dashboard</a>
       <%}
@@ -39,7 +39,12 @@
         	        while(rs.next()){
         	        	%>
         	        	<div class="general-SBHbox bookH">
-              				<button value="<%=rs.getInt("id")%>">Book Now</button>
+        	        	<div class="imgg">
+        	        	<img src="./static/images/h1.jpg" alt="hotel">
+        	        	</div>
+        	        	<div class="description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et voluptates quasi tempore, perspiciatis reprehenderit excepturi, placeat ea quis debitis suscipit corrupti enim maxime praesentium laborum, at qui. Aspernatur suscipit quo et voluptatum ipsa, fugit harum reiciendis accusantium ut quia voluptates consectetur excepturi blanditiis iusto numquam ratione ad ex? Voluptate, eveniet?
+						</div>
+              			<button value="<%=rs.getInt("id")%>">Book Now</button>
             			</div>
         	        	<%
         	        }
