@@ -401,4 +401,124 @@ public class user_credentialsDAO{
 			System.out.println(e);
 		}
 	}
+	public void adminroom(String roomno,String type,String rate,String capacity,String hotelid) {
+		System.out.println("in addservice DAO");
+		try{
+			int roomtypeid=0;
+			//String query34="select * from customer_credentials where email='"+email+"' ";
+			//int customerid=0;
+			//String query3="delete from customerservices where cusid='"+customerid+"' and serviceid='"+serviceid+"'and useddate='"+ciin+"' ";
+			Class.forName(dbDriver);
+			Connection con = DriverManager.getConnection(dbUrl, dbUsername,dbPassword);
+			String q6="select * from roomtype where ac='"+type+"' and capacity='"+capacity+"' and rate='"+rate+"'";
+			PreparedStatement st5= con.prepareStatement(q6);
+			ResultSet rs=st5.executeQuery();
+			while(rs.next()) {
+				roomtypeid=rs.getInt("id");
+			}
+			String q7="insert into room (status,roomno,hotelid,roomtypeid)"+"values('"+0+"','"+roomno+"','"+hotelid+"','"+roomtypeid+"')";
+			PreparedStatement st6=con.prepareStatement(q7);
+			st6.execute();
+		}
+		catch(Exception e){
+			System.out.println(e);
+		}
+	}
+	public void deleteroom(String roomno,String hotelid) {
+		try{
+			Class.forName(dbDriver);
+			Connection con = DriverManager.getConnection(dbUrl, dbUsername,dbPassword);
+			String q7="delete from room where room.roomno='"+roomno+"' and room.hotelid='"+hotelid+"'";
+			PreparedStatement st6=con.prepareStatement(q7);
+			st6.executeUpdate();
+		}
+		catch(Exception e){
+			System.out.println(e);
+		}
+	}
+	public void adminaddservice(String name,String rate,String desc,String hotelid) {
+		try{
+			int sid=0;
+			Class.forName(dbDriver);
+			Connection con = DriverManager.getConnection(dbUrl, dbUsername,dbPassword);
+			String q7="insert into services (name)"+"values('"+name+"')";
+			PreparedStatement st6=con.prepareStatement(q7);
+			st6.executeUpdate();
+			String q8="select * from services where name='"+name+"'";
+			PreparedStatement st8=con.prepareStatement(q8);
+			ResultSet rs = st8.executeQuery();
+			while(rs.next()) {
+				sid=rs.getInt("id");
+			}
+			String q9="insert into hotelservices (idhotel,idservice,rate,description,capacity,status)"+"values('"+hotelid+"','"+sid+"','"+rate+"','"+desc+"','"+100+"','"+1+"')";
+			PreparedStatement st19=con.prepareStatement(q9);
+			st19.executeUpdate();
+		}
+		catch(Exception e){
+			System.out.println(e);
+		}
+	}
+	public void admindeleteservice(String names,String hotel) {
+		try{
+			Class.forName(dbDriver);
+			Connection con = DriverManager.getConnection(dbUrl, dbUsername,dbPassword);
+			int sid=0;
+			String q8="select * from services where name='"+names+"'";
+			PreparedStatement st8=con.prepareStatement(q8);
+			ResultSet rs = st8.executeQuery();
+			while(rs.next()) {
+				sid=rs.getInt("id");
+			}
+			String q7="delete from hotelservices where hotelservices.idservice='"+sid+"' and hotelservices.idhotel='"+hotel+"'";
+			PreparedStatement st6=con.prepareStatement(q7);
+			st6.executeUpdate();
+		}
+		catch(Exception e){
+			System.out.println(e);
+		}
+	}
+	public void adminaddfood(String name,String rate,String desc,String type,String hotelid) {
+		System.out.println("in addfood DAO");
+		try{
+			int foodid=0;
+			Class.forName(dbDriver);
+			Connection con = DriverManager.getConnection(dbUrl, dbUsername,dbPassword);
+			String q7="insert into food (name,type,rate)"+"values('"+name+"','"+type+"','"+rate+"')";
+			PreparedStatement st6=con.prepareStatement(q7);
+			st6.execute();
+			String q8="select * from food where name='"+name+"'";
+			PreparedStatement st8=con.prepareStatement(q8);
+			ResultSet rs = st8.executeQuery();
+			while(rs.next()) {
+				foodid=rs.getInt("id");
+			}
+			String q9="insert into hotelfood (hotelid,foodid,status,description)"+"values('"+hotelid+"','"+foodid+"','"+1+"','"+desc+"')";
+			PreparedStatement st7=con.prepareStatement(q9);
+			st7.execute();
+		}
+		catch(Exception e){
+			System.out.println(e);
+		}
+	}
+	public void admindeletefood(String name,String hotel) {
+		try{
+			Class.forName(dbDriver);
+			Connection con = DriverManager.getConnection(dbUrl, dbUsername,dbPassword);
+			int sid=0;
+			String q8="select * from food where name='"+name+"'";
+			PreparedStatement st8=con.prepareStatement(q8);
+			ResultSet rs = st8.executeQuery();
+			while(rs.next()) {
+				sid=rs.getInt("id");
+			}
+			String q7="delete from hotelfood where hotelfood.foodid='"+sid+"' and hotelfood.hotelid='"+hotel+"'";
+			PreparedStatement st6=con.prepareStatement(q7);
+			st6.executeUpdate();
+		}
+		catch(Exception e){
+			System.out.println(e);
+		}
+	}
+	
 }
+
