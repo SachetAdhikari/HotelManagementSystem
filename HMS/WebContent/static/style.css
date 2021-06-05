@@ -163,10 +163,9 @@ nav a{
 .bookH-hidden{
 	position: absolute;
 	bottom: 0;
-	display: none;
 	width: 100%
 }
-
+/*
 .addF:hover .addF-hidden,
 .myF:hover .myF-hidden,
 .addS:hover .addS-hidden,
@@ -174,8 +173,12 @@ nav a{
 .bookH:hover .bookH-hidden{
 	display: block;
 }	
+
+*/
 	
 /* Button */
+
+
 
 .button{
   font-size: medium;
