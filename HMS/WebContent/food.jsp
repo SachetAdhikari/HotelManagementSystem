@@ -34,7 +34,7 @@ ResultSet rs=null;
 				con = DriverManager.getConnection(dbUrl, dbUsername,dbPassword);
 				 %>
 				 <section class="box-section">
-          <h2 style="color: #000; font-family:cursive">Your Services</h2>
+          <h2 style="color: #000; font-family:cursive">Your Orders</h2>
           <div class="general-SBH">
           <%
           PreparedStatement st6=con.prepareStatement("SELECT * FROM customerfood join hotelfood on customerfood.foodid=hotelfood.foodid where customerfood.cusid='"+customerid+"' and hotelfood.hotelid='"+hotelid+"'");

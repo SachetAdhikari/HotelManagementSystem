@@ -55,7 +55,6 @@ ResultSet rs=null;
         <div class="profilepic">
           <img src="./static/images/avatar.png" alt="profilepic">
           <a href="billController" class="button">Check Out</a> <br />
-          <a href="billController" class="button">View Bill</a> <br />
           <a href="./food.jsp" class="button">Order Food</a> <br />
         </div>            
             <% 
@@ -150,7 +149,6 @@ ResultSet rs=null;
             <li><h2>Checkin Date:<%=rs5.getString("checkindate")%></h2></li>
             <li>
               <h2>Checkout Date: <%=rs5.getString("checkoutdate") %> 
-              <a href="#" class="button">Update</a></h2>
 			<%
 			}
             %>
@@ -172,6 +170,10 @@ ResultSet rs=null;
         		 //System.out.println(rs6.getString("description"));
         	        %>
             <div class="general-SBHbox myS">
+            <div class="imgg">
+        	        	<img src="./static/images/hotel1.jpg" alt="hotel">
+        	        	</div>
+        	        	<div class="description"><%=rs6.getString("description")%></div>
               <button name="RemoveService" value="<%=rs6.getInt("serviceid")%>">Remove Service</button>
             </div>
             <% }%>
@@ -186,25 +188,16 @@ ResultSet rs=null;
         		 //System.out.println(rs7.getString("description"));
         	        %>
             <div class="general-SBHbox addS">
+            <div class="imgg">
+        	        	<img src="./static/images/hotel1.jpg" alt="hotel">
+        	        	</div>
+        	        	<div class="description"><%=rs7.getString("description")%></div>
               <button name="AddService" value="<%=rs7.getInt("idservice")%>">Add Service</button>
     
             </div>
             <%} %>
           </div>
         </section>
-        <section class="box-section">
-          <h2 style="color: #000; font-family:cursive">Available Food</h2>
-          <div class="general-SBH">
-          <% PreparedStatement st8=con.prepareStatement("SELECT * FROM hotelfood where hotelfood.hotelid='"+hotelid+"'");
-        	 ResultSet rs8=st8.executeQuery();
-        	 while(rs8.next()){
-        		 //System.out.println(rs8.getString("description"));
-        	        %>
-            <div class="general-SBHbox orderF">
-              <button name="food" value="<%=rs8.getInt("foodid")%>">Order this</button>
-            </div>
-            <%} %>
-          </div>
           <%      
         	   
         	        con.close();
@@ -216,7 +209,6 @@ ResultSet rs=null;
         			System.out.println(e);
         		}
        %> 
-        </section>
         </form>
     	<%@ include file="footer.jsp" %>
     	<%
