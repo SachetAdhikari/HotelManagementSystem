@@ -60,9 +60,9 @@ public class adminController extends HttpServlet {
 			String sdesc=request.getParameter("servicedescription");
 			Part filePart = request.getPart("file");
 			if(filePart != null) {
-				for (Part part : request.getParts()) {
-					   part.write(System.getProperty("user.dir")+"\\HotelManagementSystem\\HMS\\WebContent\\static\\images\\"+sname+".png");
-					}
+				request.setAttribute("identityname", sname );
+				fileController fc = new fileController();
+				fc.savePic(request);
 			}
 			uc.adminaddservice(sname, srate, sdesc,hotel);
 			response.sendRedirect("./admin.jsp");
@@ -79,9 +79,11 @@ public class adminController extends HttpServlet {
 			String desc=request.getParameter("fooddescription");
 			Part filePart = request.getPart("file");
 			if(filePart != null) {
-				for (Part part : request.getParts()) {
-					   part.write(System.getProperty("user.dir")+"\\HotelManagementSystem\\HMS\\WebContent\\static\\images\\"+name+".png");
-					}
+				if(filePart != null) {
+					request.setAttribute("identityname", name );
+					fileController fc = new fileController();
+					fc.savePic(request);
+				}
 			}
 			uc.adminaddfood(name, rate, desc,type,hotel);
 			response.sendRedirect("./admin.jsp");
