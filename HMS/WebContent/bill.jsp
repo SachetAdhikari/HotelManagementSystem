@@ -24,11 +24,9 @@
 		<span>Bill Amount: <%= request.getAttribute("TotalBill") %></span>
 		
 		<form action="pay">
-<<<<<<< HEAD
-=======
 			<input type="hidden" name = "pay" value="<%=request.getAttribute("TotalBill")%>">
 			<input type="submit"  value="Pay">
->>>>>>> bd6c524fdff6a4f63dc36f743bc95bcb59ceb5c0
+
 		</form>
 	</div>
 </body>
