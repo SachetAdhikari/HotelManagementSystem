@@ -136,6 +136,17 @@ nav a{
   position: relative;
   border-radius: 2px;
 }
+.general-SBHbox .imgg {
+  height: 60%;
+  width: 100%;
+}
+.general-SBHbox .imgg img{
+  height: 100%;
+  width: 100%; 
+}
+.general-SBHbox .description{
+	background-color: green;
+}
 
 .general-SBHbox button{
   width: 100%;
@@ -318,6 +329,8 @@ nav a{
 .hotels{
   background-image: url(./images/booking10.jpg);
   background-attachment: fixed;
+  height: 100vh;
+  width: 100vw;
 }
 
 .bookH button{
