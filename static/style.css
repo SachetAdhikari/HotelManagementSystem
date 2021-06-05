@@ -356,6 +356,15 @@ input::placeholder {
   border: rgb(138, 44, 7) solid 3px;
   position: relative;
 }
+.general-SBHbox .imgg {
+  height: 60%;
+  width: 100%;
+}
+.general-SBHbox .imgg img{
+  height: 100%;
+  width: 100%; 
+}
+
 .general-SBHbox button {
   position: absolute;
   bottom: 0;
