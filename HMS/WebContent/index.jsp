@@ -80,7 +80,7 @@
             </div>
         </div>
     </section>
-    <div class="index-footer">
+    <div class="index-footer" style="color:white;">
     	<%@ include file="footer.jsp" %>
     </div>
   </body>
