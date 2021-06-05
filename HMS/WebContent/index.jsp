@@ -1,6 +1,7 @@
 <%@ include file="navbar.jsp" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@page import="java.sql.*" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -16,30 +17,31 @@
       <section class="hotels box-section" id="hotels">
       	<h2>Our Hotels</h2>
         <div class="general-SBH">
-            <div class="general-SBHbox bookH">
-              <button>Book Now</button>
-            </div>
-            <div class="general-SBHbox bookH">
-              <button>Book Now</button>
-            </div>
-            <div class="general-SBHbox bookH">
-              <button>Book Now</button>
-            </div>
-             <div class="general-SBHbox bookH">
-              <button>Book Now</button>
-            </div>
-             <div class="general-SBHbox bookH">
-              <button>Book Now</button>
-            </div>
-             <div class="general-SBHbox bookH">
-              <button>Book Now</button>
-            </div>
-             <div class="general-SBHbox bookH">
-              <button>Book Now</button>
-            </div>
-            <div class="general-SBHbox bookH">
-              <button>Book Now</button>
-            </div>
+        <% 
+        try{
+        		String dbUrl = "jdbc:mysql://remotemysql.com:3306/jBsMU8OOWb";
+        		String dbUsername = "jBsMU8OOWb";
+        		String dbPassword = "GPkoS7miTH";
+        		String dbDriver = "com.mysql.cj.jdbc.Driver";
+        		Class.forName(dbDriver);
+				Connection con = DriverManager.getConnection(dbUrl, dbUsername,dbPassword);
+        		PreparedStatement st = con.prepareStatement("select * from hotels");
+        		System.out.println("On Index");
+        	       ResultSet rs = st.executeQuery();
+        	        while(rs.next()){
+        	        	%>
+        	        	<div class="general-SBHbox bookH">
+              				<button value="<%=rs.getInt("id")%>">Book Now</button>
+            			</div>
+        	        	<%
+        	        }
+        	        con.close();
+        	        st.close();
+        	}
+        		catch(Exception e){
+        			System.out.println(e);
+        		}
+        	%>
         </div>
       </section>
       <section class="service" id="services">
