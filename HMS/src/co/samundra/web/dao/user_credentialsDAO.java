@@ -229,6 +229,27 @@ public class user_credentialsDAO{
 		}
 		
 	}
+	public void removefood(String foodid,String email) {
+		System.out.println("in removefood DAO");
+		try{
+			String query333="select * from customer_credentials where email='"+email+"' ";
+			int customerid=0;
+			Class.forName(dbDriver);
+			Connection con = DriverManager.getConnection(dbUrl, dbUsername,dbPassword);
+			PreparedStatement stf11= con.prepareStatement(query333);
+			ResultSet rsff=stf11.executeQuery();
+			while(rsff.next()) {
+				customerid=rsff.getInt("id");
+			}
+			String query3333="delete from customerfood where cusid='"+customerid+"' and foodid='"+foodid+"'";
+			PreparedStatement stff= con.prepareStatement(query3333);
+			stff.executeUpdate();
+		}
+		catch(Exception e){
+			System.out.println(e);
+		}
+		
+	}
 	public void addservice(String serviceid,String email ,String customerid ) {
 		System.out.println("in addservice DAO");
 		try{
