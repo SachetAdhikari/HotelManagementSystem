@@ -1,35 +1,58 @@
 package co.samundra.web;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
-/* The Java file upload Servlet example */
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
-@WebServlet("/uploadPhoto")
 @MultipartConfig(
 		  //fileSizeThreshold = 1024 * 1024 * 1, // 1 MB
 		  //maxFileSize = 1024 * 1024 * 10,      // 10 MB
 		  //maxRequestSize = 1024 * 1024 * 100   // 100 MB
 		)
-public class fileController extends HttpServlet {
+public class fileController{
+	public void savePic(HttpServletRequest request) throws ServletException, IOException {
+	final String path = System.getProperty("user.dir")+"\\HotelManagementSystem\\HMS\\WebContent\\static\\images\\";
+	 final Part filePart = request.getPart("file");
+	 final String fileName = request.getAttribute("identityname")+".png";
 
-	private static final long serialVersionUID = 1L;
+	 OutputStream out = null;
+	 InputStream fileContent = null;
 
-public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    Part filePart = request.getPart("file");
-    String fileName = filePart.getSubmittedFileName();
-    for (Part part : request.getParts()) {
-      part.write(System.getProperty("user.dir")+"\\HotelManagementSystem\\HMS\\WebContent\\static\\photo.png");
-      System.out.println("photo uploaded");
-      System.out.println(System.getProperty("user.dir") ) ;
-    }
-    
-  }
+	 try {
+	  out = new FileOutputStream(new File(path + File.separator
+	      + fileName));
+	  fileContent = filePart.getInputStream();
 
+	  int read = 0;
+	  final byte[] bytes = new byte[1024];
+
+	  while ((read = fileContent.read(bytes)) != -1) {
+	   out.write(bytes, 0, read);
+	  }
+	  System.out.println("New file " + fileName + " created at " + path);
+
+	 } catch (FileNotFoundException fne) {
+		 System.out.println("You either did not specify a file to upload or are "
+	      + "trying to upload a file to a protected or nonexistent "
+	      + "location.");
+		 System.out.println("<br/> ERROR: " + fne.getMessage());
+
+	 } finally {
+	  if (out != null) {
+	   out.close();
+	  }
+	  if (fileContent != null) {
+	   fileContent.close();
+	  }
+	 }
+	}
 }
+

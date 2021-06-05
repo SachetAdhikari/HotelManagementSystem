@@ -9,6 +9,8 @@
 <body>
 <form method="post" action="uploadPhoto" enctype="multipart/form-data">
     <input type="file" name="file" />
+    <input type="text" name="table" />
+    <input type="text" name="identity" />
     <input type="submit" value="Upload" />
   </form>
 </body>
