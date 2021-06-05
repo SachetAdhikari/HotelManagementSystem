@@ -41,12 +41,15 @@
         	        while(rs.next()){
         	        	%>
         	        	<div class="general-SBHbox bookH">
+        	        	<div class="rate" style="height:30px;"><%=rs.getString("name")%></div>
         	        	<div class="imgg">
         	        	<img src="./static/images/hotel1.jpg" alt="hotel">
         	        	</div>
         	        	<div class="description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et voluptates quasi tempore, perspiciatis reprehenderit excepturi, placeat ea quis debitis suscipit corrupti enim maxime praesentium laborum, at qui. Aspernatur suscipit quo et voluptatum ipsa, fugit harum reiciendis accusantium ut quia voluptates consectetur excepturi blanditiis iusto numquam ratione ad ex? Voluptate, eveniet?
 						</div>
-              			<button value="<%=rs.getInt("id")%>">Book Now</button>
+						<form action="./booking.jsp">
+              			<button value="<%=rs.getInt("id")%>" >Book Now</button>
+              			</form>
             			</div>
         	        	<%
         	        }

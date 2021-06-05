@@ -57,7 +57,7 @@ ResultSet rs=null;
           <h2 style="color: #000; font-family:cursive">Available Food</h2>
           <div class="general-SBH">
           <%
-          PreparedStatement st8=con.prepareStatement("SELECT * FROM hotelfood where hotelfood.hotelid='"+hotelid+"'");
+          PreparedStatement st8=con.prepareStatement("SELECT * FROM hotelfood join food on hotelfood.foodid = food.id where hotelfood.hotelid='"+hotelid+"'");
         	 ResultSet rs8=st8.executeQuery();
         	// PreparedStatement st88=con.prepareStatement("SELECT * FROM food where id= (select id from hotelfood where hotelfood.hotelid='"+hotelid+"'");
         	 //ResultSet rs88=st8.executeQuery();
@@ -69,6 +69,7 @@ ResultSet rs=null;
         	        	<img src="./static/images/hotel1.jpg" alt="hotel">
         	        	</div>
         	        	<div class="description"><%=rs8.getString("description")%>
+        	        	<div class="rate"><%=rs8.getString("rate")%>
 						</div>
               <button name="food" value="<%=rs8.getInt("foodid")%>">Order this</button>
             </div>
