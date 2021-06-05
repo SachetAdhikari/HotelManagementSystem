@@ -255,7 +255,7 @@ public class user_credentialsDAO{
 		try {
 			String[] billDetail = new String[9];
 			//String query = "select b.id,b.roomid, b.ratefactor, h.name, r.roomno, b.noofguests from booking b inner join room r on b.roomid = r.id inner join hotels h on h.id = r.hotelid inner join roomtype rt on r.roomtypeid = rt.id where b.id=(select max(id) from booking where booking.cusid ="+cus_id+")";
-			String query = "select b.id,b.roomid, b.ratefactor, h.name, r.roomno, b.noofguests from booking b inner join room r on b.roomid = r.id inner join hotels h on h.id = r.hotelid inner join roomtype rt on r.roomtypeid = rt.id where b.bookingstatus=0 and b.cusid="+cus_id;
+			String query = "select b.id, b.checkindate, b.roomid, b.ratefactor, h.name, r.roomno, b.noofguests from booking b inner join room r on b.roomid = r.id inner join hotels h on h.id = r.hotelid inner join roomtype rt on r.roomtypeid = rt.id where b.bookingstatus=0 and b.cusid="+cus_id;
 			Class.forName(dbDriver);
 			Connection con = DriverManager.getConnection(dbUrl, dbUsername, dbPassword);
 			Statement st = con.createStatement();
@@ -266,16 +266,21 @@ public class user_credentialsDAO{
 			billDetail[2] = String.valueOf(rs.getInt("roomno"));
 			billDetail[3] = String.valueOf(rs.getInt("noofguests"));
 			String room_id = String.valueOf(rs.getInt("roomid"));
+			String checkindate = rs.getString("checkindate");
 			float ratefactor = rs.getFloat("ratefactor");
 			query = "select curdate() as cur_date";
 			rs = st.executeQuery(query);
-			if (rs.next()) {
-				billDetail[4] = rs.getString("cur_date");
-			}
+			rs.next();
+			String cur_date = rs.getString("cur_date");
+			billDetail[4] = cur_date;
+			query = "select datediff("+cur_date+","+checkindate+") as days";
+			rs = st.executeQuery(query);
+			rs.next();
+			int noOfDays = rs.getInt("days") + 1;
 			query = "select rt.rate from roomtype rt inner join room r on r.roomtypeid = rt.id where r.id ="+ room_id;
 			rs = st.executeQuery(query);
 			rs.next();
-			float room_rate = ratefactor*rs.getFloat("rate");
+			float room_rate = noOfDays*rs.getFloat("rate");
 			billDetail[5] = String.valueOf(room_rate);
 			query = "select sum(hs.rate) as servicerate from hotelservices hs inner join customerservices cs on hs.idservice=cs.serviceid where cs.cusid = " + cus_id;
 			rs = st.executeQuery(query);
@@ -285,6 +290,7 @@ public class user_credentialsDAO{
 			}
 			billDetail[6] = String.valueOf(service_rate);
 			query = "select sum(f.rate) as foodrate from food f inner join customerfood cf on cf.foodid=f.id where cf.cusid = " + cus_id;
+			rs = st.executeQuery(query);
 			float food_rate = 0;
 			while (rs.next()) {
 			 food_rate += rs.getFloat("foodrate");
