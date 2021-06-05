@@ -59,6 +59,8 @@ ResultSet rs=null;
           <%
           PreparedStatement st8=con.prepareStatement("SELECT * FROM hotelfood where hotelfood.hotelid='"+hotelid+"'");
         	 ResultSet rs8=st8.executeQuery();
+        	// PreparedStatement st88=con.prepareStatement("SELECT * FROM food where id= (select id from hotelfood where hotelfood.hotelid='"+hotelid+"'");
+        	 //ResultSet rs88=st8.executeQuery();
         	 while(rs8.next()){
         		 //System.out.println(rs8.getString("description"));
         	        %>

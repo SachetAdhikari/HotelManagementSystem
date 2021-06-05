@@ -176,6 +176,7 @@ ResultSet rs=null;
         	        	<img src="./static/images/hotel1.jpg" alt="hotel">
         	        	</div>
         	        	<div class="description"><%=rs6.getString("description")%></div>
+        	        	<div class="rate"><h3>Rate: $<%=rs6.getString("rate")%> </h3></div>
               <button name="RemoveService" value="<%=rs6.getInt("serviceid")%>">Remove Service</button>
             </div>
             <% }%>
@@ -194,6 +195,8 @@ ResultSet rs=null;
         	        	<img src="./static/images/hotel1.jpg" alt="hotel">
         	        	</div>
         	        	<div class="description"><%=rs7.getString("description")%></div>
+        	        	<div class="rate"><h3>Rate: $<%=rs7.getString("rate")%> </h3></div>
+        	        	
               <button name="AddService" value="<%=rs7.getInt("idservice")%>">Add Service</button>
     
             </div>

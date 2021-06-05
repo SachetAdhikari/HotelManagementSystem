@@ -145,7 +145,10 @@ nav a{
   width: 100%; 
 }
 .general-SBHbox .description{
-	background-color: green;
+	background-color: lightgreen;
+}
+.general-SBHbox .rate{
+	background-color: lightblue ;
 }
 
 .general-SBHbox button{
