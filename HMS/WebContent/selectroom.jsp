@@ -53,7 +53,7 @@ session.setAttribute("service3",service3);
     	       // while(rs.next()){
     	        	//hotelid=rs.getInt("id"); 
     	        //}
-    	        PreparedStatement st1 = con.prepareStatement("select * from room join roomtype on room.roomtypeid=roomtype.id where room.hotelid='"+hotel+"' and room.status='"+0+"' and roomtype.ac='"+ac_nac+"'");
+    	        PreparedStatement st1 = con.prepareStatement("select * from room join roomtype on room.roomtypeid=roomtype.id where room.hotelid='"+hotel+"' and room.status='"+0+"' and roomtype.ac='"+ac_nac+"' and roomtype.capacity='"+nog+"'" );
     			System.out.println("connected on selectroomjsp");
     	        ResultSet rs1 = st1.executeQuery();
     	        while(rs1.next()){

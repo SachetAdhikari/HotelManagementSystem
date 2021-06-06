@@ -24,6 +24,7 @@ import co.samundra.web.dao.user_credentialsDAO;
 			String name = request.getParameter("fullname");
 			String cpassword = request.getParameter("cpassword");
 			user_credentialsDAO uc = new user_credentialsDAO();
+			//user_credentialsDAO uc = new user_credentialsDAO();
 			//boolean result = uc.authenticateUser(email,password);
 			if(name!=null && email!=null && password.equals(cpassword)){
 				int cus_id = uc.inputUserdetails(name,email,password);
