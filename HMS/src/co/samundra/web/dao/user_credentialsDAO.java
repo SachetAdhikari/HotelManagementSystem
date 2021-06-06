@@ -468,7 +468,7 @@ public class user_credentialsDAO{
 			int sid=0;
 			Class.forName(dbDriver);
 			Connection con = DriverManager.getConnection(dbUrl, dbUsername,dbPassword);
-			String q7="insert into services (name, fileName)"+"values('"+name+"','"+name+".png')";
+			String q7="insert into services (name, fileName)"+"values('"+name+"','"+name+".jpg')";
 			PreparedStatement st6=con.prepareStatement(q7);
 			st6.executeUpdate();
 			String q8="select * from services where name='"+name+"'";
