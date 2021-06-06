@@ -1,0 +1,11 @@
+127.0.0.1 - - [30/May/2021:22:48:13 +0545] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [30/May/2021:22:48:16 +0545] "GET /HMS/dashboard.jsp HTTP/1.1" 200 19
+0:0:0:0:0:0:0:1 - - [30/May/2021:22:48:40 +0545] "GET /HMS/index.jsp HTTP/1.1" 200 1579
+0:0:0:0:0:0:0:1 - - [30/May/2021:22:48:40 +0545] "GET /HMS/static/style.css HTTP/1.1" 200 7344
+0:0:0:0:0:0:0:1 - - [30/May/2021:22:48:41 +0545] "GET /HMS/static/images/booking8.jpeg HTTP/1.1" 200 379959
+0:0:0:0:0:0:0:1 - - [30/May/2021:22:48:41 +0545] "GET /HMS/static/images/try2.jpg HTTP/1.1" 200 2623161
+0:0:0:0:0:0:0:1 - - [30/May/2021:22:48:41 +0545] "GET /HMS/static/images/hotel.jpg HTTP/1.1" 200 1113836
+0:0:0:0:0:0:0:1 - - [30/May/2021:22:48:50 +0545] "GET /HMS/login.jsp HTTP/1.1" 200 2007
+0:0:0:0:0:0:0:1 - - [30/May/2021:22:48:50 +0545] "GET /HMS/static/images/avatar.png HTTP/1.1" 200 17884
+0:0:0:0:0:0:0:1 - - [30/May/2021:22:48:50 +0545] "GET /HMS/static/images/reception.jpg HTTP/1.1" 200 908236
+0:0:0:0:0:0:0:1 - - [30/May/2021:22:49:13 +0545] "POST /HMS/login HTTP/1.1" 200 7

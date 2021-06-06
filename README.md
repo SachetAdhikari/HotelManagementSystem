@@ -1,1 +1,2 @@
-# DBMS Project HMS
+# HotelManagementSystem
+MAVEN Project in Eclipse
