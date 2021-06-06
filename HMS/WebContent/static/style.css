@@ -228,6 +228,11 @@ nav a{
   position: absolute;
   bottom: 0;
 }
+.SF1{
+	display: grid;
+	grid-template-rows: 10% 60% 15% 15% ;	
+}
+
 .general-SBHbox button:hover{
   background-color: rgb(141, 10, 39, 0.76);
   transition-duration: 0.3s;
