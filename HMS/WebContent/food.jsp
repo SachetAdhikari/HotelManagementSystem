@@ -37,13 +37,17 @@ ResultSet rs=null;
           <h2 style="color: #000; font-family:cursive">Your Orders</h2>
           <div class="general-SBH">
           <%
-          	 PreparedStatement st6=con.prepareStatement("SELECT * FROM customerfood join hotelfood on customerfood.foodid=hotelfood.foodid where customerfood.cusid='"+customerid+"' and hotelfood.hotelid='"+hotelid+"'");
+          	 PreparedStatement st6=con.prepareStatement("SELECT * FROM customerfood join hotelfood on customerfood.foodid=hotelfood.foodid join food on food.id=customerfood.foodid where customerfood.cusid='"+customerid+"' and hotelfood.hotelid='"+hotelid+"'");
         	 ResultSet rs6=st6.executeQuery();
         	 while(rs6.next()){
         	        %>
             	<div class="general-SBHbox">
             <div class="imgg" style="height: 250px;">
-        	        	<img src="./static/images/hotel1.jpg" alt="hotel">
+            <% 
+            	String src="./static/images/"+rs6.getString("fileName");
+            	System.out.println(src);
+            %>
+        	        	<img src=<%=src%> alt="hotel">
         	        	</div>
         	        	<div class="description" ><%=rs6.getString("description")%>
 						</div>
@@ -63,7 +67,11 @@ ResultSet rs=null;
         	        %>
             <div class="general-SBHbox SF">
             <div class="imgg">
-        	        	<img src="./static/images/hotel1.jpg" alt="hotel">
+            <% 
+            	String src="./static/images/"+rs8.getString("fileName");
+            	System.out.println(src);
+            %>
+        	        	<img src=<%=src%> alt="hotel">
         	        	</div>
         	        	<div class="description"><%=rs8.getString("description")%>
 						</div>
