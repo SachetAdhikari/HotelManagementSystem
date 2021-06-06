@@ -44,7 +44,11 @@
         	        	<div class="general-SBHbox bookH">
         	        	<div class="rate" style="height:30px;"><%=rs.getString("name")%></div>
         	        	<div class="imgg" style="height: 250px;">
-        	        	<img src="./static/images/hotel1.jpg" alt="hotel">
+        	        	<% 
+            	String src="./static/images/"+rs.getString("fileName");
+            	System.out.println(src);
+            %>
+        	        	<img src=<%=src%> alt="hotel">
         	        	</div>
         	        	<div class="description">ut quia voluptates consectetur excepturi blanditiis iusto numquam ratione ad ex? Voluptate, eveniet?
 						</div>

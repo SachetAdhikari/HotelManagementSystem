@@ -157,14 +157,18 @@ ResultSet rs=null;
         <section class="box-section">
           <h2 style="color: #000; font-family:cursive">Your Services</h2>
           <div class="general-SBH">
-          <% PreparedStatement st6=con.prepareStatement("SELECT * FROM customerservices join hotelservices on customerservices.serviceid=hotelservices.idservice where customerservices.cusid='"+customerid+"' and hotelservices.idhotel='"+hotelid+"'");
+          <% PreparedStatement st6=con.prepareStatement("SELECT * FROM customerservices join hotelservices on customerservices.serviceid=hotelservices.idservice  join services on customerservices.serviceid=services.id where customerservices.cusid='"+customerid+"' and hotelservices.idhotel='"+hotelid+"'");
         	 ResultSet rs6=st6.executeQuery();
         	 while(rs6.next()){
         		 //System.out.println(rs6.getString("description"));
         	        %>
            <div class="general-SBHbox SF myS">
             <div class="imgg">
-        	        	<img src="./static/images/hotel1.jpg" alt="hotel">
+        	        	<% 
+            	String src="./static/images/"+rs6.getString("fileName");
+            	System.out.println(src);
+            %>
+        	        	<img src=<%=src%> alt="hotel">
         	        	</div>
         	        	<div class="description"><%=rs6.getString("description")%></div>
         	        	<div class="rate"><h3>Rate: $<%=rs6.getString("rate")%> </h3></div>
@@ -176,14 +180,18 @@ ResultSet rs=null;
         <section class="box-section">
           <h2 style="color: #000; font-family:cursive">Other Services</h2>
           <div class="general-SBH">
-          <% PreparedStatement st7=con.prepareStatement("SELECT * FROM hotelservices where hotelservices.idservice not in (select customerservices.serviceid from customerservices where customerservices.cusid='"+customerid+"') and hotelservices.idhotel='"+hotelid+"'");
+          <% PreparedStatement st7=con.prepareStatement("SELECT * FROM hotelservices join services on services.id=hotelservices.idservice where hotelservices.idservice not in (select customerservices.serviceid from customerservices where customerservices.cusid='"+customerid+"') and hotelservices.idhotel='"+hotelid+"'");
         	 ResultSet rs7=st7.executeQuery();
         	 while(rs7.next()){
         		 //System.out.println(rs7.getString("description"));
         	        %>
             <div class="general-SBHbox SF addS">
             <div class="imgg">
-        	        	<img src="./static/images/hotel1.jpg" alt="hotel">
+        	        	<% 
+            	String src="./static/images/"+rs7.getString("fileName");
+            	System.out.println(src);
+            %>
+        	        	<img src=<%=src%> alt="hotel">
         	        	</div>
         	        	<div class="description"><p><%=rs7.getString("description")%></p></div>
         	        	<div class="rate"><h3>Rate: $<%=rs7.getString("rate")%> </h3></div>
