@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import co.samundra.web.dao.user_credentialsDAO;
-	@WebServlet("/signup")
+	@WebServlet("/signupp")
 	public class SignupController extends HttpServlet {
 		private static final long serialVersionUID = 1L;
 	    public SignupController() {

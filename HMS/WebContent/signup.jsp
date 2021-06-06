@@ -18,7 +18,7 @@
     <div class="signup">
       <div class="decorator signupBox">
         <h1>Signup</h1>
-        <form action="signup" autocomplete="off" method="post">
+        <form action="signupp" autocomplete="off" method="post">
           <label for="id1FullName">Full Name</label><br />
           <input
             type="text"
