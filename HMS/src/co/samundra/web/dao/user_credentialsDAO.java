@@ -510,7 +510,7 @@ public class user_credentialsDAO{
 			int foodid=0;
 			Class.forName(dbDriver);
 			Connection con = DriverManager.getConnection(dbUrl, dbUsername,dbPassword);
-			String q7="insert into food (name,type,rate,fileName)"+"values('"+name+"','"+type+"','"+rate+"','"+name+".png')";
+			String q7="insert into food (name,type,rate,fileName)"+"values('"+name+"','"+type+"','"+rate+"','"+name+".jpg')";
 			PreparedStatement st6=con.prepareStatement(q7);
 			st6.execute();
 			String q8="select * from food where name='"+name+"'";
