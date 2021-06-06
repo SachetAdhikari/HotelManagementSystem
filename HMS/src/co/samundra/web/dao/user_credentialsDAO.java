@@ -468,7 +468,7 @@ public class user_credentialsDAO{
 			int sid=0;
 			Class.forName(dbDriver);
 			Connection con = DriverManager.getConnection(dbUrl, dbUsername,dbPassword);
-			String q7="insert into services (name)"+"values('"+name+"')";
+			String q7="insert into services (name, fileName)"+"values('"+name+"','"+name+".png')";
 			PreparedStatement st6=con.prepareStatement(q7);
 			st6.executeUpdate();
 			String q8="select * from services where name='"+name+"'";
@@ -510,7 +510,7 @@ public class user_credentialsDAO{
 			int foodid=0;
 			Class.forName(dbDriver);
 			Connection con = DriverManager.getConnection(dbUrl, dbUsername,dbPassword);
-			String q7="insert into food (name,type,rate)"+"values('"+name+"','"+type+"','"+rate+"')";
+			String q7="insert into food (name,type,rate,fileName)"+"values('"+name+"','"+type+"','"+rate+"','"+name+".png')";
 			PreparedStatement st6=con.prepareStatement(q7);
 			st6.execute();
 			String q8="select * from food where name='"+name+"'";
@@ -541,6 +541,19 @@ public class user_credentialsDAO{
 			String q7="delete from hotelfood where hotelfood.foodid='"+sid+"' and hotelfood.hotelid='"+hotel+"'";
 			PreparedStatement st6=con.prepareStatement(q7);
 			st6.executeUpdate();
+		}
+		catch(Exception e){
+			System.out.println(e);
+		}
+	}
+	
+	public void setRoomStatus(String cus_id) {
+		String query = "UPDATE room SET room.status = 0 WHERE room.id = (select booking.roomid from booking where booking.bookingstatus=0 and booking.cusid="+cus_id+")";
+		try{
+			Class.forName(dbDriver);
+			Connection con = DriverManager.getConnection(dbUrl, dbUsername,dbPassword);
+			PreparedStatement st=con.prepareStatement(query);
+			st.executeUpdate();
 		}
 		catch(Exception e){
 			System.out.println(e);

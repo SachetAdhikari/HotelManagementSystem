@@ -29,10 +29,15 @@ ResultSet rs=null;
   <%
   	session = request.getSession();
    	if (session.getAttribute("userStatus").equals("CurrentlyVacant")){%>
-   		<div>
+   		<div class = "notBooked">
    		<h1>You've not booked a hotel currently!</h1>
+   		<div>
    		<a href="./history.jsp" class="button">Your History</a>
    		<a href="./index.jsp#hotels" class="button">BookNow</a>
+   		</div>
+   		</div>
+   		<div class="notBookedFooter">
+   		<%@ include file="footer.jsp" %>
    		</div>
    	<%}
    	else {
@@ -97,8 +102,7 @@ ResultSet rs=null;
         	        PreparedStatement st4=con.prepareStatement("select * from hotels join room where room.hotelid = hotels.id and room.id='"+roomid+"'");
         	        ResultSet rs4=st4.executeQuery();
         	        PreparedStatement st5=con.prepareStatement("SELECT * FROM booking WHERE booking.cusid='"+customerid+"'and booking.bookingstatus='"+0+"'");
-        	        ResultSet rs5=st5.executeQuery();
-        	        
+        	        ResultSet rs5=st5.executeQuery();        	
         	        while(rs.next()){
         	        	
         	        	%>
@@ -128,21 +132,13 @@ ResultSet rs=null;
             	%>
             <li><h2>Room Number: <%=rs3.getInt("roomno")%></h2></li><% 
             }
+            while(rs5.next()){
+           		
             %>
             <li>
-              <h2>Guests</h2>
-              <ul>
-                <li><h3>guest1</h3></li>
-                <li><h3>guest2</h3></li>
-                <li><h3>guest3</h3></li>
-              </ul>
+              <h2>No of Guests: <%= rs5.getString("noofguests")%></h2>
             </li>
             <li>
-            <%
-            while(rs5.next()){
-            	
-            %>
-            
             <li><h2>Checkin Date:<%=rs5.getString("checkindate")%></h2></li>
             <li>
               <h2>Checkout Date: <%=rs5.getString("checkoutdate") %> 
@@ -166,11 +162,12 @@ ResultSet rs=null;
         	 while(rs6.next()){
         		 //System.out.println(rs6.getString("description"));
         	        %>
-            <div class="general-SBHbox myS">
+           <div class="general-SBHbox SF myS">
             <div class="imgg">
         	        	<img src="./static/images/hotel1.jpg" alt="hotel">
         	        	</div>
         	        	<div class="description"><%=rs6.getString("description")%></div>
+        	        	<div class="rate"><h3>Rate: $<%=rs6.getString("rate")%> </h3></div>
               <button name="RemoveService" value="<%=rs6.getInt("serviceid")%>">Remove Service</button>
             </div>
             <% }%>
@@ -184,11 +181,13 @@ ResultSet rs=null;
         	 while(rs7.next()){
         		 //System.out.println(rs7.getString("description"));
         	        %>
-            <div class="general-SBHbox addS">
+            <div class="general-SBHbox SF addS">
             <div class="imgg">
         	        	<img src="./static/images/hotel1.jpg" alt="hotel">
         	        	</div>
-        	        	<div class="description"><%=rs7.getString("description")%></div>
+        	        	<div class="description"><p><%=rs7.getString("description")%></p></div>
+        	        	<div class="rate"><h3>Rate: $<%=rs7.getString("rate")%> </h3></div>
+        	        	
               <button name="AddService" value="<%=rs7.getInt("idservice")%>">Add Service</button>
     
             </div>
@@ -211,5 +210,6 @@ ResultSet rs=null;
     	<%
    	}
     	%>
+  
   </body>
 </html>

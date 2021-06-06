@@ -26,6 +26,7 @@ public class payController extends HttpServlet{
     	uc.insertIntoCustomerBill(bill_id, cus_id);
     	uc.deleteFromCustomerFood(cus_id);
     	uc.deleteFromCustomerServices(cus_id);
+    	uc.setRoomStatus(cus_id);
     	session.setAttribute("userStatus", "CurrentlyVacant");
     	response.sendRedirect("logout");
     }

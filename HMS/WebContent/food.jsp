@@ -37,12 +37,11 @@ ResultSet rs=null;
           <h2 style="color: #000; font-family:cursive">Your Orders</h2>
           <div class="general-SBH">
           <%
-          PreparedStatement st6=con.prepareStatement("SELECT * FROM customerfood join hotelfood on customerfood.foodid=hotelfood.foodid where customerfood.cusid='"+customerid+"' and hotelfood.hotelid='"+hotelid+"'");
+          	 PreparedStatement st6=con.prepareStatement("SELECT * FROM customerfood join hotelfood on customerfood.foodid=hotelfood.foodid where customerfood.cusid='"+customerid+"' and hotelfood.hotelid='"+hotelid+"'");
         	 ResultSet rs6=st6.executeQuery();
         	 while(rs6.next()){
-        		 //System.out.println(rs6.getString("description"));
         	        %>
-            <div class="general-SBHbox myS">
+            	<div class="general-SBHbox ">
             <div class="imgg">
         	        	<img src="./static/images/hotel1.jpg" alt="hotel">
         	        	</div>
@@ -55,19 +54,20 @@ ResultSet rs=null;
         </section>
 	<section class="box-section">
           <h2 style="color: #000; font-family:cursive">Available Food</h2>
-          <div class="general-SBH">
+          <div class="general-SBH" >
           <%
-          PreparedStatement st8=con.prepareStatement("SELECT * FROM hotelfood where hotelfood.hotelid='"+hotelid+"'");
+          PreparedStatement st8=con.prepareStatement("SELECT * FROM hotelfood join food on hotelfood.foodid = food.id where hotelfood.hotelid='"+hotelid+"'");
         	 ResultSet rs8=st8.executeQuery();
         	 while(rs8.next()){
         		 //System.out.println(rs8.getString("description"));
         	        %>
-            <div class="general-SBHbox orderF">
+            <div class="general-SBHbox SF">
             <div class="imgg">
         	        	<img src="./static/images/hotel1.jpg" alt="hotel">
         	        	</div>
         	        	<div class="description"><%=rs8.getString("description")%>
 						</div>
+						<div class="rate"><h3>Rate: $<%=rs8.getString("rate")%> </h3></div>
               <button name="food" value="<%=rs8.getInt("foodid")%>">Order this</button>
             </div>
             <%} %>
@@ -89,4 +89,3 @@ ResultSet rs=null;
     	<%@ include file="footer.jsp" %>
   </body>
 </html>
-

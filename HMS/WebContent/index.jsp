@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
   </head>
-  <body>
+  <body class="index-body">
       <section class="intro">
         <h1>NAMASTE</h1>
       </section>
@@ -18,8 +18,10 @@
       <%
       session = request.getSession();
       if (session.getAttribute("loggedInUserId")!=null && session.getAttribute("userStatus").equals("CurrentlyBooked")){%>
-      	<h1>You're Currently Booked in one of Our Hotels</h1>
-      	<a href="./dashboard.jsp" class="button">View Dashboard</a>
+      	<div class="booked">
+      		<h1>You're Currently Booked in one of Our Hotels</h1>
+      		<a href="./dashboard.jsp" class="button">View Dashboard</a>
+      	</div>
       <%}
       else{
       %>
@@ -37,16 +39,22 @@
         		System.out.println("On Index");
         	       ResultSet rs = st.executeQuery();
         	        while(rs.next()){
+        	        
         	        	%>
         	        	<div class="general-SBHbox bookH">
+        	        	<div class="rate" style="height:30px;"><%=rs.getString("name")%></div>
         	        	<div class="imgg">
         	        	<img src="./static/images/hotel1.jpg" alt="hotel">
         	        	</div>
         	        	<div class="description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et voluptates quasi tempore, perspiciatis reprehenderit excepturi, placeat ea quis debitis suscipit corrupti enim maxime praesentium laborum, at qui. Aspernatur suscipit quo et voluptatum ipsa, fugit harum reiciendis accusantium ut quia voluptates consectetur excepturi blanditiis iusto numquam ratione ad ex? Voluptate, eveniet?
 						</div>
-              			<button value="<%=rs.getInt("id")%>">Book Now</button>
+						<form action="./booking.jsp">
+              			<button value="<%=rs.getInt("id")%>" >Book Now</button>
+              			</form>
             			</div>
         	        	<%
+        	       
+        
         	        }
         	        con.close();
         	        st.close();
@@ -61,7 +69,7 @@
       </section>
       <section class="service" id="services">
         <h1>Services we provide</h1>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi quod sapiente facere, distinctio quis tempora consequuntur nostrum in perferendis optio impedit tenetur aliquam aliquid placeat.</p>
+        <p id="mainp">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi quod sapiente facere, distinctio quis tempora consequuntur nostrum in perferendis optio impedit tenetur aliquam aliquid placeat.</p>
         <div class="row">
             <div class="service-col">
                 <h3>Blogs</h3>
@@ -78,7 +86,7 @@
             </div>
         </div>
     </section>
-    <div class="index-footer">
+    <div class="index-footer" style="color:white;">
     	<%@ include file="footer.jsp" %>
     </div>
   </body>

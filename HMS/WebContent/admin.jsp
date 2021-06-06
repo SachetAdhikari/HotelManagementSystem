@@ -5,10 +5,11 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<link rel="stylesheet" href="./static/style.css" />
+<title>Admin</title>
 </head>
-<body>
-	<form action="admin">
+<body class="admin-body">
+	<form method="post" action="admin" enctype="multipart/form-data">
 		<div class="admin-hotel">
 		<h1>Select Hotel</h1>
 		<select name = "hotel" id = "">
@@ -47,54 +48,58 @@
 		</div>
 		<div class="admin-addroom">
 			<h1>Add Room</h1>
-			<label for="roomno" >Room No.</label>
-			<input type="text" id="roomno" name="roomno">
-			<label for="roomtype">Type</label>
-			<input type="text" id="roomtype" name="roomtype">
-			<label for="roomrate">Rate</label>
-			<input type="text" id="roomrate" name="roomrate">
-			<label for="roomcapacity">Room Capacity</label>
-			<input type="text" id="roomcapacity" name="roomcapacity">
+			<label for="roomno" >Room No.</label><br>
+			<input type="text" id="roomno" name="roomno"><br>
+			<label for="roomtype">Type</label><br>
+			<input type="text" id="roomtype" name="roomtype"><br>
+			<label for="roomrate">Rate</label><br>
+			<input type="text" id="roomrate" name="roomrate"><br>
+			<label for="roomcapacity">Room Capacity</label><br>
+			<input type="text" id="roomcapacity" name="roomcapacity"><br>
 			<button name="addroom" value="1">Add Room</button>
-		</div>
-		<div class="admin-deleteroom">
-			<h1>Delete Room</h1>
-			<label for="deleteroomno">Room No.</label>
-			<input type="text" id="deleteroomno" name="deleteroomno">
-			<button name="deleteroom" value="1">Delete Room</button>
 		</div>
 		<div class="admin-addservice">
 			<h1>Add Service</h1>
-			<label for="servicename" >Service Name</label>
-			<input type="text" id="servicename" name="servicename">
-			<label for="servicerate">Rate</label>
-			<input type="text" id="servicerate" name="servicerate">
-			<label for="servicedescription" >Description</label>
-			<input type="text" id="servicedescription" name="servicedescription">
+			<label for="servicename" >Service Name</label><br>
+			<input type="text" id="servicename" name="servicename"><br>
+			<label for="servicerate">Rate</label><br>
+			<input type="text" id="servicerate" name="servicerate"><br>
+			<label for="servicedescription" >Description</label><br>
+			<input type="text" id="servicedescription" name="servicedescription"><br>
+    		<input type="file" name="file" /> <br>
 			<button name="addservice" value="1">Add Service</button>
-		</div>
-		<div class="admin-deleteservice">
-			<h1>Delete Service</h1>
-			<label for="deleteservicename">Service Name</label>
-			<input type="text" id="deleteservicename" name="deleteservicename">
-			<button name="deleteservice" value="1">Delete Service</button>
 		</div>
 		<div class="admin-addfood">
 			<h1>Add Food</h1>
-			<label for="foodname" >Food Name</label>
-			<input type="text" id="foodname" name="foodname">
-			<label for="foodtype">Type</label>
-			<input type="text" id="foodtype" name="foodtype">
-			<label for="foodrate">Rate</label>
-			<input type="text" id="foodrate" name="foodrate">
-			<label for="fooddescription" >Description</label>
-			<input type="text" id="fooddescription" name="fooddescription">
+			<label for="foodname" >Food Name</label><br>
+			<input type="text" id="foodname" name="foodname"><br>
+			<label for="foodtype">Type</label><br>
+			<input type="text" id="foodtype" name="foodtype"><br>
+			<label for="foodrate">Rate</label><br>
+			<input type="text" id="foodrate" name="foodrate"><br>
+			<label for="fooddescription" >Description</label><br>
+			<input type="text" id="fooddescription" name="fooddescription"><br>
+			<input type="file" name="file" /> <br>
 			<button name="addfood" value="1">Add Food</button>
 		</div>
-		<div class="admin-deletefood">
+		
+		<div class="admin-deleteroom">
+			<h1>Delete Room</h1>
+			<label for="deleteroomno">Room No.</label><br>
+			<input type="text" id="deleteroomno" name="deleteroomno"><br>
+			<button name="deleteroom" value="1">Delete Room</button>
+		</div>
+		
+		<div class="admin-deleteservice">
+			<h1>Delete Service</h1>
+			<label for="deleteservicename">Service Name</label><br>
+			<input type="text" id="deleteservicename" name="deleteservicename"><br>
+			<button name="deleteservice" value="1">Delete Service</button><br>
+		</div>
+				<div class="admin-deletefood">
 			<h1>Delete Food</h1>
-			<label for="deletefoodname">Food Name</label>
-			<input type="text" id="deletefoodname" name="deletefoodname">
+			<label for="deletefoodname">Food Name</label><br>
+			<input type="text" id="deletefoodname" name="deletefoodname"><br>
 			<button name="deletefood" value="1">Delete Food</button>
 		</div>
 	</form>	
