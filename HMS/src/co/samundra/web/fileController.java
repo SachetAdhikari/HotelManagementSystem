@@ -21,7 +21,7 @@ public class fileController{
 	public void savePic(HttpServletRequest request) throws ServletException, IOException {
 	final String path = System.getProperty("user.dir")+"\\HotelManagementSystem\\HMS\\WebContent\\static\\images\\";
 	 final Part filePart = request.getPart("file");
-	 final String fileName = request.getAttribute("identityname")+".png";
+	 final String fileName = request.getAttribute("identityname")+".jpg";
 
 	 OutputStream out = null;
 	 InputStream fileContent = null;

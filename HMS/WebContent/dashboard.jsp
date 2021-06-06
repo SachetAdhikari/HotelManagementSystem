@@ -107,7 +107,7 @@ ResultSet rs=null;
         	        	
         	        	%>
         	        	<div class="user-details">
-        	        	<h1 style="text-decoration: underline;">Name:<%=rs.getString("name")%></h1>
+        	        	<h1 style="text-decoration: underline;"><%=rs.getString("name")%></h1>
         	        	<h2>Email:<%=rs.getString("email") %></h2>
         	        	 <a href="./history.jsp" class="button">Your History</a>
         	    
