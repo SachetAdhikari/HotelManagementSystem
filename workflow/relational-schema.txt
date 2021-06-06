@@ -3,9 +3,9 @@ Schema:
 step 1:
 customer_credentials -> (id*,name,email,password,address,age)
 room -> (id*, status)
-hotels -> (id*, name, address)
-services -> (id*, name)
-food -> (id*, name, type, rate)
+hotels -> (id*, name, address, filename)
+services -> (id*, name, filename)
+food -> (id*, name, type, rate, filename)
 bills -> (id*, date, total_amount)
 roomtype -> (id*, ac, capacity, rate)
 
@@ -16,7 +16,7 @@ room -> (id*, status, roomtypeid(fk), hotelid(fk), roomno)
 step 3: M:N relationship mapping
 
 booking -> (id*, roomid(id from room as fk), cusid(id from customer_credentials as fk),
-	    cindate, coutdate, noOfguests, ratefactor)
+	    cindate, coutdate, noOfguests, ratefactor, bookingstatus)
 
 Hotelservices -> (idhotel(id from hotels as fk)*, idservice(id from services as fk)*,
 		rate, description, capacity, status)
