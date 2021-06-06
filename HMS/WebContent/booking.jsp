@@ -82,14 +82,14 @@
       <section class="box-section">
         <h2>Quick Services</h2>
         <div class="general-SBH">
-          <div class="general-SBHbox addS">
-            <input type="checkbox" name="service1" value="1"><label>Add Service</label>
+          <div class="general-SBHbox addS" style="background-image: url('./static/images/guide.jpg'); background-size: cover;">
+            <input type="checkbox" name="service1" value="1" style="margin:5px; height:18px; width:18px;"><label style="font-size:22px;">Hire a personal guide to roam around the city</label>
           </div>
-          <div class="general-SBHbox addS">
-            <input type="checkbox" name="service2" value="2"><label>Add Service</label>
+          <div class="general-SBHbox addS" style="background-image: url('./static/images/decoration2.jpg'); background-size: cover;">
+            <input type="checkbox" name="service2" value="2" style="margin:5px; height:18px; width:18px;"><label style="font-size:22px">Decorate your room with flowers</label>
           </div>
-          <div class="general-SBHbox addS">
-            <input type="checkbox" name="service3" value="3"><label>Add Service</label>
+          <div class="general-SBHbox addS" style="background-image: url('./static/images/pickup1.jpg'); background-size: cover;">
+            <input type="checkbox" name="service3" value="3" style="margin:5px; height:18px; width:18px;"><label style="font-size:22px;">Want a pickup service?</label>
           </div>
         </div>
       </section>
