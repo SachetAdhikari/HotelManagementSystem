@@ -41,11 +41,11 @@ ResultSet rs=null;
         	 ResultSet rs6=st6.executeQuery();
         	 while(rs6.next()){
         	        %>
-            	<div class="general-SBHbox ">
-            <div class="imgg">
+            	<div class="general-SBHbox">
+            <div class="imgg" style="height: 250px;">
         	        	<img src="./static/images/hotel1.jpg" alt="hotel">
         	        	</div>
-        	        	<div class="description"><%=rs6.getString("description")%>
+        	        	<div class="description" ><%=rs6.getString("description")%>
 						</div>
               <button name="RemoveFood" value="<%=rs6.getInt("foodid")%>">Remove Order</button>
             </div>

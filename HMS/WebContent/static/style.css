@@ -200,7 +200,7 @@ nav a{
 .general-SBHbox .description{
 	background-color: lightgreen;
 	text-align: center;
-	padding-top: 10px;
+	padding: 10px;
 }
 
 .general-SBHbox .rate{
@@ -228,6 +228,11 @@ nav a{
   position: absolute;
   bottom: 0;
 }
+.SF1{
+	display: grid;
+	grid-template-rows: 10% 60% 15% 15% ;	
+}
+
 .general-SBHbox button:hover{
   background-color: rgb(141, 10, 39, 0.76);
   transition-duration: 0.3s;
@@ -414,7 +419,7 @@ nav a{
 .bookHdescription{
 	background-color: lightgreen;
 	text-align: center;
-	padding-top: 10px;	
+	padding: 10px;	
 }
 
 
@@ -593,7 +598,7 @@ a.photo-tala{
 .mySdescription{
 	background-color: lightgreen;
 	text-align: center;
-	padding-top: 10px;	
+	padding: 10px;	
 }
 
 .myS button{
