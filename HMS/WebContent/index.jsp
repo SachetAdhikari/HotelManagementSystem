@@ -41,7 +41,7 @@
         	        while(rs.next()){
         	        
         	        	%>
-        	        	<div class="general-SBHbox bookH ">
+        	        	<div class="general-SBHbox bookH">
         	        	<div class="rate" style="height:30px;"><%=rs.getString("name")%></div>
         	        	<div class="imgg" style="height: 250px;">
         	        	<img src="./static/images/hotel1.jpg" alt="hotel">
@@ -53,8 +53,6 @@
               			</form>
             			</div>
         	        	<%
-        	       
-        
         	        }
         	        con.close();
         	        st.close();
